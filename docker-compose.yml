@@ -1,9 +1,11 @@
+version: '3'
+
 services:
   redmine:
     image: redmine:latest
     restart: always
     environment:
-      REDMINE_DB_POSTGRES: db  # Correct service name for PostgreSQL
+      REDMINE_DB_POSTGRES: db
       REDMINE_DB_USERNAME: redmine_user
       REDMINE_DB_PASSWORD: redmine_pass
       REDMINE_DB_DATABASE: redmine_production
@@ -22,7 +24,11 @@ services:
       POSTGRES_USER: redmine_user
       POSTGRES_PASSWORD: redmine_pass
     volumes:
-      - ./db:/var/lib/postgresql/data  # Bind mount to the local db directory
+      - ./db:/var/lib/postgresql/data
 
 volumes:
   redmine_data:
+
+networks:
+  default:
+    driver: bridge
