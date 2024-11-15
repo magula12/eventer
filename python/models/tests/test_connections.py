@@ -1,5 +1,5 @@
 import unittest
-from datetime import date, time
+from datetime import datetime
 
 from ..connections import EventPerson, PersonRoleQualification
 from ..person import Person
@@ -9,8 +9,11 @@ from ..role import Role
 
 class TestEventPerson(unittest.TestCase):
     def setUp(self):
-        self.event = Event(id=1, category=EventCategory(id=1, techName="Workshop", description="Workshop events", priority=2), priority=1, name="Workshop 101", date=date(2024, 12, 12), time=time(10, 0), description="Basic workshop")
-        self.person = Person(id=3, name="Bob", surname="Brown", admin=False, email="bob@example.com", phone_number="123456789")
+        self.event = Event(id=1, category=EventCategory(id=1, techName="Workshop", description="Workshop events", priority=2),
+                           priority=1, name="Workshop 101", start_date=datetime(2024, 12, 12,10),
+                           description="Basic workshop")
+        self.person = Person(id=3, name="Bob", surname="Brown", admin=False, email="bob@example.com",
+                             phone_number="123456789")
         self.event_person = EventPerson(event=self.event, person=self.person)
 
     def test_event_person_link(self):
@@ -25,7 +28,8 @@ class TestPersonRoleQualification(unittest.TestCase):
     def setUp(self):
         category = EventCategory(id=1, techName="Seminar", description="Seminar events", priority=3)
         role = Role(id=1, name="Speaker", priority=1)
-        person = Person(id=4, name="Claire", surname="Johnson", admin=False, email="claire@example.com", phone_number="555666777")
+        person = Person(id=4, name="Claire", surname="Johnson", admin=False, email="claire@example.com",
+                        phone_number="555666777")
         self.qual = PersonRoleQualification(person=person, role=role, category=category, qualified=True)
 
     def test_person_role_qualification_creation(self):

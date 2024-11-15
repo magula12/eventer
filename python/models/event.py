@@ -1,16 +1,18 @@
 from .eventCategory import EventCategory
 from .person import Person
-from datetime import date, time
+from .role import Role
+from datetime import datetime, timedelta
 
 class Event:
-    def __init__(self, id :int, category: EventCategory, priority: int, name: str, date: date, time: time, description: str):
+    def __init__(self, id :int, category: EventCategory, priority: int, name: str,
+                 start_date: datetime, end_date: datetime = None, description: str = ""):
         self.id = id
         self.category = category
         self.priority = priority
         self.name = name
-        self.date = date
-        self.time = time
-        self.participants = []
+        self.start_date = start_date
+        self.end_date = end_date
+        self.participants = {}
         self.description = description
 
     def __str__(self) -> str:
@@ -38,7 +40,7 @@ class Event:
         return self.priority
 
     def is_same_event(self, other) -> bool:
-        return self.date == other.date and self.time == other.time and self.name == other.name
+        return self.id == other.id
 
     def set_category(self, category: EventCategory) -> None:
         self.category = category
@@ -46,11 +48,11 @@ class Event:
     def set_name(self, name: str) -> None:
         self.name = name
 
-    def set_date(self, date: date) -> None:
-        self.date = date
+    def set_start_date(self, start_date: datetime) -> None:
+        self.start_date = start_date
 
-    def set_time(self, time: time) -> None:
-        self.time = time
+    def set_end_date(self, end_date: datetime) -> None:
+        self.end_date = end_date
 
     def set_participants(self, participants: list[Person]) -> None:
         self.participants = participants
@@ -64,32 +66,26 @@ class Event:
     def get_name(self) -> str:
         return self.name
 
-    def get_date(self) -> date:
-        return self.date
+    def get_start_date(self) -> datetime:
+        return self.start_date
 
-    def get_time(self) -> time:
-        return self.time
+    def get_end_date(self) -> datetime:
+        return self.end_date
 
     def get_participants(self) -> list[Person]:
-        return self.participants
+        return list(self.participants.values())
 
     def get_description(self) -> str:
         return self.description
 
-    def add_participant(self, participant: Person) -> None:
-        self.participants.append(participant)
+    def add_participant(self, participant: Person, role : Role) -> None:
+        self.participants[role] = participant
 
     def remove_participant(self, participant: Person) -> None:
-        self.participants.remove(participant)
+        for role, p in self.participants.items():
+            if p == participant:
+                del self.participants[role]
+                return
 
     def is_participant(self, participant: Person) -> bool:
-        return participant in self.participants
-
-    def is_happening_today(self) -> bool:
-        return self.date == date.today()
-
-    def is_happening_now(self) -> bool:
-        return self.date == date.today() and self.time == time.now()
-
-    def is_happening_soon(self) -> bool:
-        return self.date == date.today() and self.time == time.now() + 1
+        return any([p == participant for p in self.participants.values()])

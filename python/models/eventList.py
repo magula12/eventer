@@ -5,6 +5,9 @@ class EventList:
     def __init__(self, events: list[Event]):
         self.events = events
 
+    def __iter__(self):
+        return iter(self.events)
+
     def get_events(self) -> list[Event]:
         return self.events
 
@@ -27,3 +30,6 @@ class EventList:
                 raise ValueError("Event not found in list.")
         else:
             raise TypeError("Argument must be an int (index) or an Event object.")
+
+    def sort(self):
+        self.events.sort()

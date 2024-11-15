@@ -1,4 +1,5 @@
 from .role import Role
+from datetime import datetime, timedelta
 
 class Person:
     def __init__(self, id: int, name: str, surname: str, admin: bool, email: str, phone_number: str):
@@ -9,6 +10,7 @@ class Person:
         self.email = email
         self.phone_number = phone_number
         self.roles = []
+        self.off_times = []
 
     def __str__(self) -> str:
         return f"{self.name} {self.surname}"
@@ -85,3 +87,20 @@ class Person:
 
     def __hash__(self) -> int:
         return hash(self.name + self.email + self.phone_number)
+
+    def add_off_time(self, start_date: datetime, end_date: datetime):
+        if start_date > end_date:
+            raise ValueError("Start date cannot be after end date")
+        self.off_times.append((start_date, end_date))
+
+    def remove_off_time(self, start_date: datetime, end_date: datetime):
+        self.off_times = [ot for ot in self.off_times if ot != (start_date, end_date)]
+
+    def get_off_times(self):
+        return self.off_times
+
+    def is_free(self, start_date: datetime, end_date: datetime):
+        for ot in self.off_times:
+            if not (end_date <= ot[0] or start_date >= ot[1]):
+                return False
+        return True

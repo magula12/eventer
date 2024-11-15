@@ -1,20 +1,23 @@
 from unittest import TestCase
-from datetime import date, time
+from datetime import datetime
 
 from ..event import Event
 from ..eventCategory import EventCategory
 from ..eventList import EventList
-
+from ..role import Role
 
 class TestEventList(TestCase):
 
     def setUp(self):
-        self.event1 = Event(1, EventCategory(123,"Meeting","fakt huste",3), 1, "Event 1", date(2023, 10, 1), time(10, 0), "Description 1")
-        self.event2 = Event(2, EventCategory(13,"Workshop", "nuda",4), 2, "Event 2", date(2023, 10, 2), time(11, 0), "Description 2")
+        self.event1 = Event(1, EventCategory(123,"Meeting","fakt huste",3),
+                            1, "Event 1", datetime(2023, 10, 1,10), "Description 1")
+        self.event2 = Event(2, EventCategory(13,"Workshop", "nuda",4),
+                            2, "Event 2", datetime(2023, 10, 2,11),"Description 2")
         self.event_list = EventList([self.event1, self.event2])
 
     def test_add_event(self):
-        event3 = Event(3, EventCategory(12,"Conference",'daka konfera', 7), 3, "Event 3", date(2023, 10, 3), time(12, 0), "Description 3")
+        event3 = Event(3, EventCategory(12,"Conference",'daka konfera', 7),
+                       3, "Event 3", datetime(2023, 10, 3,12),"Description 3")
         self.event_list.add_event(event3)
         self.assertIn(event3, self.event_list.get_events())
 
@@ -31,7 +34,8 @@ class TestEventList(TestCase):
             self.event_list.remove_event(10)
 
     def test_remove_event_not_in_list(self):
-        event3 = Event(3, EventCategory(12,"Conference",'daka konfera', 7), 3, "Event 3", date(2023, 10, 3), time(12, 0), "Description 3")
+        event3 = Event(3, EventCategory(12,"Conference",'daka konfera', 7),
+                       3, "Event 3", datetime(2023, 10, 3,12),"Description 3")
         with self.assertRaises(ValueError):
             self.event_list.remove_event(event3)
 

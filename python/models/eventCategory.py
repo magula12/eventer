@@ -1,9 +1,12 @@
+from .role import Role
+
 class EventCategory:
     def __init__(self,id: int, techName: str, description: str, priority : int):
         self.id = id
         self.techName = techName
         self.description = description
         self.priority = priority
+        self.roles = []
 
     def __str__(self) -> str:
         return f"{self.techName} ({self.priority})"
@@ -46,3 +49,9 @@ class EventCategory:
 
     def set_priority(self, priority: int) -> None:
         self.priority = priority
+
+    def add_role(self, role : Role) -> None:
+        self.roles.append(role)
+
+    def get_roles(self) -> list[Role]:
+        return self.roles
