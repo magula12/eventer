@@ -1,0 +1,24 @@
+<h1><%= @user_data.name %></h1>
+
+<ul class="tabs">
+  <li><%= link_to 'Overall', '#' %></li>
+  <li><%= link_to 'Qualities', '#' %></li>
+</ul>
+
+<div id="overall">
+  <h2>Overall</h2>
+  <p>Details about the user.</p>
+</div>
+
+<h2>Qualities</h2>
+<% if @qualities.any? %>
+  <ul>
+    <% @qualities.each do |quality| %>
+      <li><%= "#{quality.role.name} - #{quality.category.name} - #{quality.rating}" %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No qualities found.</p>
+<% end %>
+
+

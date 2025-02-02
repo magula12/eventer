@@ -1,0 +1,30 @@
+<h2>Moje vlastné filtre</h2>
+
+<p>
+  Tu si môžete vytvoriť a spravovať vlastné filtre pre problémy v Redmine.
+  Filtre umožňujú zobrazovať len tie problémy, ktoré spĺňajú vami nastavené podmienky.
+</p>
+
+<table class="list">
+  <thead>
+  <tr>
+    <th>Názov filtra</th>
+    <th>Podmienky</th>
+    <th>Akcie</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @filters.each do |filter| %>
+    <tr>
+      <td><%= filter.name %></td>
+      <td><%= filter.conditions %></td>
+      <td>
+        <%= link_to 'Upraviť', edit_custom_filter_path(filter), class: 'icon icon-edit' %> |
+        <%= link_to 'Odstrániť', custom_filter_path(filter), method: :delete, data: { confirm: 'Naozaj chcete odstrániť tento filter?' }, class: 'icon icon-del' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Vytvoriť nový filter', new_custom_filter_path, class: 'button' %>

@@ -1,0 +1,13 @@
+<%= form_with(model: @filter, local: true) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :conditions %>
+    <%= form.text_area :conditions %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

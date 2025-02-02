@@ -1,0 +1,8 @@
+<h1>Users Data List</h1>
+
+<ul>
+  <% @users_data.each do |user_data| %>
+    <li><%= link_to user_data.name, users_datum_path(user_data) %></li>
+  <% end %>
+</ul>
+

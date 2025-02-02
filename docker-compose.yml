@@ -2,7 +2,7 @@ version: '3'
 
 services:
   redmine:
-    image: redmine:latest
+    image: redmine:6.0.2
     restart: always
     environment:
       REDMINE_DB_POSTGRES: db
