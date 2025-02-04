@@ -1,13 +1,88 @@
-<%= form_with(model: @filter, local: true) do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+<%= form_for filter do |f| %>
+  <p>
+    <%= f.label :name, 'Názov filtra' %><br>
+    <%= f.text_field :name, required: true %>
+  </p>
+
+  <h3>Conditions (voliteľné)</h3>
+  <div id="conditions-container">
+    <!-- Dynamicky generované podmienky -->
   </div>
-  <div>
-    <%= form.label :conditions %>
-    <%= form.text_area :conditions %>
+  <button type="button" onclick="addCondition()">+ Pridať podmienku</button>
+
+  <h3>Rules (povinné)</h3>
+  <div id="rules-container">
+    <!-- Dynamicky generované pravidlá -->
   </div>
-  <div>
-    <%= form.submit %>
-  </div>
+  <button type="button" onclick="addRule()">+ Pridať pravidlo</button>
+
+  <p>
+    <%= f.hidden_field :conditions, id: "conditions-hidden" %>
+  </p>
+
+  <p>
+    <%= f.submit 'Uložiť', class: 'button', onclick: "prepareJson()" %>
+    <%= link_to 'Späť', custom_filters_path, class: 'button' %>
+  </p>
 <% end %>
+
+<script>
+    const validVariables = ["issue.category", "issue.start_datetime", "user.id"];
+    const validOperators = ["==", "!=", ">", "<", ">=", "<=", "in", "not in"];
+
+    function createConditionRow(containerId) {
+        let container = document.getElementById(containerId);
+        let div = document.createElement("div");
+
+        let varSelect = document.createElement("select");
+        validVariables.forEach(v => {
+            let opt = document.createElement("option");
+            opt.value = v;
+            opt.innerText = v;
+            varSelect.appendChild(opt);
+        });
+
+        let opSelect = document.createElement("select");
+        validOperators.forEach(o => {
+            let opt = document.createElement("option");
+            opt.value = o;
+            opt.innerText = o;
+            opSelect.appendChild(opt);
+        });
+
+        let valueInput = document.createElement("input");
+        valueInput.type = "text";
+        valueInput.placeholder = "Hodnota / Premenná";
+
+        let removeBtn = document.createElement("button");
+        removeBtn.innerText = "❌";
+        removeBtn.type = "button";
+        removeBtn.onclick = () => div.remove();
+
+        div.appendChild(varSelect);
+        div.appendChild(opSelect);
+        div.appendChild(valueInput);
+        div.appendChild(removeBtn);
+        container.appendChild(div);
+    }
+
+    function addCondition() { createConditionRow("conditions-container"); }
+    function addRule() { createConditionRow("rules-container"); }
+
+    function prepareJson() {
+        let conditions = { conditions: {}, rules: {} };
+
+        document.querySelectorAll("#conditions-container div").forEach(row => {
+            let [variable, operator, value] = row.querySelectorAll("select, input");
+            conditions.conditions[variable.value] = { [operator.value]: value.value };
+        });
+
+        document.querySelectorAll("#rules-container div").forEach(row => {
+            let [variable, operator, value] = row.querySelectorAll("select, input");
+            conditions.rules[variable.value] = { [operator.value]: value.value };
+        });
+
+        document.getElementById("conditions-hidden").value = JSON.stringify(conditions);
+    }
+
+</script>

@@ -1,25 +1,3 @@
 <h2><%= @filter.new_record? ? 'Vytvoriť nový filter' : 'Upraviť filter' %></h2>
 
-<p>
-  Zadajte názov filtra a podmienky vo formáte <b>JSON</b>.
-  Napríklad:
-<pre>{"issue.start_datetime": "< 18:00", "user.id": "in issue.assignees"}</pre>
-</p>
-
-<%= form_for @filter do |f| %>
-  <p>
-    <%= f.label :name, 'Názov filtra' %><br>
-    <%= f.text_field :name, required: true %>
-  </p>
-
-  <p>
-    <%= f.label :conditions, 'Podmienky (JSON formát)' %><br>
-    <%= f.text_area :conditions, rows: 5, required: true, placeholder: '{"issue.status": "open"}' %>
-
-  </p>
-
-  <p>
-    <%= f.submit 'Uložiť', class: 'button' %>
-    <%= link_to 'Späť', custom_filters_path, class: 'button' %>
-  </p>
-<% end %>
+<%= render 'form', filter: @filter %>
