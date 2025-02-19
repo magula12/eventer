@@ -14,11 +14,9 @@
 <% if @qualities.any? %>
   <ul>
     <% @qualities.each do |quality| %>
-      <li><%= "#{quality.role.name} - #{quality.category.name} - #{quality.rating}" %></li>
+      <li><%= "#{quality[:role_name]} - #{quality[:category_name]} - #{quality[:rating]}" %></li>
     <% end %>
   </ul>
 <% else %>
   <p>No qualities found.</p>
 <% end %>
-
-

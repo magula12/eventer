@@ -1,3 +1,5 @@
+#not applied
+
 module Eventer
   module UsersControllerPatch
     extend ActiveSupport::Concern
@@ -5,13 +7,12 @@ module Eventer
     included do
       Rails.logger.info "Users controller patch start..."
       # This hook will ensure the patch is applied only to the show action
-      before_action :add_qualities_to_user, only: [:show]
+      #before_action :add_qualities_to_user, only: [:show]
 
       # Alias original `show` method to preserve its functionality
       alias_method :show_without_qualities, :show
-      alias_method :show, :show_with_qualities
-    end
-    def show_with_qualities
+
+    def show
       Rails.logger.debug "Entering show_with_qualities action"
 
       @user = User.find(params[:id])
@@ -49,5 +50,6 @@ module Eventer
     def fetch_rating(user_id, role_id)
       UserRole.find_by(user_id: user_id, role_id: role_id)&.rating || 'No Rating'
     end
-  end
+    end
+    end
 end
