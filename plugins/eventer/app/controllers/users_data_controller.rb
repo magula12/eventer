@@ -1,18 +1,42 @@
 class UsersDataController < ApplicationController
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show, :new_qualification, :create_qualification, :edit_qualification, :update_qualification]
 
   def index
     @users_data = User.all
   end
 
   def show
-    @user_data = User.find_by(id: params[:id]) # Use find_by to avoid exceptions
-    unless @user_data
-      Rails.logger.error "User with ID #{params[:id]} not found"
-      redirect_to users_data_path, alert: "User not found" and return
-    end
+    @user_data = @user
+    @qualifications = fetch_qualities(@user_data)
+  end
 
-    @qualities = fetch_qualities(@user_data)
+  def new_qualification
+    @qualification = UserRoleQualification.new
+  end
+
+  def create_qualification
+    @qualification = UserRoleQualification.new(qualification_params)
+    @qualification.user = @user
+
+    if @qualification.save
+      redirect_to users_data_path(@user), notice: "Kvalifikácia bola pridaná."
+    else
+      render :new_qualification
+    end
+  end
+
+  def edit_qualification
+    @qualification = UserRoleQualification.find(params[:id])
+  end
+
+  def update_qualification
+    @qualification = UserRoleQualification.find(params[:id])
+
+    if @qualification.update(qualification_params)
+      redirect_to users_data_path(@user), notice: "Kvalifikácia bola upravená."
+    else
+      render :edit_qualification
+    end
   end
 
   private
@@ -22,23 +46,37 @@ class UsersDataController < ApplicationController
   end
 
   def fetch_qualities(user)
-    UserRoleQualification
-      .where(user_id: user.id)
-      .includes(:role, :category) # Použiť správny názov asociácie
-      .map do |qualification|
+    qualifications = UserRoleQualification
+                       .where(user_id: user.id)
+                       .includes(:role, :category)
+                       .map do |qualification|
       {
+        id: qualification.id,
         role_name: qualification.role&.name || 'Unknown Role',
-        category_name: qualification.category&.name || 'Unknown Category', # Opravený názov
-        rating: fetch_rating(user.id, qualification.role_id)
+        category_name: qualification.category&.name || 'Unknown Category',
+        role_id: qualification.role_id # Add the role_id to help merge ratings later
       }
     end
+
+    ratings = UserRole
+                .where(user_id: user.id)
+                .includes(:role)
+                .map { |user_role| { role_id: user_role.role_id, rating: user_role.rating } }
+
+    # Merge qualifications with ratings based on role_id
+    qualifications.each do |qualification|
+      rating = ratings.find { |r| r[:role_id] == qualification[:role_id] }
+      qualification[:rating] = rating[:rating] if rating
+    end
+
+    qualifications
   rescue => e
     Rails.logger.error "Error fetching qualities: #{e.message}"
     []
   end
 
 
-  def fetch_rating(user_id, role_id)
-    UserRole.find_by(user_id: user_id, role_id: role_id)&.rating || 'No Rating'
+  def qualification_params
+    params.require(:user_role_qualification).permit(:role_id, :category_id, :rating)
   end
 end

@@ -1,0 +1,21 @@
+<%= form_with(url: qualifications_path, local: true) do |form| %>
+  <%= hidden_field_tag :user_id, params[:user_id] %>
+
+  <p>
+    <%= form.label :role_id, "Rola" %><br>
+    <%= form.collection_select :role_id, Role.where.not(id: [1, 2]), :id, :name, prompt: "Vyberte rolu" %>
+
+  </p>
+
+  <p>
+    <%= form.label :category_id, "Kategória" %><br>
+    <%= form.collection_select :category_id, IssueCategory.all, :id, :name, prompt: "Vyberte kategóriu" %>
+  </p>
+
+  <p>
+    <%= form.label :rating, "Hodnotenie (0-10)" %><br>
+    <%= form.number_field :rating, in: 0..10, step: 1 %>
+  </p>
+
+  <%= form.submit "Uložiť" %>
+<% end %>
