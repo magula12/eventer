@@ -5,6 +5,9 @@
 #   resources :offdays, only: [:index]
 # end
 resources :users_data, only: [:index, :show]
+
+resources :qualifications, only: [:new, :create, :edit, :update, :destroy]
+
 resources :offdays, only: [:index, :create, :destroy]
 
 RedmineApp::Application.routes.draw do

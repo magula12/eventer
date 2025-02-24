@@ -4,7 +4,7 @@ class CreateUserRoleQualifications < ActiveRecord::Migration[7.2]
       t.integer :user_id, null: false
       t.integer :role_id, null: false
       t.integer :category_id, null: false
-      t.boolean :qualified, default: false
+      t.integer :rating, default: 0, null: false
 
       t.timestamps
     end

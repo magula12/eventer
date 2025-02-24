@@ -1,24 +1,33 @@
 <h1><%= @user_data.name %></h1>
 
-<ul class="tabs">
-  <li><%= link_to 'Overall', '#' %></li>
-  <li><%= link_to 'Qualities', '#' %></li>
-</ul>
+<p>
+  Tu si môžete spravovať kvalifikácie používateľa.
+  Každá kvalifikácia obsahuje rolu, kategóriu a hodnotenie.
+</p>
 
-<div id="overall">
-  <h2>Overall</h2>
-  <p>Details about the user.</p>
-</div>
+<table class="list">
+  <thead>
+  <tr>
+    <th>Rola</th>
+    <th>Kategória</th>
+    <th>Hodnotenie</th>
+    <th>Akcie</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @qualifications.each do |qualification| %>
+    <tr>
+      <td><%= qualification[:role_name] %></td>
+      <td><%= qualification[:category_name] %></td>
+      <td><%= qualification[:rating] %></td>
+      <td>
+        <%= link_to 'Upraviť', edit_qualification_path(qualification), class: 'icon icon-edit' %> |
+        <%= link_to 'Odstrániť', qualification_path(qualification), method: :delete, data: { confirm: 'Naozaj chcete odstrániť túto kvalifikáciu?' }, class: 'icon icon-del' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
 
-<h2>Qualities</h2>
-<% if @qualities.any? %>
-  <ul>
-    <% @qualities.each do |quality| %>
-      <li><%= "#{quality.role.name} - #{quality.category.name} - #{quality.rating}" %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>No qualities found.</p>
-<% end %>
+</table>
 
-
+<%= link_to 'Pridať novú kvalifikáciu', new_qualification_path(user_id: @user_data.id), class: 'button' %>
