@@ -10,17 +10,17 @@ class QualificationsController < ApplicationController
   def create
     ActiveRecord::Base.transaction do
       # Create UserRole
-      user_role = UserRole.create!(
+      UserRole.create!(
         user_id: params[:user_id],
-        role_id: params[:role_id],
-        rating: params[:rating]
+        role_id: params[:role_id]
       )
 
       # Create UserRoleQualification
       UserRoleQualification.create!(
         user_id: params[:user_id],
         role_id: params[:role_id],
-        category_id: params[:category_id]
+        category_id: params[:category_id],
+        rating: params[:rating]
       )
     end
 

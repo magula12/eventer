@@ -46,30 +46,18 @@ class UsersDataController < ApplicationController
   end
 
   def fetch_qualities(user)
-    qualifications = UserRoleQualification
-                       .where(user_id: user.id)
-                       .includes(:role, :category)
-                       .map do |qualification|
+    UserRoleQualification
+      .where(user_id: user.id)
+      .includes(:role, :category)
+      .map do |qualification|
       {
         id: qualification.id,
         role_name: qualification.role&.name || 'Unknown Role',
         category_name: qualification.category&.name || 'Unknown Category',
-        role_id: qualification.role_id # Add the role_id to help merge ratings later
+        role_id: qualification.role_id,
+        rating: qualification.rating
       }
     end
-
-    ratings = UserRole
-                .where(user_id: user.id)
-                .includes(:role)
-                .map { |user_role| { role_id: user_role.role_id, rating: user_role.rating } }
-
-    # Merge qualifications with ratings based on role_id
-    qualifications.each do |qualification|
-      rating = ratings.find { |r| r[:role_id] == qualification[:role_id] }
-      qualification[:rating] = rating[:rating] if rating
-    end
-
-    qualifications
   rescue => e
     Rails.logger.error "Error fetching qualities: #{e.message}"
     []
