@@ -1,50 +1,24 @@
 module Eventer
   module IssuesControllerPatch
-    extend ActiveSupport::Concern
+    def self.included(base)
+      base.class_eval do
+        before_action :override_assignee_param, only: [:create, :update, :show]
 
-    included do |othermod|
-      before_action :set_assigned_users, only: [:new, :edit, :create, :update]
-      Rails.logger.info "Issues controller patch start..."
-    end
+        private
 
-    def new
-      @issue = Issue.new
-      # Initialize with an empty array for assigned users
-      @issue.assigned_users = []
-    end
-
-    def create
-      @issue = Issue.new(issue_params)
-      if @issue.save
-        flash[:notice] = 'Issue was successfully created.'
-        redirect_to issue_path(@issue)
-      else
-        render :new
+        def override_assignee_param
+          if params[:issue]
+            # If multiple assignees exist, override `assigned_to_id` with an array
+            params[:issue][:assigned_to_id] = params[:issue][:assigned_user_ids]&.first
+          end
+        end
       end
     end
+  end
+end
 
-    def edit
-      @issue = Issue.find(params[:id])
-    end
-
-    def update
-      @issue = Issue.find(params[:id])
-      if @issue.update(issue_params)
-        flash[:notice] = 'Issue was successfully updated.'
-        redirect_to issue_path(@issue)
-      else
-        render :edit
-      end
-    end
-
-    private
-
-    def issue_params
-      params.require(:issue).permit(:subject, :description, assigned_user_ids: [])
-    end
-
-    def set_assigned_users
-      @issue.assigned_users ||= []
-    end
+Rails.configuration.to_prepare do
+  unless IssuesController.included_modules.include?(Eventer::IssuesControllerPatch)
+    IssuesController.send(:include, Eventer::IssuesControllerPatch)
   end
 end

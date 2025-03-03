@@ -1,0 +1,8 @@
+<%# plugins/eventer/app/views/eventer/_multi_assignee.html.erb %>
+<p>
+  <%= l(:field_assigned_users) %><br>
+  <%= select_tag 'issue[assigned_user_ids][]',
+                 options_from_collection_for_select(User.all, 'id', 'name',
+                                                    @issue.assigned_users.pluck(:id)),
+                 multiple: true, size: 10 %>
+</p>

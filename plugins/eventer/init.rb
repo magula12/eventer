@@ -1,8 +1,9 @@
 Rails.logger.info "Loading Eventer plugin..."
-
 require_relative 'lib/eventer/issue_patch'
-require_relative 'lib/eventer/issues_controller_patch'
+#require_relative 'lib/eventer/issues_controller_patch'
 require_relative  'app/controllers/custom_filters_controller'
+require_relative 'lib/eventer/hooks/multi_assignee_hook'
+require_relative 'lib/eventer/hooks/view_multi_assignee_hook'
 
 
 
@@ -23,5 +24,5 @@ Redmine::Plugin.register :eventer do
 end
 
 #Rails.logger.info "Including Eventer::IssuePatch in Issue model..."
-IssuesController.send(:include, Eventer::IssuesControllerPatch)
+#IssuesController.send(:include, Eventer::IssuesControllerPatch)
 Issue.include Eventer::IssuePatch
