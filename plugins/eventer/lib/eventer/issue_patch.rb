@@ -1,4 +1,3 @@
-# plugins/eventer/lib/eventer/issue_patch.rb
 module Eventer
   module IssuePatch
     extend ActiveSupport::Concern
@@ -9,7 +8,21 @@ module Eventer
                               join_table: 'issues_users',
                               foreign_key: 'issue_id',
                               association_foreign_key: 'user_id'
+
       safe_attributes 'assigned_user_ids'
+
+      # Override assigned_to to return multiple users
+      def assigned_to
+        assigned_users.first # Redmine expects a single user, so return the first one
+      end
+
+      def assigned_to=(user)
+        self.assigned_users = if user.is_a?(User)
+          [user] # Set single user assignment
+        else
+          User.where(id: user) # Set multiple users
+                              end
+      end
     end
   end
 end
