@@ -27,7 +27,14 @@
 <% end %>
 
 <script>
-    const validVariables = ["issue.category", "issue.start_datetime", "user.id"];
+    const validVariables = [
+        "issue.category",
+        "issue.start_datetime",
+        "issue.priority",
+        "issue.assigned_users",
+        "issue.subject",
+        "user.id"
+    ];
     const validOperators = ["==", "!=", ">", "<", ">=", "<=", "in", "not in"];
 
     function createConditionRow(containerId) {
