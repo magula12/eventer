@@ -1,0 +1,6 @@
+<% if local_assigns[:f] %>
+  <p>
+    <%= f.label :start_datetime, 'Start Date & Time' %><br>
+    <%= f.datetime_local_field :start_datetime, required: true, value: (@issue.start_datetime || Time.now).strftime('%Y-%m-%dT%H:%M') %>
+  </p>
+<% end %>

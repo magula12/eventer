@@ -9,7 +9,7 @@ module Eventer
                               foreign_key: 'issue_id',
                               association_foreign_key: 'user_id'
 
-      safe_attributes 'assigned_user_ids'
+      safe_attributes 'assigned_user_ids', 'start_datetime'
 
       # Override assigned_to to return multiple users
       def assigned_to
@@ -18,15 +18,19 @@ module Eventer
 
       def assigned_to=(user)
         self.assigned_users = if user.is_a?(User)
-          [user] # Set single user assignment
-        else
-          User.where(id: user) # Set multiple users
+                                [user] # Set single user assignment
+                              else
+                                User.where(id: user) # Set multiple users
                               end
       end
+
+      # Ensure start_datetime is required
+      validates :start_datetime, presence: true
     end
   end
 end
 
+# Apply patch
 unless Issue.included_modules.include?(Eventer::IssuePatch)
   Issue.send(:include, Eventer::IssuePatch)
 end
