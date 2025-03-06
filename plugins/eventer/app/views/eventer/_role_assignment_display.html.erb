@@ -1,0 +1,15 @@
+<% if @issue && @issue.issue_role_assignments.present? %>
+  <h3>Required Roles</h3>
+  <ul>
+    <% @issue.issue_role_assignments.each do |assignment| %>
+      <li>
+        <%= assignment.role.name %> (Required: <%= assignment.required_count %>)
+        <ul>
+          <% User.where(id: assignment.assigned_user_ids).each do |user| %>
+            <li><%= user.name %></li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

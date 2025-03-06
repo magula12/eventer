@@ -9,6 +9,9 @@ module Eventer
                               foreign_key: 'issue_id',
                               association_foreign_key: 'user_id'
 
+      has_many :issue_role_assignments, dependent: :destroy
+      accepts_nested_attributes_for :issue_role_assignments, allow_destroy: true
+
       safe_attributes 'assigned_user_ids', 'start_datetime'
 
       # Override assigned_to to return multiple users

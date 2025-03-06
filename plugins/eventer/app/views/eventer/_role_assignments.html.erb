@@ -1,0 +1,62 @@
+<fieldset>
+  <legend>Required Roles</legend>
+  <div id="roles-container">
+    <!-- Example: One role block by default -->
+    <div class="role-assignment">
+      <!--<label>Role:</label> -->
+      <select name="issue[role_assignments][0][role_id]">
+        <% Role.all.each do |role| %>
+          <option value="<%= role.id %>"><%= role.name %></option>
+        <% end %>
+      </select>
+
+<!--      <label>Required Count:</label>-->
+      <input type="number" name="issue[role_assignments][0][required_count]" min="1" value="1" />
+
+      <div class="assignees">
+<!--        <label>Assign Users:</label><br>-->
+        <!-- Multiple user selection.
+             The name array is inside [role_assignments][0][assigned_user_ids][]
+             so that we get an array of user IDs in params[:issue][:role_assignments][0][:assigned_user_ids]. -->
+        <select multiple name="issue[role_assignments][0][assigned_user_ids][]">
+          <% User.active.each do |user| %>
+            <option value="<%= user.id %>"><%= user.name %></option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+  </div>
+  <br>
+  <a href="#" id="add-role">Add Another Role</a>
+</fieldset>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const container = document.getElementById("roles-container");
+        const addRoleLink = document.getElementById("add-role");
+
+        addRoleLink.addEventListener("click", function(e) {
+            e.preventDefault();
+            const index = container.children.length;
+            const newField = `
+        <div class="role-assignment">
+          <select name="issue[role_assignments][${index}][role_id]">
+            <% Role.all.each do |role| %>
+              <option value="<%= role.id %>"><%= role.name %></option>
+            <% end %>
+          </select>
+
+          <input type="number" name="issue[role_assignments][${index}][required_count]" min="1" value="1" />
+
+          <div class="assignees">
+            <select multiple name="issue[role_assignments][${index}][assigned_user_ids][]">
+              <% User.active.each do |user| %>
+                <option value="<%= user.id %>"><%= user.name %></option>
+              <% end %>
+            </select>
+          </div>
+        </div>`;
+            container.insertAdjacentHTML('beforeend', newField);
+        });
+    });
+</script>
