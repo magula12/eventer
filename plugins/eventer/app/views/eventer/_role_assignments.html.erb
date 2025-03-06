@@ -3,27 +3,25 @@
   <div id="roles-container">
     <!-- Example: One role block by default -->
     <div class="role-assignment">
-      <!--<label>Role:</label> -->
       <select name="issue[role_assignments][0][role_id]">
-        <% Role.all.each do |role| %>
+        <option value="" selected>Choose a role</option> <!-- Default blank option -->
+        <% Role.where.not(id: [1, 2]).each do |role| %>  <!-- Exclude roles with ID 1 & 2 -->
           <option value="<%= role.id %>"><%= role.name %></option>
         <% end %>
       </select>
 
-<!--      <label>Required Count:</label>-->
       <input type="number" name="issue[role_assignments][0][required_count]" min="1" value="1" />
 
       <div class="assignees">
-<!--        <label>Assign Users:</label><br>-->
-        <!-- Multiple user selection.
-             The name array is inside [role_assignments][0][assigned_user_ids][]
-             so that we get an array of user IDs in params[:issue][:role_assignments][0][:assigned_user_ids]. -->
         <select multiple name="issue[role_assignments][0][assigned_user_ids][]">
-          <% User.active.each do |user| %>
+          <% User.where.not(id: 1).each do |user| %> <!-- Exclude user with ID 1 -->
             <option value="<%= user.id %>"><%= user.name %></option>
           <% end %>
         </select>
       </div>
+
+      <!-- Remove Button -->
+      <button type="button" class="remove-role" style="margin-left: 10px;">❌</button>
     </div>
   </div>
   <br>
@@ -31,32 +29,60 @@
 </fieldset>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const container = document.getElementById("roles-container");
-        const addRoleLink = document.getElementById("add-role");
-
-        addRoleLink.addEventListener("click", function(e) {
+    function addRoleHandler(e) {
+        if (e.target && e.target.id === "add-role") {
             e.preventDefault();
-            const index = container.children.length;
-            const newField = `
-        <div class="role-assignment">
-          <select name="issue[role_assignments][${index}][role_id]">
-            <% Role.all.each do |role| %>
-              <option value="<%= role.id %>"><%= role.name %></option>
-            <% end %>
+
+            const container = document.getElementById("roles-container");
+            const index = container.querySelectorAll(".role-assignment").length; // Ensure unique index
+
+            console.log("Adding new role at index:", index); // Debugging
+
+            const newField = document.createElement("div");
+            newField.classList.add("role-assignment");
+            newField.innerHTML = `
+        <select name="issue[role_assignments][${index}][role_id]">
+          <option value="" selected>Choose a role</option> <!-- Default blank option -->
+          <%== Role.where.not(id: [1, 2]).map { |role| "<option value='#{role.id}'>#{role.name}</option>" }.join %>
+        </select>
+
+        <input type="number" name="issue[role_assignments][${index}][required_count]" min="1" value="1" />
+
+        <div class="assignees">
+          <select multiple name="issue[role_assignments][${index}][assigned_user_ids][]">
+            <%== User.where.not(id: 1).map { |user| "<option value='#{user.id}'>#{user.name}</option>" }.join %>
           </select>
+        </div>
 
-          <input type="number" name="issue[role_assignments][${index}][required_count]" min="1" value="1" />
+        <!-- Remove Button -->
+        <button type="button" class="remove-role" style="margin-left: 10px;">❌</button>
+      `;
 
-          <div class="assignees">
-            <select multiple name="issue[role_assignments][${index}][assigned_user_ids][]">
-              <% User.active.each do |user| %>
-                <option value="<%= user.id %>"><%= user.name %></option>
-              <% end %>
-            </select>
-          </div>
-        </div>`;
-            container.insertAdjacentHTML('beforeend', newField);
-        });
-    });
+            container.appendChild(newField);
+        }
+    }
+
+    function removeRoleHandler(e) {
+        if (e.target && e.target.classList.contains("remove-role")) {
+            e.preventDefault();
+
+            const roleAssignment = e.target.closest(".role-assignment");
+            if (roleAssignment) {
+                if (document.querySelectorAll(".role-assignment").length > 1) {
+                    roleAssignment.remove();
+                } else {
+                    alert("You must have at least one role!");
+                }
+            }
+        }
+    }
+
+    function attachEventListeners() {
+        document.removeEventListener("click", addRoleHandler); // Prevent multiple bindings
+        document.removeEventListener("click", removeRoleHandler); // Prevent duplicate bindings
+        document.addEventListener("click", addRoleHandler);
+        document.addEventListener("click", removeRoleHandler);
+    }
+
+    document.addEventListener("DOMContentLoaded", attachEventListeners);
 </script>
