@@ -1,8 +1,12 @@
 <h1>Users Data List</h1>
 
+<!-- Link to the new "Algorithm Runner" page -->
+<p>
+  <%= link_to "Go to Algorithm Runner", algorithm_runner_path, class: "button" %>
+</p>
+
 <ul>
   <% @users_data.each do |user_data| %>
     <li><%= link_to user_data.name, users_datum_path(user_data) %></li>
   <% end %>
 </ul>
-
