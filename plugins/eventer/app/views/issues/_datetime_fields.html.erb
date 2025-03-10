@@ -3,4 +3,9 @@
     <%= f.label :start_datetime, 'Start Date & Time' %><br>
     <%= f.datetime_local_field :start_datetime, required: true, value: (@issue.start_datetime || Time.now).strftime('%Y-%m-%dT%H:%M') %>
   </p>
+
+  <p>
+    <%= f.label :end_datetime, 'End Date & Time' %><br>
+    <%= f.datetime_local_field :end_datetime, required: false, value: (@issue.end_datetime || Time.now).strftime('%Y-%m-%dT%H:%M') %>
+  </p>
 <% end %>

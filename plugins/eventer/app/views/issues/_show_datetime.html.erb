@@ -1,0 +1,5 @@
+<% if issue.start_datetime.present? || issue.end_datetime.present? %>
+  <h3>Event Duration</h3>
+  <p><strong>Start:</strong> <%= issue.start_datetime.strftime('%Y-%m-%d %H:%M') if issue.start_datetime.present? %></p>
+  <p><strong>End:</strong> <%= issue.end_datetime.strftime('%Y-%m-%d %H:%M') if issue.end_datetime.present? %></p>
+<% end %>

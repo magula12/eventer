@@ -8,32 +8,19 @@ class CustomFilter < ApplicationRecord
   private
 
   def convert_conditions_to_json
-    return if conditions.is_a?(Hash) # Už je JSON
+    return if conditions.is_a?(Hash) # Already a Hash
 
-    self.conditions = JSON.parse(conditions) rescue nil
+    parsed_conditions = JSON.parse(conditions) rescue {}
+    self.conditions = parsed_conditions if parsed_conditions.is_a?(Hash)
   end
 
   def valid_conditions_format
-    parsed = JSON.parse(conditions) rescue nil
+    parsed = conditions.is_a?(Hash) ? conditions : (JSON.parse(conditions) rescue nil)
     return errors.add(:conditions, 'nie je platný JSON') unless parsed.is_a?(Hash)
 
-    unless parsed.key?("rules")
-      errors.add(:conditions, 'chýba kľúč "rules"')
+    unless parsed["conditions"].is_a?(Hash) && parsed["rules"].is_a?(Hash)
+      errors.add(:conditions, 'Musí obsahovať "rules" a "conditions" ako objekty')
       return
-    end
-
-    # Overíme správnosť operátorov v podmienkach
-    validate_condition_rules(parsed["conditions"], "Conditions") if parsed["conditions"]
-    validate_condition_rules(parsed["rules"], "Rules")
-  end
-
-  def validate_condition_rules(rules, type)
-    valid_operators = ["==", "!=", ">", "<", ">=", "<=", "in", "not in"]
-
-    rules.each do |key, condition|
-      unless condition.is_a?(Hash) && condition.keys.all? { |op| valid_operators.include?(op) }
-        errors.add(:conditions, "#{type} obsahuje neplatnú podmienku: #{key} => #{condition}")
-      end
     end
   end
 end

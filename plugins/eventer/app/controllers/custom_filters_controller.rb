@@ -4,7 +4,11 @@ class CustomFiltersController < ApplicationController
   def index
     @filters = CustomFilter.where(user_id: User.current.id)
 
+    if @filters.empty?
+      flash[:notice] = "Nemáte žiadne filtre. Vytvorte nový!"
+    end
   end
+
 
   def new
     @filter = CustomFilter.new
@@ -13,12 +17,19 @@ class CustomFiltersController < ApplicationController
   def create
     @filter = CustomFilter.new(filter_params)
     @filter.user = User.find(User.current.id)
+
+    if @filter.conditions.blank?
+      @filter.conditions = { "conditions" => { "and" => [] }, "rules" => { "and" => [] } } # Ensure a valid JSON structure
+    end
+
     if @filter.save
-      redirect_to custom_filters_path, notice: 'Filter was successfully created.'
+      redirect_to custom_filters_path, notice: 'Filter bol úspešne vytvorený.'
     else
+      flash.now[:alert] = 'Nepodarilo sa vytvoriť filter. Skontrolujte dáta.'
       render :new
     end
   end
+
 
   def edit; end
 

@@ -5,16 +5,22 @@
   </p>
 
   <h3>Conditions (voliteľné)</h3>
-  <div id="conditions-container">
-    <!-- Dynamicky generované podmienky -->
-  </div>
-  <button type="button" onclick="addCondition()">+ Pridať podmienku</button>
+  <p>
+    <strong>Podmienky:</strong>
+    <input type="radio" name="conditions_type" value="and" checked> AND
+    <input type="radio" name="conditions_type" value="or"> OR
+  </p>
+  <div id="conditions-container"></div>
+  <button type="button" onclick="addCondition('conditions-container')">+ Pridať podmienku</button>
 
   <h3>Rules (povinné)</h3>
-  <div id="rules-container">
-    <!-- Dynamicky generované pravidlá -->
-  </div>
-  <button type="button" onclick="addRule()">+ Pridať pravidlo</button>
+  <p>
+    <strong>Pravidlá:</strong>
+    <input type="radio" name="rules_type" value="and" checked> AND
+    <input type="radio" name="rules_type" value="or"> OR
+  </p>
+  <div id="rules-container"></div>
+  <button type="button" onclick="addCondition('rules-container')">+ Pridať pravidlo</button>
 
   <p>
     <%= f.hidden_field :conditions, id: "conditions-hidden" %>
@@ -28,68 +34,82 @@
 
 <script>
     const validVariables = [
-        "issue.category",
-        "issue.start_datetime",
-        "issue.priority",
-        "issue.assigned_users",
-        "issue.subject",
-        "user.id"
+        "issue.category", "issue.start_datetime", "issue.priority",
+        "issue.assigned_users", "issue.subject", "user.id"
     ];
     const validOperators = ["==", "!=", ">", "<", ">=", "<=", "in", "not in"];
 
     function createConditionRow(containerId) {
         let container = document.getElementById(containerId);
         let div = document.createElement("div");
+        div.classList.add("condition-row");
 
-        let varSelect = document.createElement("select");
-        validVariables.forEach(v => {
-            let opt = document.createElement("option");
-            opt.value = v;
-            opt.innerText = v;
-            varSelect.appendChild(opt);
-        });
-
-        let opSelect = document.createElement("select");
-        validOperators.forEach(o => {
-            let opt = document.createElement("option");
-            opt.value = o;
-            opt.innerText = o;
-            opSelect.appendChild(opt);
-        });
-
+        let varSelect = createDropdown(validVariables);
+        let opSelect = createDropdown(validOperators);
         let valueInput = document.createElement("input");
         valueInput.type = "text";
         valueInput.placeholder = "Hodnota / Premenná";
+
+        let logicSelect = document.createElement("select");
+        logicSelect.innerHTML = '<option value="none">None</option><option value="and">AND</option><option value="or">OR</option>';
 
         let removeBtn = document.createElement("button");
         removeBtn.innerText = "❌";
         removeBtn.type = "button";
         removeBtn.onclick = () => div.remove();
 
-        div.appendChild(varSelect);
-        div.appendChild(opSelect);
-        div.appendChild(valueInput);
-        div.appendChild(removeBtn);
+        div.append(varSelect, opSelect, valueInput, logicSelect, removeBtn);
         container.appendChild(div);
     }
 
-    function addCondition() { createConditionRow("conditions-container"); }
-    function addRule() { createConditionRow("rules-container"); }
-
-    function prepareJson() {
-        let conditions = { conditions: {}, rules: {} };
-
-        document.querySelectorAll("#conditions-container div").forEach(row => {
-            let [variable, operator, value] = row.querySelectorAll("select, input");
-            conditions.conditions[variable.value] = { [operator.value]: value.value };
+    function createDropdown(options) {
+        let select = document.createElement("select");
+        options.forEach(opt => {
+            let option = document.createElement("option");
+            option.value = opt;
+            option.innerText = opt;
+            select.appendChild(option);
         });
-
-        document.querySelectorAll("#rules-container div").forEach(row => {
-            let [variable, operator, value] = row.querySelectorAll("select, input");
-            conditions.rules[variable.value] = { [operator.value]: value.value };
-        });
-
-        document.getElementById("conditions-hidden").value = JSON.stringify(conditions);
+        return select;
     }
 
+    function addCondition(containerId) { createConditionRow(containerId); }
+
+    function prepareJson() {
+        let conditionsType = document.querySelector('input[name="conditions_type"]:checked').value || "and";
+        let rulesType = document.querySelector('input[name="rules_type"]:checked').value || "and";
+
+        let conditions = buildNestedLogic("conditions-container", conditionsType);
+        let rules = buildNestedLogic("rules-container", rulesType);
+
+        let finalJson = JSON.stringify({ "conditions": conditions, "rules": rules });
+
+        if (!finalJson || finalJson === "{}") {
+            finalJson = JSON.stringify({ "conditions": { "and": [] }, "rules": { "and": [] } }); // Ensure valid default structure
+        }
+
+        document.getElementById("conditions-hidden").value = finalJson;
+    }
+
+
+    function buildNestedLogic(containerId, logicType) {
+        let logicGroup = { [logicType]: [] };
+
+        document.querySelectorAll(`#${containerId} > .condition-row`).forEach(row => {
+            let [variable, operator, value, nestedLogicType] = row.querySelectorAll("select, input");
+
+            if (variable.value && operator.value && value.value) {
+                let condition = { [operator.value]: [{ "var": variable.value }, value.value] };
+
+                if (nestedLogicType && nestedLogicType.value !== "none") {
+                    let nestedLogic = buildNestedLogic(row.id, nestedLogicType.value);
+                    logicGroup[logicType].push(nestedLogic);
+                } else {
+                    logicGroup[logicType].push(condition);
+                }
+            }
+        });
+
+        return logicGroup;
+    }
 </script>

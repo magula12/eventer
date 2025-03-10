@@ -16,3 +16,8 @@ RedmineApp::Application.routes.draw do
   end
 end
 
+# plugins/eventer/config/routes.rb
+match 'eventer_api',
+      :to => 'eventer_api#index',
+      :via => :get,
+      :defaults => { format: 'json' }

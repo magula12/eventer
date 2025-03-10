@@ -10,9 +10,11 @@ module Eventer
                               association_foreign_key: 'user_id'
 
       has_many :issue_role_assignments, dependent: :destroy
+      belongs_to :category, class_name: 'IssueCategory', foreign_key: 'category_id', optional: true
+      belongs_to :priority, class_name: 'IssuePriority', foreign_key: 'priority_id', optional: true
       accepts_nested_attributes_for :issue_role_assignments, allow_destroy: true
 
-      safe_attributes 'assigned_user_ids', 'start_datetime'
+      safe_attributes 'assigned_user_ids', 'start_datetime', 'end_datetime', 'issue_role_assignments_attributes'
 
       # Override assigned_to to return multiple users
       def assigned_to
