@@ -13,7 +13,7 @@ services:
       - "3000:3000"
     volumes:
       - redmine_data:/usr/src/redmine/files
-      - ./plugins:/usr/src/redmine/plugins # Mount plugins directory
+      - ./plugins:/usr/src/redmine/plugins
     depends_on:
       - db
 
@@ -26,6 +26,16 @@ services:
       POSTGRES_PASSWORD: redmine_pass
     volumes:
       - ./db:/var/lib/postgresql/data
+
+  # NEW service for Python + PuLP
+  python-service:
+    image: python:3.9-slim
+    volumes:
+      - ./plugins/eventer/python:/usr/src/redmine/plugins/eventer/python
+    working_dir: /usr/src/redmine/plugins/eventer/python
+    expose:
+      - "5000"
+    command: [ "sh", "-c", "pip install -r requirements.txt && python main.py" ]
 
 volumes:
   redmine_data:

@@ -1,36 +1,45 @@
 # plugins/eventer/app/controllers/algorithm_runner_controller.rb
-class AlgorithmRunnerController < ApplicationController
-  before_action :require_admin  # optional: restrict to admin
+require 'net/http'
+require 'uri'
+require 'json'
 
-  # GET /algorithm_runner
+class AlgorithmRunnerController < ApplicationController
+  before_action :require_admin
+
   def index
-    # Just render the page with the button
+    # Just renders the page with the button
   end
 
   # POST /algorithm_runner/run
   def run_script
-    # We'll run the Python script via system call
-    script_dir  = "/usr/src/redmine/plugins/eventer/python"
-    script_path = File.join(script_dir, "main.py")
-    python_path = File.join(script_dir, "venv", "bin", "python")
-
-    command = "cd #{script_dir} && #{python_path} #{script_path} 2>&1"
-    Rails.logger.info "RUN_SCRIPT: Executing => #{command.inspect}"
-
-    @output = `#{command}`    # capture stdout/stderr
-    @status = $?.exitstatus   # get the exit code
-
-    Rails.logger.info "RUN_SCRIPT: Output => #{@output}"
-    Rails.logger.info "RUN_SCRIPT: Exit code => #{@status}"
-
-    # We'll stay on the same page, so let's store the data in instance vars
-    if @status == 0
-      flash.now[:notice] = "Python script ran successfully!"
+    uri = URI.parse("http://python-service:5000/run_algorithm")
+    http = Net::HTTP.new(uri.host, uri.port)
+    request = Net::HTTP::Post.new(uri.path, { "Content-Type" => "application/json" })
+  
+    response = http.request(request)
+    @status_code = response.code.to_i
+  
+    if @status_code == 200
+      begin
+        json = JSON.parse(response.body)
+        @output = json["output"]
+    
+        # 🟢 Check if assignments were posted (based on known response)
+        if @output.include?("Assignments posted successfully")
+          flash.now[:notice] = "✅ Solutions from the algorithm were successfully saved into Redmine."
+        else
+          flash.now[:notice] = "✅ Python script ran successfully!"
+        end
+    
+      rescue => e
+        @output = "✅ Algorithm ran, but response could not be parsed:\n#{response.body}"
+        flash.now[:warning] = "⚠️ Output parsing failed: #{e.message}"
+      end
     else
-      flash.now[:error] = "Python script failed with code #{@status}"
+      @output = "❌ Algorithm failed (HTTP #{@status_code}).\n\n#{response.body}"
+      flash.now[:error] = "❌ Python service returned an error (#{@status_code})"
     end
-
-    # We'll re-render `index.html.erb` to show the output
+  
     render :index
   end
 end

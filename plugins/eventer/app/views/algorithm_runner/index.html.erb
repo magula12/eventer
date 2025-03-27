@@ -6,8 +6,24 @@
   <%= submit_tag "Run Python Algorithm" %>
 <% end %>
 
-<!-- If there's output, show it -->
+<%= notice %>
+<%= alert %>
+<%= flash[:error] %>
+<%= flash[:warning] %>
+
 <% if @output.present? %>
   <h2>Python Script Output</h2>
-  <pre style="background:#f0f0f0;padding:10px;"><%= @output %></pre>
+  <div style="
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 15px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    line-height: 1.5em;
+    color: #333;
+    border-radius: 6px;
+    overflow-x: auto;
+  ">
+    <%= @output.html_safe %>
+  </div>
 <% end %>

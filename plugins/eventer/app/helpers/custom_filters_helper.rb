@@ -38,12 +38,17 @@ module CustomFiltersHelper
     return "" unless condition.is_a?(Hash)
 
     operator, values = condition.first
-    variable, value = values
+    return "(Neznáma podmienka)" if values.nil? || !values.is_a?(Array) || values.empty?
 
-    variable_name = variable["var"].split(".").last.capitalize # Extract field name
+    variable = values[0]  # First item in the array should be the variable
+    value = values[1] || "(neznáma hodnota)" # Default to '?' if missing
+
+    # Safely extract the variable name
+    variable_name = variable.is_a?(Hash) ? variable.dig("var")&.split(".")&.last&.capitalize : variable.to_s
+
     operator_text = operator_to_text(operator)
 
-    "#{variable_name} #{operator_text} #{value}"
+    " #{value} #{operator_text} #{variable_name}"
   end
 
   def operator_to_text(operator)

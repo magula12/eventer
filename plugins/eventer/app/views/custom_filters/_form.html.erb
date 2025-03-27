@@ -34,8 +34,8 @@
 
 <script>
     const validVariables = [
-        "issue.category", "issue.start_datetime", "issue.priority",
-        "issue.assigned_users", "issue.subject", "user.id"
+        "category", "start_time", "end_time",
+        "assigned_users", "name"
     ];
     const validOperators = ["==", "!=", ">", "<", ">=", "<=", "in", "not in"];
 
@@ -44,12 +44,18 @@
         let div = document.createElement("div");
         div.classList.add("condition-row");
 
-        let varSelect = createDropdown(validVariables);
-        let opSelect = createDropdown(validOperators);
+        // 1) Text input (left)
         let valueInput = document.createElement("input");
         valueInput.type = "text";
         valueInput.placeholder = "Hodnota / Premenná";
 
+        // 2) Operator (middle)
+        let opSelect = createDropdown(validOperators);
+
+        // 3) Variable dropdown (right)
+        let varSelect = createDropdown(validVariables);
+
+        // Logic select
         let logicSelect = document.createElement("select");
         logicSelect.innerHTML = '<option value="none">None</option><option value="and">AND</option><option value="or">OR</option>';
 
@@ -58,7 +64,8 @@
         removeBtn.type = "button";
         removeBtn.onclick = () => div.remove();
 
-        div.append(varSelect, opSelect, valueInput, logicSelect, removeBtn);
+        // Append them in the new order: valueInput -> opSelect -> varSelect -> ...
+        div.append(valueInput, opSelect, varSelect, logicSelect, removeBtn);
         container.appendChild(div);
     }
 
@@ -73,7 +80,9 @@
         return select;
     }
 
-    function addCondition(containerId) { createConditionRow(containerId); }
+    function addCondition(containerId) {
+        createConditionRow(containerId);
+    }
 
     function prepareJson() {
         let conditionsType = document.querySelector('input[name="conditions_type"]:checked').value || "and";
@@ -83,23 +92,33 @@
         let rules = buildNestedLogic("rules-container", rulesType);
 
         let finalJson = JSON.stringify({ "conditions": conditions, "rules": rules });
-
         if (!finalJson || finalJson === "{}") {
-            finalJson = JSON.stringify({ "conditions": { "and": [] }, "rules": { "and": [] } }); // Ensure valid default structure
+            finalJson = JSON.stringify({
+                "conditions": { "and": [] },
+                "rules": { "and": [] }
+            });
         }
 
         document.getElementById("conditions-hidden").value = finalJson;
     }
 
-
     function buildNestedLogic(containerId, logicType) {
         let logicGroup = { [logicType]: [] };
 
         document.querySelectorAll(`#${containerId} > .condition-row`).forEach(row => {
-            let [variable, operator, value, nestedLogicType] = row.querySelectorAll("select, input");
+            // Because we changed the DOM order, the sequence is now:
+            // [valueInput, opSelect, varSelect, logicSelect, removeBtn]
+            let [value, operator, variable, nestedLogicType] = row.querySelectorAll("input, select");
 
             if (variable.value && operator.value && value.value) {
-                let condition = { [operator.value]: [{ "var": variable.value }, value.value] };
+                // Keep the JSON structure exactly the same as before:
+                // { "operator": [ { "var": variable.value }, value.value ] }
+                let condition = {
+                    [operator.value]: [
+                        { "var": variable.value },
+                        value.value
+                    ]
+                };
 
                 if (nestedLogicType && nestedLogicType.value !== "none") {
                     let nestedLogic = buildNestedLogic(row.id, nestedLogicType.value);

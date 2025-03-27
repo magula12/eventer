@@ -1,12 +1,17 @@
+from flask import Flask, request, jsonify
 import requests
 from models import initialize_data
 from process import match_issues_to_users
+import io
+import sys
 
-# Same endpoint for GET and POST, but different HTTP methods
-API_URL = "http://localhost:3000/eventer_api.json?key=836415703b4576d4dc5663a062a89b3a7b10055f"
+app = Flask(__name__)
+
+# Same endpoint & key as before
+API_URL = "http://redmine:3000/eventer_api.json?key=836415703b4576d4dc5663a062a89b3a7b10055f"
 
 def fetch_json_from_api():
-    """Fetch JSON data from the Redmine plugin API (GET)."""
+    """Fetch JSON data from the Redmine plugin API (same as old logic)."""
     try:
         response = requests.get(API_URL, headers={"Content-Type": "application/json"})
         response.raise_for_status()
@@ -17,73 +22,76 @@ def fetch_json_from_api():
 
 def send_assignments_to_redmine(results):
     """
-    POST the assignment results back to the same endpoint.
-    We assume EventerApiController has a create_assignments action
-    that handles 'assignments' in the payload.
+    POST the assignment results back to the same endpoint,
+    using the same structure you had before.
+    e.g. { 'assignments': { '23': { 'Režisér': [5], ... }, ... } }
     """
-    # 'results' is something like:
-    # {
-    #   23: { "Režisér": [5], "Komentátor": [10] },
-    #   24: { "Režisér": [1,7] },
-    #   ...
-    # }
-
-    # The controller expects a structure like:
-    # {
-    #   "assignments": {
-    #       "23": { "Režisér": [5], "Komentátor": [10] },
-    #       "24": { "Režisér": [1,7] }
-    #   }
-    # }
     payload = { "assignments": {} }
-
     for issue_id, roles_dict in results.items():
+        # Convert integer keys to strings
         payload["assignments"][str(issue_id)] = roles_dict
 
     try:
-        # Post to the same endpoint, but it must be configured
-        # to handle POST in your routes (create_assignments action).
-        response = requests.post(API_URL,
-                                 json=payload,
-                                 headers={"Content-Type": "application/json"})
+        response = requests.post(API_URL, json=payload, headers={"Content-Type": "application/json"})
         response.raise_for_status()
         print(f"✅ Assignments posted successfully! Status: {response.status_code}")
         print("Server response:", response.json())
     except requests.RequestException as e:
         print(f"❌ Error posting assignments: {e}")
 
-if __name__ == "__main__":
-    print("📡 Fetching data from API (GET)...")
-    json_data = fetch_json_from_api()
+@app.route("/run_algorithm", methods=["POST"])
+def run_algorithm():
+    # Redirect stdout to capture prints
+    old_stdout = sys.stdout
+    sys.stdout = mystdout = io.StringIO()
 
-    if json_data:
-        print("✅ Data fetched successfully!")
+    try:
+        print("📡 Fetching data from API (GET)...")
+        json_data = fetch_json_from_api()
 
-        # Convert JSON data into Python objects (issues & users)
+        if not json_data:
+            print("❌ No data fetched from API.")
+            return jsonify({"status": "error", "output": mystdout.getvalue()}), 400
+
+        print("✅ Data fetched successfully!\n")
+
         issues, users = initialize_data(json_data)
 
-        # Print loaded data for debugging
-        print("\n📌 Issues Loaded:")
+        print("📌 Issues Loaded:")
         for issue in issues:
-            print(issue)
+            print(str(issue))
 
         print("\n📌 Users Loaded:")
         for user in users:
-            print(user)
+            print(str(user))
 
-        # Run the matching algorithm
         print("\n🔄 Running Matching Algorithm with Datetime Checks...")
         results = match_issues_to_users(issues, users)
 
         print("\n=== FINAL RESULTS ===")
         for issue_id, role_assignments in results.items():
             print(f"Issue ID {issue_id}:")
-            for role_name, assigned_ids in role_assignments.items():
-                print(f"  - Role '{role_name}': {assigned_ids}")
+            for role_name, user_ids in role_assignments.items():
+                print(f"  - Role '{role_name}': {user_ids}")
 
-        # Now POST results back to the same endpoint
-        print("\n💾 Sending assignments to Redmine (POST)...")
+        print("\n💾 Sending assignments to Redmine...")
         send_assignments_to_redmine(results)
 
-    else:
-        print("❌ No data fetched; exiting.")
+        # Restore stdout
+        sys.stdout = old_stdout
+
+        return jsonify({
+            "status": "success",
+            "output": mystdout.getvalue()
+        }), 200
+
+    except Exception as e:
+        sys.stdout = old_stdout
+        return jsonify({
+            "status": "error",
+            "output": mystdout.getvalue() + f"\n❌ Exception occurred: {str(e)}"
+        }), 500
+
+if __name__ == "__main__":
+    # Make sure to listen on 0.0.0.0 so Redmine can reach us
+    app.run(host="0.0.0.0", port=5000)
