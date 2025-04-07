@@ -1,9 +1,4 @@
-# Plugin's routes
-# See: http://guides.rubyonrails.org/routing.html
-
-# resources :users do
-#   resources :offdays, only: [:index]
-# end
+#
 resources :users_data, only: [:index, :show]
 
 resources :qualifications, only: [:new, :create, :edit, :update, :destroy]

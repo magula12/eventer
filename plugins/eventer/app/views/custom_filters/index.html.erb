@@ -1,9 +1,9 @@
 <table class="list">
   <thead>
   <tr>
-    <th>Názov filtra</th>
-    <th>Podmienky</th>
-    <th>Akcie</th>
+    <th><%= l(:label_filter_name) %></th>
+    <th><%= l(:label_filter_conditions) %></th>
+    <th><%= l(:label_actions) %></th>
   </tr>
   </thead>
   <tbody>
@@ -14,16 +14,19 @@
         <% if filter.conditions.present? %>
           <%= readable_conditions(filter.conditions) %>
         <% else %>
-          <em>Žiadne podmienky</em>
+          <em><%= l(:label_no_conditions) %></em>
         <% end %>
       </td>
       <td>
-        <%= link_to 'Upraviť', edit_custom_filter_path(filter), class: 'icon icon-edit' %> |
-        <%= link_to 'Odstrániť', custom_filter_path(filter), method: :delete, data: { confirm: 'Naozaj chcete odstrániť tento filter?' }, class: 'icon icon-del' %>
+        <%= link_to l(:button_edit), edit_custom_filter_path(filter), class: 'icon icon-edit' %> |
+        <%= link_to l(:button_delete), custom_filter_path(filter),
+                    method: :delete,
+                    data: { confirm: l(:text_are_you_sure_delete_filter) },
+                    class: 'icon icon-del' %>
       </td>
     </tr>
   <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Vytvoriť nový filter', new_custom_filter_path, class: 'button' %>
+<%= link_to l(:button_create_new_filter), new_custom_filter_path, class: 'button' %>

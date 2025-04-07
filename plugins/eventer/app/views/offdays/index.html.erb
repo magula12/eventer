@@ -1,38 +1,48 @@
+<h1><%= l(:label_off_day_header) %></h1>
 
+<%= form_with(model: @off_day, url: offdays_path, method: :post, local: true) do |f| %>
+  <p>
+    <%= f.label :start_datetime, l(:label_start_datetime) %><br>
+    <%= f.datetime_local_field :start_datetime,
+                               required: true,
+                               value: (@off_day.start_datetime || Time.now).strftime('%Y-%m-%dT%H:%M') %>
+  </p>
 
-<h1>Your Off Days</h1>
+  <p>
+    <%= f.label :end_datetime, l(:label_end_datetime) %><br>
+    <%= f.datetime_local_field :end_datetime,
+                               required: true,
+                               value: (@off_day.end_datetime || Time.now + 1.hour).strftime('%Y-%m-%dT%H:%M') %>
+  </p>
 
-<%= form_with(model: OffDay.new, url: offdays_path, method: :post, local: true) do |f| %>
-  <div>
-    <%= f.label :start_datetime, 'Start Date and Time' %><br>
-    <%= f.datetime_select :start_datetime %>
-  </div>
-
-  <div>
-    <%= f.label :end_datetime, 'End Date and Time' %><br>
-    <%= f.datetime_select :end_datetime %>
-  </div>
-  <div>
-    <%= f.submit 'Add Off Day' %>
-  </div>
+  <%= f.submit l(:button_add_off_day) %>
 <% end %>
 
-<h2>Existing Off Days</h2>
-<ul>
-  <% @off_days.each do |off_day| %>
-    <li>
-      <%= off_day.start_datetime.strftime('%d-%m-%Y %H:%M') %> to
-      <% if off_day.start_datetime.year != off_day.end_datetime.year %>
-        <%= off_day.end_datetime.strftime('%d-%m-%Y %H:%M') %>
-      <% elsif off_day.start_datetime.month != off_day.end_datetime.month %>
-        <%= off_day.end_datetime.strftime('%d-%m %H:%M') %>
-      <% elsif off_day.start_datetime.day != off_day.end_datetime.day %>
-        <%= off_day.end_datetime.strftime('%d %H:%M') %>
-      <% else %>
-        <%= off_day.end_datetime.strftime('%H:%M') %>
-      <% end %>
-      <%= button_to 'Delete', offday_path(off_day), method: :delete, data: { confirm: 'Are you sure?' } %>
-    </li>
-  <% end %>
+<h2><%= l(:label_existing_off_days) %></h2>
 
-</ul>
+<div class="autoscroll">
+  <table class="list">
+    <thead>
+    <tr>
+      <th><%= l(:label_from) %></th>
+      <th><%= l(:label_to) %></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @off_days.each do |off_day| %>
+      <tr>
+        <td><%= formatted_offday_time(off_day.start_datetime) %></td>
+        <td><%= formatted_offday_time(off_day.end_datetime) %></td>
+        <td class="buttons">
+          <%= button_to l(:button_delete),
+                        offday_path(off_day),
+                        method: :delete,
+                        data: { confirm: l(:text_are_you_sure_delete_off_day) },
+                        class: 'icon icon-del' %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

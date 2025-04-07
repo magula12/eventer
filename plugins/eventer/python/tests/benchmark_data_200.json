@@ -1,0 +1,6751 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstname": "Darren",
+      "lastname": "Baker",
+      "login": "xnunez",
+      "qualifications": [
+        {
+          "role": "Režisér",
+          "category": "Volejbal",
+          "rating": 6
+        },
+        {
+          "role": "Technik",
+          "category": "Basket EXZ",
+          "rating": 6
+        },
+        {
+          "role": "Rozhodca",
+          "category": "Hokej SHL",
+          "rating": 10
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-18T09:00:00",
+          "end_datetime": "2025-03-18T14:00:00"
+        },
+        {
+          "start_datetime": "2025-03-14T08:00:00",
+          "end_datetime": "2025-03-14T09:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 2,
+      "firstname": "Cindy",
+      "lastname": "Lane",
+      "login": "dennisarnold",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Basket EXZ",
+          "rating": 9
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-01T16:00:00",
+          "end_datetime": "2025-03-01T18:00:00"
+        },
+        {
+          "start_datetime": "2025-03-23T18:00:00",
+          "end_datetime": "2025-03-23T23:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 3,
+      "firstname": "Roberto",
+      "lastname": "Mathis",
+      "login": "linbryan",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Atletika",
+          "rating": 7
+        },
+        {
+          "role": "Strihač",
+          "category": "Hokej SHL",
+          "rating": 6
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-14T13:00:00",
+          "end_datetime": "2025-03-14T16:00:00"
+        },
+        {
+          "start_datetime": "2025-03-05T11:00:00",
+          "end_datetime": "2025-03-05T14:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 4,
+      "firstname": "Katelyn",
+      "lastname": "Johnson",
+      "login": "tbarron",
+      "qualifications": [
+        {
+          "role": "Režisér",
+          "category": "Futbal",
+          "rating": 5
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-28T13:00:00",
+          "end_datetime": "2025-03-28T18:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 5,
+      "firstname": "Jennifer",
+      "lastname": "Riley",
+      "login": "cartersarah",
+      "qualifications": [
+        {
+          "role": "Režisér",
+          "category": "Atletika",
+          "rating": 5
+        },
+        {
+          "role": "Strihač",
+          "category": "Futbal",
+          "rating": 5
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-10T18:00:00",
+          "end_datetime": "2025-03-10T23:00:00"
+        },
+        {
+          "start_datetime": "2025-03-28T13:00:00",
+          "end_datetime": "2025-03-28T18:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 6,
+      "firstname": "Parker",
+      "lastname": "Williams",
+      "login": "littlekarina",
+      "qualifications": [
+        {
+          "role": "Režisér",
+          "category": "Hokej SHL",
+          "rating": 10
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 7,
+      "firstname": "Dawn",
+      "lastname": "Mosley",
+      "login": "bensonkimberly",
+      "qualifications": [
+        {
+          "role": "Režisér",
+          "category": "Hokej SHL",
+          "rating": 8
+        },
+        {
+          "role": "Komentátor",
+          "category": "Volejbal",
+          "rating": 8
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-27T13:00:00",
+          "end_datetime": "2025-03-27T15:00:00"
+        },
+        {
+          "start_datetime": "2025-03-12T13:00:00",
+          "end_datetime": "2025-03-12T15:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 8,
+      "firstname": "Tyler",
+      "lastname": "White",
+      "login": "heatherellis",
+      "qualifications": [
+        {
+          "role": "Rozhodca",
+          "category": "Basket EXZ",
+          "rating": 9
+        },
+        {
+          "role": "Režisér",
+          "category": "Basket EXZ",
+          "rating": 6
+        },
+        {
+          "role": "Technik",
+          "category": "Futbal",
+          "rating": 8
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-21T16:00:00",
+          "end_datetime": "2025-03-21T18:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 9,
+      "firstname": "Katherine",
+      "lastname": "Williams",
+      "login": "greentaylor",
+      "qualifications": [
+        {
+          "role": "Rozhodca",
+          "category": "Hokej SHL",
+          "rating": 7
+        },
+        {
+          "role": "Režisér",
+          "category": "Futbal",
+          "rating": 7
+        },
+        {
+          "role": "Strihač",
+          "category": "Hokej SHL",
+          "rating": 6
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-23T13:00:00",
+          "end_datetime": "2025-03-23T15:00:00"
+        },
+        {
+          "start_datetime": "2025-03-21T15:00:00",
+          "end_datetime": "2025-03-21T19:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 10,
+      "firstname": "Erin",
+      "lastname": "Martinez",
+      "login": "crogers",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Basket EXZ",
+          "rating": 6
+        },
+        {
+          "role": "Komentátor",
+          "category": "Atletika",
+          "rating": 9
+        },
+        {
+          "role": "Technik",
+          "category": "Volejbal",
+          "rating": 10
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-14T17:00:00",
+          "end_datetime": "2025-03-14T21:00:00"
+        },
+        {
+          "start_datetime": "2025-03-12T11:00:00",
+          "end_datetime": "2025-03-12T13:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 11,
+      "firstname": "Tom",
+      "lastname": "Evans",
+      "login": "zhobbs",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Hokej SHL",
+          "rating": 6
+        },
+        {
+          "role": "Režisér",
+          "category": "Basket EXZ",
+          "rating": 10
+        },
+        {
+          "role": "Technik",
+          "category": "Futbal",
+          "rating": 9
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 12,
+      "firstname": "Kelli",
+      "lastname": "Finley",
+      "login": "xclark",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Atletika",
+          "rating": 7
+        },
+        {
+          "role": "Technik",
+          "category": "Atletika",
+          "rating": 5
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-24T09:00:00",
+          "end_datetime": "2025-03-24T14:00:00"
+        },
+        {
+          "start_datetime": "2025-03-25T12:00:00",
+          "end_datetime": "2025-03-25T15:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 13,
+      "firstname": "Joel",
+      "lastname": "Thomas",
+      "login": "hendersonanthony",
+      "qualifications": [
+        {
+          "role": "Rozhodca",
+          "category": "Futbal",
+          "rating": 6
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-01T12:00:00",
+          "end_datetime": "2025-03-01T17:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 14,
+      "firstname": "Teresa",
+      "lastname": "Morris",
+      "login": "jwilson",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Hokej SHL",
+          "rating": 10
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-27T18:00:00",
+          "end_datetime": "2025-03-27T23:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 15,
+      "firstname": "Lawrence",
+      "lastname": "Spence",
+      "login": "rickyporter",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Basket EXZ",
+          "rating": 9
+        },
+        {
+          "role": "Technik",
+          "category": "Atletika",
+          "rating": 5
+        },
+        {
+          "role": "Strihač",
+          "category": "Atletika",
+          "rating": 7
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-01T09:00:00",
+          "end_datetime": "2025-03-01T12:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 16,
+      "firstname": "Chloe",
+      "lastname": "Nguyen",
+      "login": "hensonmary",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Basket EXZ",
+          "rating": 9
+        },
+        {
+          "role": "Režisér",
+          "category": "Hokej SHL",
+          "rating": 5
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-16T09:00:00",
+          "end_datetime": "2025-03-16T14:00:00"
+        },
+        {
+          "start_datetime": "2025-03-25T10:00:00",
+          "end_datetime": "2025-03-25T12:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 17,
+      "firstname": "Zachary",
+      "lastname": "Scott",
+      "login": "charlespatterson",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Atletika",
+          "rating": 9
+        },
+        {
+          "role": "Komentátor",
+          "category": "Futbal",
+          "rating": 6
+        },
+        {
+          "role": "Technik",
+          "category": "Atletika",
+          "rating": 10
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-07T12:00:00",
+          "end_datetime": "2025-03-07T16:00:00"
+        },
+        {
+          "start_datetime": "2025-03-22T18:00:00",
+          "end_datetime": "2025-03-22T21:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 18,
+      "firstname": "Kimberly",
+      "lastname": "Richardson",
+      "login": "glen68",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Hokej SHL",
+          "rating": 6
+        },
+        {
+          "role": "Strihač",
+          "category": "Basket EXZ",
+          "rating": 5
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-01T17:00:00",
+          "end_datetime": "2025-03-01T22:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 19,
+      "firstname": "Lisa",
+      "lastname": "Clark",
+      "login": "turnerdavid",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Basket EXZ",
+          "rating": 5
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 20,
+      "firstname": "Donna",
+      "lastname": "Clark",
+      "login": "denniswilliam",
+      "qualifications": [
+        {
+          "role": "Režisér",
+          "category": "Hokej SHL",
+          "rating": 7
+        },
+        {
+          "role": "Komentátor",
+          "category": "Hokej SHL",
+          "rating": 9
+        },
+        {
+          "role": "Technik",
+          "category": "Basket EXZ",
+          "rating": 7
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-16T11:00:00",
+          "end_datetime": "2025-03-16T16:00:00"
+        },
+        {
+          "start_datetime": "2025-03-05T17:00:00",
+          "end_datetime": "2025-03-05T22:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 21,
+      "firstname": "Charles",
+      "lastname": "Brown",
+      "login": "lambertbradley",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Futbal",
+          "rating": 6
+        },
+        {
+          "role": "Strihač",
+          "category": "Hokej SHL",
+          "rating": 5
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-14T13:00:00",
+          "end_datetime": "2025-03-14T17:00:00"
+        },
+        {
+          "start_datetime": "2025-03-14T15:00:00",
+          "end_datetime": "2025-03-14T16:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 22,
+      "firstname": "Jacob",
+      "lastname": "Stout",
+      "login": "baldwinmary",
+      "qualifications": [
+        {
+          "role": "Režisér",
+          "category": "Volejbal",
+          "rating": 5
+        },
+        {
+          "role": "Technik",
+          "category": "Basket EXZ",
+          "rating": 6
+        },
+        {
+          "role": "Komentátor",
+          "category": "Basket EXZ",
+          "rating": 9
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-05T14:00:00",
+          "end_datetime": "2025-03-05T16:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 23,
+      "firstname": "Meredith",
+      "lastname": "Wolfe",
+      "login": "richardhensley",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Hokej SHL",
+          "rating": 8
+        },
+        {
+          "role": "Komentátor",
+          "category": "Atletika",
+          "rating": 5
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 24,
+      "firstname": "Ashley",
+      "lastname": "Bush",
+      "login": "richard27",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Basket EXZ",
+          "rating": 6
+        },
+        {
+          "role": "Režisér",
+          "category": "Futbal",
+          "rating": 8
+        },
+        {
+          "role": "Strihač",
+          "category": "Futbal",
+          "rating": 6
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-02T10:00:00",
+          "end_datetime": "2025-03-02T14:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 25,
+      "firstname": "Sara",
+      "lastname": "Johnson",
+      "login": "chandlerlindsay",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Volejbal",
+          "rating": 8
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-14T16:00:00",
+          "end_datetime": "2025-03-14T20:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 26,
+      "firstname": "Jennifer",
+      "lastname": "Barker",
+      "login": "jacksontheresa",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Volejbal",
+          "rating": 6
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 27,
+      "firstname": "Kim",
+      "lastname": "Tran",
+      "login": "garciamonique",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Volejbal",
+          "rating": 5
+        },
+        {
+          "role": "Režisér",
+          "category": "Hokej SHL",
+          "rating": 9
+        },
+        {
+          "role": "Rozhodca",
+          "category": "Futbal",
+          "rating": 9
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-06T08:00:00",
+          "end_datetime": "2025-03-06T13:00:00"
+        },
+        {
+          "start_datetime": "2025-03-03T10:00:00",
+          "end_datetime": "2025-03-03T11:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 28,
+      "firstname": "Wesley",
+      "lastname": "Juarez",
+      "login": "trollins",
+      "qualifications": [
+        {
+          "role": "Režisér",
+          "category": "Hokej SHL",
+          "rating": 9
+        },
+        {
+          "role": "Komentátor",
+          "category": "Basket EXZ",
+          "rating": 9
+        },
+        {
+          "role": "Strihač",
+          "category": "Atletika",
+          "rating": 5
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-03T14:00:00",
+          "end_datetime": "2025-03-03T19:00:00"
+        },
+        {
+          "start_datetime": "2025-03-19T16:00:00",
+          "end_datetime": "2025-03-19T19:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 29,
+      "firstname": "Jill",
+      "lastname": "Duke",
+      "login": "millermaria",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Basket EXZ",
+          "rating": 7
+        },
+        {
+          "role": "Rozhodca",
+          "category": "Futbal",
+          "rating": 6
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-21T12:00:00",
+          "end_datetime": "2025-03-21T16:00:00"
+        },
+        {
+          "start_datetime": "2025-03-11T09:00:00",
+          "end_datetime": "2025-03-11T10:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 30,
+      "firstname": "Ryan",
+      "lastname": "Smith",
+      "login": "mbaker",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Hokej SHL",
+          "rating": 9
+        },
+        {
+          "role": "Režisér",
+          "category": "Basket EXZ",
+          "rating": 9
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-05T13:00:00",
+          "end_datetime": "2025-03-05T14:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 31,
+      "firstname": "Cynthia",
+      "lastname": "Perez",
+      "login": "gary76",
+      "qualifications": [
+        {
+          "role": "Rozhodca",
+          "category": "Volejbal",
+          "rating": 6
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-27T16:00:00",
+          "end_datetime": "2025-03-27T19:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 32,
+      "firstname": "James",
+      "lastname": "Hernandez",
+      "login": "johnrodriguez",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Atletika",
+          "rating": 7
+        },
+        {
+          "role": "Režisér",
+          "category": "Hokej SHL",
+          "rating": 6
+        },
+        {
+          "role": "Rozhodca",
+          "category": "Volejbal",
+          "rating": 5
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 33,
+      "firstname": "Stephanie",
+      "lastname": "Kidd",
+      "login": "hsmall",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Volejbal",
+          "rating": 9
+        },
+        {
+          "role": "Komentátor",
+          "category": "Basket EXZ",
+          "rating": 10
+        },
+        {
+          "role": "Strihač",
+          "category": "Volejbal",
+          "rating": 6
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-21T12:00:00",
+          "end_datetime": "2025-03-21T17:00:00"
+        },
+        {
+          "start_datetime": "2025-03-16T12:00:00",
+          "end_datetime": "2025-03-16T13:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 34,
+      "firstname": "Lori",
+      "lastname": "Lopez",
+      "login": "wallacekelly",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Volejbal",
+          "rating": 5
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 35,
+      "firstname": "John",
+      "lastname": "Pena",
+      "login": "sarahmorris",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Basket EXZ",
+          "rating": 10
+        },
+        {
+          "role": "Rozhodca",
+          "category": "Futbal",
+          "rating": 9
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-14T16:00:00",
+          "end_datetime": "2025-03-14T17:00:00"
+        },
+        {
+          "start_datetime": "2025-03-04T09:00:00",
+          "end_datetime": "2025-03-04T11:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 36,
+      "firstname": "Audrey",
+      "lastname": "Moore",
+      "login": "kcox",
+      "qualifications": [
+        {
+          "role": "Režisér",
+          "category": "Atletika",
+          "rating": 6
+        },
+        {
+          "role": "Rozhodca",
+          "category": "Futbal",
+          "rating": 6
+        },
+        {
+          "role": "Strihač",
+          "category": "Hokej SHL",
+          "rating": 7
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-26T08:00:00",
+          "end_datetime": "2025-03-26T11:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 37,
+      "firstname": "Frederick",
+      "lastname": "Wilson",
+      "login": "maldonadojason",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Hokej SHL",
+          "rating": 7
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-28T14:00:00",
+          "end_datetime": "2025-03-28T19:00:00"
+        },
+        {
+          "start_datetime": "2025-03-24T10:00:00",
+          "end_datetime": "2025-03-24T12:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 38,
+      "firstname": "Jerome",
+      "lastname": "Hernandez",
+      "login": "gordonglenn",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Futbal",
+          "rating": 5
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 39,
+      "firstname": "Max",
+      "lastname": "Cooper",
+      "login": "zhicks",
+      "qualifications": [
+        {
+          "role": "Rozhodca",
+          "category": "Basket EXZ",
+          "rating": 7
+        },
+        {
+          "role": "Strihač",
+          "category": "Basket EXZ",
+          "rating": 10
+        },
+        {
+          "role": "Technik",
+          "category": "Hokej SHL",
+          "rating": 8
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 40,
+      "firstname": "Jason",
+      "lastname": "Chavez",
+      "login": "byrdjenny",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Futbal",
+          "rating": 7
+        },
+        {
+          "role": "Technik",
+          "category": "Volejbal",
+          "rating": 6
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 41,
+      "firstname": "Samantha",
+      "lastname": "Hooper",
+      "login": "reyeslee",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Futbal",
+          "rating": 7
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-28T09:00:00",
+          "end_datetime": "2025-03-28T12:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 42,
+      "firstname": "Diane",
+      "lastname": "Ray",
+      "login": "ogray",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Atletika",
+          "rating": 7
+        },
+        {
+          "role": "Strihač",
+          "category": "Hokej SHL",
+          "rating": 5
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-06T17:00:00",
+          "end_datetime": "2025-03-06T20:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 43,
+      "firstname": "Christopher",
+      "lastname": "Schmidt",
+      "login": "michaelpowell",
+      "qualifications": [
+        {
+          "role": "Režisér",
+          "category": "Atletika",
+          "rating": 8
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-24T13:00:00",
+          "end_datetime": "2025-03-24T17:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 44,
+      "firstname": "Mary",
+      "lastname": "Smith",
+      "login": "scottdaniel",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Atletika",
+          "rating": 6
+        },
+        {
+          "role": "Režisér",
+          "category": "Volejbal",
+          "rating": 5
+        },
+        {
+          "role": "Komentátor",
+          "category": "Futbal",
+          "rating": 5
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-26T16:00:00",
+          "end_datetime": "2025-03-26T18:00:00"
+        },
+        {
+          "start_datetime": "2025-03-12T14:00:00",
+          "end_datetime": "2025-03-12T15:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 45,
+      "firstname": "Katie",
+      "lastname": "Murphy",
+      "login": "vbrown",
+      "qualifications": [
+        {
+          "role": "Rozhodca",
+          "category": "Hokej SHL",
+          "rating": 10
+        },
+        {
+          "role": "Technik",
+          "category": "Volejbal",
+          "rating": 9
+        },
+        {
+          "role": "Strihač",
+          "category": "Volejbal",
+          "rating": 10
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-11T14:00:00",
+          "end_datetime": "2025-03-11T17:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 46,
+      "firstname": "Denise",
+      "lastname": "Robinson",
+      "login": "fowlershane",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Futbal",
+          "rating": 10
+        },
+        {
+          "role": "Technik",
+          "category": "Basket EXZ",
+          "rating": 9
+        },
+        {
+          "role": "Strihač",
+          "category": "Atletika",
+          "rating": 7
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-18T08:00:00",
+          "end_datetime": "2025-03-18T11:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 47,
+      "firstname": "Kathy",
+      "lastname": "Davenport",
+      "login": "ugreene",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Atletika",
+          "rating": 9
+        },
+        {
+          "role": "Strihač",
+          "category": "Volejbal",
+          "rating": 8
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-15T18:00:00",
+          "end_datetime": "2025-03-15T20:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 48,
+      "firstname": "Larry",
+      "lastname": "Crawford",
+      "login": "freemanmatthew",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Hokej SHL",
+          "rating": 7
+        },
+        {
+          "role": "Komentátor",
+          "category": "Atletika",
+          "rating": 10
+        },
+        {
+          "role": "Rozhodca",
+          "category": "Atletika",
+          "rating": 7
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 49,
+      "firstname": "Denise",
+      "lastname": "Mcconnell",
+      "login": "christina75",
+      "qualifications": [
+        {
+          "role": "Rozhodca",
+          "category": "Basket EXZ",
+          "rating": 6
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 50,
+      "firstname": "Craig",
+      "lastname": "Taylor",
+      "login": "lindapetersen",
+      "qualifications": [
+        {
+          "role": "Režisér",
+          "category": "Basket EXZ",
+          "rating": 8
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-28T09:00:00",
+          "end_datetime": "2025-03-28T13:00:00"
+        },
+        {
+          "start_datetime": "2025-03-14T18:00:00",
+          "end_datetime": "2025-03-14T23:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 51,
+      "firstname": "Deborah",
+      "lastname": "Smith",
+      "login": "kellerjames",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Futbal",
+          "rating": 8
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 52,
+      "firstname": "William",
+      "lastname": "Clark",
+      "login": "destiny69",
+      "qualifications": [
+        {
+          "role": "Režisér",
+          "category": "Hokej SHL",
+          "rating": 8
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 53,
+      "firstname": "Eric",
+      "lastname": "Watkins",
+      "login": "jacksoncarolyn",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Futbal",
+          "rating": 5
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-08T09:00:00",
+          "end_datetime": "2025-03-08T13:00:00"
+        },
+        {
+          "start_datetime": "2025-03-05T15:00:00",
+          "end_datetime": "2025-03-05T20:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 54,
+      "firstname": "Robert",
+      "lastname": "Oliver",
+      "login": "dibarra",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Atletika",
+          "rating": 10
+        },
+        {
+          "role": "Rozhodca",
+          "category": "Atletika",
+          "rating": 8
+        },
+        {
+          "role": "Komentátor",
+          "category": "Atletika",
+          "rating": 8
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 55,
+      "firstname": "Robert",
+      "lastname": "Joseph",
+      "login": "rbrown",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Basket EXZ",
+          "rating": 10
+        },
+        {
+          "role": "Technik",
+          "category": "Volejbal",
+          "rating": 9
+        },
+        {
+          "role": "Komentátor",
+          "category": "Futbal",
+          "rating": 10
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 56,
+      "firstname": "Patrick",
+      "lastname": "Leon",
+      "login": "masonshawn",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Volejbal",
+          "rating": 6
+        },
+        {
+          "role": "Režisér",
+          "category": "Volejbal",
+          "rating": 7
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-18T09:00:00",
+          "end_datetime": "2025-03-18T11:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 57,
+      "firstname": "Michael",
+      "lastname": "Burnett",
+      "login": "twallace",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Futbal",
+          "rating": 10
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 58,
+      "firstname": "Jesse",
+      "lastname": "Finley",
+      "login": "johnsonbarry",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Futbal",
+          "rating": 7
+        },
+        {
+          "role": "Režisér",
+          "category": "Atletika",
+          "rating": 8
+        },
+        {
+          "role": "Technik",
+          "category": "Futbal",
+          "rating": 5
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 59,
+      "firstname": "Nicolas",
+      "lastname": "Morgan",
+      "login": "dmiller",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Atletika",
+          "rating": 8
+        },
+        {
+          "role": "Režisér",
+          "category": "Futbal",
+          "rating": 5
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-10T14:00:00",
+          "end_datetime": "2025-03-10T18:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 60,
+      "firstname": "Monica",
+      "lastname": "Owens",
+      "login": "jacquelinelynch",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Basket EXZ",
+          "rating": 7
+        },
+        {
+          "role": "Komentátor",
+          "category": "Futbal",
+          "rating": 8
+        },
+        {
+          "role": "Strihač",
+          "category": "Hokej SHL",
+          "rating": 8
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-22T18:00:00",
+          "end_datetime": "2025-03-22T22:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 61,
+      "firstname": "Todd",
+      "lastname": "Sutton",
+      "login": "dporter",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Atletika",
+          "rating": 9
+        },
+        {
+          "role": "Strihač",
+          "category": "Hokej SHL",
+          "rating": 8
+        },
+        {
+          "role": "Režisér",
+          "category": "Atletika",
+          "rating": 9
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-01T09:00:00",
+          "end_datetime": "2025-03-01T13:00:00"
+        },
+        {
+          "start_datetime": "2025-03-05T15:00:00",
+          "end_datetime": "2025-03-05T17:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 62,
+      "firstname": "Raymond",
+      "lastname": "Short",
+      "login": "morenoanne",
+      "qualifications": [
+        {
+          "role": "Rozhodca",
+          "category": "Futbal",
+          "rating": 7
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 63,
+      "firstname": "Michael",
+      "lastname": "Goodwin",
+      "login": "georgepearson",
+      "qualifications": [
+        {
+          "role": "Rozhodca",
+          "category": "Futbal",
+          "rating": 7
+        },
+        {
+          "role": "Technik",
+          "category": "Futbal",
+          "rating": 7
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 64,
+      "firstname": "Zachary",
+      "lastname": "Humphrey",
+      "login": "mayopeter",
+      "qualifications": [
+        {
+          "role": "Režisér",
+          "category": "Volejbal",
+          "rating": 6
+        },
+        {
+          "role": "Technik",
+          "category": "Hokej SHL",
+          "rating": 10
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 65,
+      "firstname": "Courtney",
+      "lastname": "Olson",
+      "login": "fsmith",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Basket EXZ",
+          "rating": 5
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-05T11:00:00",
+          "end_datetime": "2025-03-05T13:00:00"
+        },
+        {
+          "start_datetime": "2025-03-16T18:00:00",
+          "end_datetime": "2025-03-16T19:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 66,
+      "firstname": "Sara",
+      "lastname": "Nelson",
+      "login": "glee",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Volejbal",
+          "rating": 7
+        },
+        {
+          "role": "Strihač",
+          "category": "Basket EXZ",
+          "rating": 9
+        },
+        {
+          "role": "Rozhodca",
+          "category": "Atletika",
+          "rating": 10
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-04T10:00:00",
+          "end_datetime": "2025-03-04T13:00:00"
+        },
+        {
+          "start_datetime": "2025-03-04T17:00:00",
+          "end_datetime": "2025-03-04T18:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 67,
+      "firstname": "Samantha",
+      "lastname": "Morgan",
+      "login": "johnsonanthony",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Futbal",
+          "rating": 10
+        },
+        {
+          "role": "Strihač",
+          "category": "Basket EXZ",
+          "rating": 5
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-23T18:00:00",
+          "end_datetime": "2025-03-23T20:00:00"
+        },
+        {
+          "start_datetime": "2025-03-04T12:00:00",
+          "end_datetime": "2025-03-04T17:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 68,
+      "firstname": "Sandra",
+      "lastname": "Atkins",
+      "login": "wross",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Hokej SHL",
+          "rating": 7
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-14T18:00:00",
+          "end_datetime": "2025-03-14T21:00:00"
+        },
+        {
+          "start_datetime": "2025-03-03T16:00:00",
+          "end_datetime": "2025-03-03T19:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 69,
+      "firstname": "Jeremy",
+      "lastname": "Arnold",
+      "login": "murphyamanda",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Futbal",
+          "rating": 5
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-12T18:00:00",
+          "end_datetime": "2025-03-12T22:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 70,
+      "firstname": "Jeffrey",
+      "lastname": "Gonzalez",
+      "login": "qolson",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Atletika",
+          "rating": 10
+        },
+        {
+          "role": "Strihač",
+          "category": "Volejbal",
+          "rating": 9
+        },
+        {
+          "role": "Režisér",
+          "category": "Atletika",
+          "rating": 8
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-14T17:00:00",
+          "end_datetime": "2025-03-14T20:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 71,
+      "firstname": "Jacob",
+      "lastname": "Mccarty",
+      "login": "nmorrison",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Volejbal",
+          "rating": 8
+        },
+        {
+          "role": "Režisér",
+          "category": "Basket EXZ",
+          "rating": 8
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-20T18:00:00",
+          "end_datetime": "2025-03-20T22:00:00"
+        },
+        {
+          "start_datetime": "2025-03-11T08:00:00",
+          "end_datetime": "2025-03-11T12:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 72,
+      "firstname": "Robert",
+      "lastname": "Frederick",
+      "login": "johnsonedward",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Basket EXZ",
+          "rating": 7
+        },
+        {
+          "role": "Strihač",
+          "category": "Volejbal",
+          "rating": 7
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-20T12:00:00",
+          "end_datetime": "2025-03-20T17:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 73,
+      "firstname": "Denise",
+      "lastname": "Sanchez",
+      "login": "millerlaurie",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Basket EXZ",
+          "rating": 5
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 74,
+      "firstname": "Jane",
+      "lastname": "Burton",
+      "login": "nolangary",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Basket EXZ",
+          "rating": 10
+        },
+        {
+          "role": "Technik",
+          "category": "Futbal",
+          "rating": 10
+        },
+        {
+          "role": "Rozhodca",
+          "category": "Futbal",
+          "rating": 8
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 75,
+      "firstname": "Sue",
+      "lastname": "Gonzales",
+      "login": "lowetony",
+      "qualifications": [
+        {
+          "role": "Rozhodca",
+          "category": "Basket EXZ",
+          "rating": 8
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-08T12:00:00",
+          "end_datetime": "2025-03-08T17:00:00"
+        },
+        {
+          "start_datetime": "2025-03-12T15:00:00",
+          "end_datetime": "2025-03-12T20:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 76,
+      "firstname": "Darren",
+      "lastname": "Blanchard",
+      "login": "esparzajulia",
+      "qualifications": [
+        {
+          "role": "Rozhodca",
+          "category": "Atletika",
+          "rating": 7
+        },
+        {
+          "role": "Strihač",
+          "category": "Volejbal",
+          "rating": 10
+        },
+        {
+          "role": "Technik",
+          "category": "Futbal",
+          "rating": 7
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-09T11:00:00",
+          "end_datetime": "2025-03-09T12:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 77,
+      "firstname": "Kim",
+      "lastname": "Lewis",
+      "login": "gilbertlinda",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Atletika",
+          "rating": 10
+        },
+        {
+          "role": "Rozhodca",
+          "category": "Basket EXZ",
+          "rating": 6
+        },
+        {
+          "role": "Režisér",
+          "category": "Basket EXZ",
+          "rating": 10
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-09T17:00:00",
+          "end_datetime": "2025-03-09T22:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 78,
+      "firstname": "James",
+      "lastname": "Hanson",
+      "login": "chenamber",
+      "qualifications": [
+        {
+          "role": "Rozhodca",
+          "category": "Volejbal",
+          "rating": 6
+        },
+        {
+          "role": "Režisér",
+          "category": "Volejbal",
+          "rating": 6
+        },
+        {
+          "role": "Strihač",
+          "category": "Volejbal",
+          "rating": 5
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-18T10:00:00",
+          "end_datetime": "2025-03-18T13:00:00"
+        },
+        {
+          "start_datetime": "2025-03-02T08:00:00",
+          "end_datetime": "2025-03-02T13:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 79,
+      "firstname": "Megan",
+      "lastname": "Peterson",
+      "login": "edwardsmarcia",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Hokej SHL",
+          "rating": 5
+        },
+        {
+          "role": "Strihač",
+          "category": "Atletika",
+          "rating": 7
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-16T15:00:00",
+          "end_datetime": "2025-03-16T18:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 80,
+      "firstname": "Jerry",
+      "lastname": "Bell",
+      "login": "robertvega",
+      "qualifications": [
+        {
+          "role": "Režisér",
+          "category": "Volejbal",
+          "rating": 8
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 81,
+      "firstname": "Helen",
+      "lastname": "Myers",
+      "login": "thomasthompson",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Futbal",
+          "rating": 5
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-21T18:00:00",
+          "end_datetime": "2025-03-21T19:00:00"
+        },
+        {
+          "start_datetime": "2025-03-05T10:00:00",
+          "end_datetime": "2025-03-05T15:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 82,
+      "firstname": "Regina",
+      "lastname": "Moore",
+      "login": "shannonlewis",
+      "qualifications": [
+        {
+          "role": "Režisér",
+          "category": "Hokej SHL",
+          "rating": 9
+        },
+        {
+          "role": "Komentátor",
+          "category": "Futbal",
+          "rating": 9
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-26T17:00:00",
+          "end_datetime": "2025-03-26T19:00:00"
+        },
+        {
+          "start_datetime": "2025-03-25T16:00:00",
+          "end_datetime": "2025-03-25T20:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 83,
+      "firstname": "Robin",
+      "lastname": "Moore",
+      "login": "odomkaren",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Atletika",
+          "rating": 8
+        },
+        {
+          "role": "Rozhodca",
+          "category": "Volejbal",
+          "rating": 9
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-02T17:00:00",
+          "end_datetime": "2025-03-02T18:00:00"
+        },
+        {
+          "start_datetime": "2025-03-25T11:00:00",
+          "end_datetime": "2025-03-25T13:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 84,
+      "firstname": "David",
+      "lastname": "Cabrera",
+      "login": "stephanie82",
+      "qualifications": [
+        {
+          "role": "Režisér",
+          "category": "Basket EXZ",
+          "rating": 6
+        },
+        {
+          "role": "Komentátor",
+          "category": "Atletika",
+          "rating": 5
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 85,
+      "firstname": "Linda",
+      "lastname": "Bridges",
+      "login": "mooneylarry",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Futbal",
+          "rating": 10
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-16T12:00:00",
+          "end_datetime": "2025-03-16T13:00:00"
+        },
+        {
+          "start_datetime": "2025-03-08T12:00:00",
+          "end_datetime": "2025-03-08T15:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 86,
+      "firstname": "Kelly",
+      "lastname": "Lee",
+      "login": "bweeks",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Basket EXZ",
+          "rating": 7
+        },
+        {
+          "role": "Režisér",
+          "category": "Atletika",
+          "rating": 10
+        },
+        {
+          "role": "Rozhodca",
+          "category": "Basket EXZ",
+          "rating": 8
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 87,
+      "firstname": "Amy",
+      "lastname": "Brown",
+      "login": "warrenstephanie",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Basket EXZ",
+          "rating": 5
+        },
+        {
+          "role": "Technik",
+          "category": "Hokej SHL",
+          "rating": 6
+        },
+        {
+          "role": "Strihač",
+          "category": "Volejbal",
+          "rating": 9
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-27T17:00:00",
+          "end_datetime": "2025-03-27T20:00:00"
+        },
+        {
+          "start_datetime": "2025-03-15T09:00:00",
+          "end_datetime": "2025-03-15T13:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 88,
+      "firstname": "Jonathon",
+      "lastname": "Cox",
+      "login": "barnettmichael",
+      "qualifications": [
+        {
+          "role": "Rozhodca",
+          "category": "Atletika",
+          "rating": 9
+        },
+        {
+          "role": "Strihač",
+          "category": "Futbal",
+          "rating": 8
+        },
+        {
+          "role": "Komentátor",
+          "category": "Hokej SHL",
+          "rating": 9
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 89,
+      "firstname": "Douglas",
+      "lastname": "Morgan",
+      "login": "kristagraham",
+      "qualifications": [
+        {
+          "role": "Rozhodca",
+          "category": "Hokej SHL",
+          "rating": 5
+        },
+        {
+          "role": "Technik",
+          "category": "Basket EXZ",
+          "rating": 10
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-19T08:00:00",
+          "end_datetime": "2025-03-19T11:00:00"
+        },
+        {
+          "start_datetime": "2025-03-19T08:00:00",
+          "end_datetime": "2025-03-19T10:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 90,
+      "firstname": "Scott",
+      "lastname": "Ramirez",
+      "login": "evansjennifer",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Volejbal",
+          "rating": 6
+        },
+        {
+          "role": "Strihač",
+          "category": "Atletika",
+          "rating": 8
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-27T15:00:00",
+          "end_datetime": "2025-03-27T16:00:00"
+        },
+        {
+          "start_datetime": "2025-03-16T13:00:00",
+          "end_datetime": "2025-03-16T17:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 91,
+      "firstname": "Kimberly",
+      "lastname": "Green",
+      "login": "joshuahall",
+      "qualifications": [
+        {
+          "role": "Rozhodca",
+          "category": "Basket EXZ",
+          "rating": 7
+        },
+        {
+          "role": "Režisér",
+          "category": "Futbal",
+          "rating": 10
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-10T18:00:00",
+          "end_datetime": "2025-03-10T22:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 92,
+      "firstname": "Jesse",
+      "lastname": "Allen",
+      "login": "bowmantyler",
+      "qualifications": [
+        {
+          "role": "Režisér",
+          "category": "Volejbal",
+          "rating": 7
+        },
+        {
+          "role": "Strihač",
+          "category": "Volejbal",
+          "rating": 5
+        },
+        {
+          "role": "Technik",
+          "category": "Futbal",
+          "rating": 9
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 93,
+      "firstname": "Emily",
+      "lastname": "Roy",
+      "login": "barbarasantos",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Hokej SHL",
+          "rating": 6
+        },
+        {
+          "role": "Strihač",
+          "category": "Atletika",
+          "rating": 7
+        },
+        {
+          "role": "Komentátor",
+          "category": "Atletika",
+          "rating": 8
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-15T08:00:00",
+          "end_datetime": "2025-03-15T10:00:00"
+        },
+        {
+          "start_datetime": "2025-03-09T16:00:00",
+          "end_datetime": "2025-03-09T18:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 94,
+      "firstname": "Richard",
+      "lastname": "Clark",
+      "login": "williamsjohn",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Hokej SHL",
+          "rating": 5
+        },
+        {
+          "role": "Technik",
+          "category": "Atletika",
+          "rating": 6
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-06T12:00:00",
+          "end_datetime": "2025-03-06T17:00:00"
+        },
+        {
+          "start_datetime": "2025-03-01T16:00:00",
+          "end_datetime": "2025-03-01T20:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 95,
+      "firstname": "John",
+      "lastname": "Sullivan",
+      "login": "xcole",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Hokej SHL",
+          "rating": 8
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 96,
+      "firstname": "Luis",
+      "lastname": "Ward",
+      "login": "hevans",
+      "qualifications": [
+        {
+          "role": "Komentátor",
+          "category": "Volejbal",
+          "rating": 9
+        },
+        {
+          "role": "Strihač",
+          "category": "Volejbal",
+          "rating": 8
+        },
+        {
+          "role": "Rozhodca",
+          "category": "Futbal",
+          "rating": 8
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 97,
+      "firstname": "Shawn",
+      "lastname": "Snyder",
+      "login": "feliciasolomon",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Futbal",
+          "rating": 6
+        },
+        {
+          "role": "Komentátor",
+          "category": "Atletika",
+          "rating": 9
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-05T09:00:00",
+          "end_datetime": "2025-03-05T12:00:00"
+        },
+        {
+          "start_datetime": "2025-03-25T14:00:00",
+          "end_datetime": "2025-03-25T17:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 98,
+      "firstname": "Thomas",
+      "lastname": "Thornton",
+      "login": "lrivera",
+      "qualifications": [
+        {
+          "role": "Rozhodca",
+          "category": "Volejbal",
+          "rating": 9
+        },
+        {
+          "role": "Režisér",
+          "category": "Atletika",
+          "rating": 10
+        },
+        {
+          "role": "Komentátor",
+          "category": "Futbal",
+          "rating": 6
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-18T15:00:00",
+          "end_datetime": "2025-03-18T18:00:00"
+        }
+      ],
+      "custom_filters": []
+    },
+    {
+      "id": 99,
+      "firstname": "Brian",
+      "lastname": "Johnson",
+      "login": "garciaanthony",
+      "qualifications": [
+        {
+          "role": "Technik",
+          "category": "Futbal",
+          "rating": 7
+        },
+        {
+          "role": "Strihač",
+          "category": "Basket EXZ",
+          "rating": 10
+        }
+      ],
+      "off_days": [],
+      "custom_filters": []
+    },
+    {
+      "id": 100,
+      "firstname": "Richard",
+      "lastname": "Bell",
+      "login": "brownrobert",
+      "qualifications": [
+        {
+          "role": "Strihač",
+          "category": "Hokej SHL",
+          "rating": 7
+        },
+        {
+          "role": "Komentátor",
+          "category": "Futbal",
+          "rating": 10
+        },
+        {
+          "role": "Technik",
+          "category": "Futbal",
+          "rating": 8
+        }
+      ],
+      "off_days": [
+        {
+          "start_datetime": "2025-03-26T18:00:00",
+          "end_datetime": "2025-03-26T20:00:00"
+        },
+        {
+          "start_datetime": "2025-03-16T08:00:00",
+          "end_datetime": "2025-03-16T10:00:00"
+        }
+      ],
+      "custom_filters": []
+    }
+  ],
+  "issues": [
+    {
+      "id": 1,
+      "subject": "Game 1",
+      "category": "Futbal",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-01T11:00:00",
+      "end_datetime": "2025-03-01T13:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "subject": "Game 2",
+      "category": "Futbal",
+      "category_priority": "Low",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-01T14:00:00",
+      "end_datetime": "2025-03-01T16:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "subject": "Game 3",
+      "category": "Volejbal",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-01T17:00:00",
+      "end_datetime": "2025-03-01T19:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "subject": "Game 4",
+      "category": "Atletika",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-01T20:00:00",
+      "end_datetime": "2025-03-01T22:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "subject": "Game 5",
+      "category": "Hokej SHL",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-01T23:00:00",
+      "end_datetime": "2025-03-02T01:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "subject": "Game 6",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-02T02:00:00",
+      "end_datetime": "2025-03-02T04:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "subject": "Game 7",
+      "category": "Volejbal",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-02T05:00:00",
+      "end_datetime": "2025-03-02T07:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "subject": "Game 8",
+      "category": "Volejbal",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-02T08:00:00",
+      "end_datetime": "2025-03-02T10:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "subject": "Game 9",
+      "category": "Atletika",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-02T11:00:00",
+      "end_datetime": "2025-03-02T13:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "subject": "Game 10",
+      "category": "Hokej SHL",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-02T14:00:00",
+      "end_datetime": "2025-03-02T16:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "subject": "Game 11",
+      "category": "Basket EXZ",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-02T17:00:00",
+      "end_datetime": "2025-03-02T19:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "subject": "Game 12",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-02T20:00:00",
+      "end_datetime": "2025-03-02T22:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "subject": "Game 13",
+      "category": "Futbal",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-02T23:00:00",
+      "end_datetime": "2025-03-03T01:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "subject": "Game 14",
+      "category": "Futbal",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-03T02:00:00",
+      "end_datetime": "2025-03-03T04:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "subject": "Game 15",
+      "category": "Basket EXZ",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-03T05:00:00",
+      "end_datetime": "2025-03-03T07:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "subject": "Game 16",
+      "category": "Volejbal",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-03T08:00:00",
+      "end_datetime": "2025-03-03T10:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "subject": "Game 17",
+      "category": "Atletika",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-03T11:00:00",
+      "end_datetime": "2025-03-03T13:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "subject": "Game 18",
+      "category": "Futbal",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-03T14:00:00",
+      "end_datetime": "2025-03-03T16:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "subject": "Game 19",
+      "category": "Basket EXZ",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-03T17:00:00",
+      "end_datetime": "2025-03-03T19:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "subject": "Game 20",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-03T20:00:00",
+      "end_datetime": "2025-03-03T22:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "subject": "Game 21",
+      "category": "Volejbal",
+      "category_priority": "Low",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-03T23:00:00",
+      "end_datetime": "2025-03-04T01:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "subject": "Game 22",
+      "category": "Volejbal",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-04T02:00:00",
+      "end_datetime": "2025-03-04T04:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "subject": "Game 23",
+      "category": "Basket EXZ",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-04T05:00:00",
+      "end_datetime": "2025-03-04T07:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "subject": "Game 24",
+      "category": "Volejbal",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-04T08:00:00",
+      "end_datetime": "2025-03-04T10:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "subject": "Game 25",
+      "category": "Hokej SHL",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-04T11:00:00",
+      "end_datetime": "2025-03-04T13:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "subject": "Game 26",
+      "category": "Futbal",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-04T14:00:00",
+      "end_datetime": "2025-03-04T16:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "subject": "Game 27",
+      "category": "Volejbal",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-04T17:00:00",
+      "end_datetime": "2025-03-04T19:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "subject": "Game 28",
+      "category": "Basket EXZ",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-04T20:00:00",
+      "end_datetime": "2025-03-04T22:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "subject": "Game 29",
+      "category": "Basket EXZ",
+      "category_priority": "Low",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-04T23:00:00",
+      "end_datetime": "2025-03-05T01:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "subject": "Game 30",
+      "category": "Futbal",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-05T02:00:00",
+      "end_datetime": "2025-03-05T04:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "subject": "Game 31",
+      "category": "Volejbal",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-05T05:00:00",
+      "end_datetime": "2025-03-05T07:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "subject": "Game 32",
+      "category": "Atletika",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-05T08:00:00",
+      "end_datetime": "2025-03-05T10:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "subject": "Game 33",
+      "category": "Atletika",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-05T11:00:00",
+      "end_datetime": "2025-03-05T13:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "subject": "Game 34",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-05T14:00:00",
+      "end_datetime": "2025-03-05T16:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "subject": "Game 35",
+      "category": "Volejbal",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-05T17:00:00",
+      "end_datetime": "2025-03-05T19:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "subject": "Game 36",
+      "category": "Hokej SHL",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-05T20:00:00",
+      "end_datetime": "2025-03-05T22:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "subject": "Game 37",
+      "category": "Volejbal",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-05T23:00:00",
+      "end_datetime": "2025-03-06T01:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "subject": "Game 38",
+      "category": "Atletika",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-06T02:00:00",
+      "end_datetime": "2025-03-06T04:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "subject": "Game 39",
+      "category": "Atletika",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-06T05:00:00",
+      "end_datetime": "2025-03-06T07:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "subject": "Game 40",
+      "category": "Volejbal",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-06T08:00:00",
+      "end_datetime": "2025-03-06T10:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "subject": "Game 41",
+      "category": "Basket EXZ",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-06T11:00:00",
+      "end_datetime": "2025-03-06T13:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "subject": "Game 42",
+      "category": "Hokej SHL",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-06T14:00:00",
+      "end_datetime": "2025-03-06T16:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "subject": "Game 43",
+      "category": "Hokej SHL",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-06T17:00:00",
+      "end_datetime": "2025-03-06T19:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "subject": "Game 44",
+      "category": "Futbal",
+      "category_priority": "Low",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-06T20:00:00",
+      "end_datetime": "2025-03-06T22:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "subject": "Game 45",
+      "category": "Volejbal",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-06T23:00:00",
+      "end_datetime": "2025-03-07T01:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "subject": "Game 46",
+      "category": "Atletika",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-07T02:00:00",
+      "end_datetime": "2025-03-07T04:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "subject": "Game 47",
+      "category": "Volejbal",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-07T05:00:00",
+      "end_datetime": "2025-03-07T07:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "subject": "Game 48",
+      "category": "Futbal",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-07T08:00:00",
+      "end_datetime": "2025-03-07T10:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "subject": "Game 49",
+      "category": "Futbal",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-07T11:00:00",
+      "end_datetime": "2025-03-07T13:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "subject": "Game 50",
+      "category": "Hokej SHL",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-07T14:00:00",
+      "end_datetime": "2025-03-07T16:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "subject": "Game 51",
+      "category": "Atletika",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-07T17:00:00",
+      "end_datetime": "2025-03-07T19:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "subject": "Game 52",
+      "category": "Hokej SHL",
+      "category_priority": "Low",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-07T20:00:00",
+      "end_datetime": "2025-03-07T22:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "subject": "Game 53",
+      "category": "Futbal",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-07T23:00:00",
+      "end_datetime": "2025-03-08T01:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "subject": "Game 54",
+      "category": "Futbal",
+      "category_priority": "Low",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-08T02:00:00",
+      "end_datetime": "2025-03-08T04:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "subject": "Game 55",
+      "category": "Volejbal",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-08T05:00:00",
+      "end_datetime": "2025-03-08T07:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "subject": "Game 56",
+      "category": "Hokej SHL",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-08T08:00:00",
+      "end_datetime": "2025-03-08T10:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "subject": "Game 57",
+      "category": "Basket EXZ",
+      "category_priority": "Low",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-08T11:00:00",
+      "end_datetime": "2025-03-08T13:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "subject": "Game 58",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-08T14:00:00",
+      "end_datetime": "2025-03-08T16:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "subject": "Game 59",
+      "category": "Atletika",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-08T17:00:00",
+      "end_datetime": "2025-03-08T19:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "subject": "Game 60",
+      "category": "Atletika",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-08T20:00:00",
+      "end_datetime": "2025-03-08T22:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "subject": "Game 61",
+      "category": "Volejbal",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-08T23:00:00",
+      "end_datetime": "2025-03-09T01:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "subject": "Game 62",
+      "category": "Atletika",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-09T02:00:00",
+      "end_datetime": "2025-03-09T04:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "subject": "Game 63",
+      "category": "Volejbal",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-09T05:00:00",
+      "end_datetime": "2025-03-09T07:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "subject": "Game 64",
+      "category": "Volejbal",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-09T08:00:00",
+      "end_datetime": "2025-03-09T10:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "subject": "Game 65",
+      "category": "Futbal",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-09T11:00:00",
+      "end_datetime": "2025-03-09T13:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "subject": "Game 66",
+      "category": "Atletika",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-09T14:00:00",
+      "end_datetime": "2025-03-09T16:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "subject": "Game 67",
+      "category": "Basket EXZ",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-09T17:00:00",
+      "end_datetime": "2025-03-09T19:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "subject": "Game 68",
+      "category": "Basket EXZ",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-09T20:00:00",
+      "end_datetime": "2025-03-09T22:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "subject": "Game 69",
+      "category": "Volejbal",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-09T23:00:00",
+      "end_datetime": "2025-03-10T01:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "subject": "Game 70",
+      "category": "Futbal",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-10T02:00:00",
+      "end_datetime": "2025-03-10T04:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "subject": "Game 71",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-10T05:00:00",
+      "end_datetime": "2025-03-10T07:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "subject": "Game 72",
+      "category": "Volejbal",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-10T08:00:00",
+      "end_datetime": "2025-03-10T10:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "subject": "Game 73",
+      "category": "Hokej SHL",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-10T11:00:00",
+      "end_datetime": "2025-03-10T13:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "subject": "Game 74",
+      "category": "Volejbal",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-10T14:00:00",
+      "end_datetime": "2025-03-10T16:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "subject": "Game 75",
+      "category": "Futbal",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-10T17:00:00",
+      "end_datetime": "2025-03-10T19:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "subject": "Game 76",
+      "category": "Futbal",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-10T20:00:00",
+      "end_datetime": "2025-03-10T22:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "subject": "Game 77",
+      "category": "Atletika",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-10T23:00:00",
+      "end_datetime": "2025-03-11T01:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "subject": "Game 78",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-11T02:00:00",
+      "end_datetime": "2025-03-11T04:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "subject": "Game 79",
+      "category": "Atletika",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-11T05:00:00",
+      "end_datetime": "2025-03-11T07:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "subject": "Game 80",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-11T08:00:00",
+      "end_datetime": "2025-03-11T10:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "subject": "Game 81",
+      "category": "Volejbal",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-11T11:00:00",
+      "end_datetime": "2025-03-11T13:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "subject": "Game 82",
+      "category": "Futbal",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-11T14:00:00",
+      "end_datetime": "2025-03-11T16:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "subject": "Game 83",
+      "category": "Volejbal",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-11T17:00:00",
+      "end_datetime": "2025-03-11T19:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "subject": "Game 84",
+      "category": "Atletika",
+      "category_priority": "Low",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-11T20:00:00",
+      "end_datetime": "2025-03-11T22:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "subject": "Game 85",
+      "category": "Volejbal",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-11T23:00:00",
+      "end_datetime": "2025-03-12T01:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "subject": "Game 86",
+      "category": "Hokej SHL",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-12T02:00:00",
+      "end_datetime": "2025-03-12T04:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "subject": "Game 87",
+      "category": "Atletika",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-12T05:00:00",
+      "end_datetime": "2025-03-12T07:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "subject": "Game 88",
+      "category": "Futbal",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-12T08:00:00",
+      "end_datetime": "2025-03-12T10:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "subject": "Game 89",
+      "category": "Volejbal",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-12T11:00:00",
+      "end_datetime": "2025-03-12T13:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "subject": "Game 90",
+      "category": "Futbal",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-12T14:00:00",
+      "end_datetime": "2025-03-12T16:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 91,
+      "subject": "Game 91",
+      "category": "Volejbal",
+      "category_priority": "Low",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-12T17:00:00",
+      "end_datetime": "2025-03-12T19:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 92,
+      "subject": "Game 92",
+      "category": "Hokej SHL",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-12T20:00:00",
+      "end_datetime": "2025-03-12T22:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 93,
+      "subject": "Game 93",
+      "category": "Atletika",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-12T23:00:00",
+      "end_datetime": "2025-03-13T01:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "subject": "Game 94",
+      "category": "Futbal",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-13T02:00:00",
+      "end_datetime": "2025-03-13T04:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "subject": "Game 95",
+      "category": "Atletika",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-13T05:00:00",
+      "end_datetime": "2025-03-13T07:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "subject": "Game 96",
+      "category": "Futbal",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-13T08:00:00",
+      "end_datetime": "2025-03-13T10:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 97,
+      "subject": "Game 97",
+      "category": "Basket EXZ",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-13T11:00:00",
+      "end_datetime": "2025-03-13T13:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 98,
+      "subject": "Game 98",
+      "category": "Volejbal",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-13T14:00:00",
+      "end_datetime": "2025-03-13T16:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "subject": "Game 99",
+      "category": "Atletika",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-13T17:00:00",
+      "end_datetime": "2025-03-13T19:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "subject": "Game 100",
+      "category": "Hokej SHL",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-13T20:00:00",
+      "end_datetime": "2025-03-13T22:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "subject": "Game 101",
+      "category": "Atletika",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-13T23:00:00",
+      "end_datetime": "2025-03-14T01:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "subject": "Game 102",
+      "category": "Basket EXZ",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-14T02:00:00",
+      "end_datetime": "2025-03-14T04:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "subject": "Game 103",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-14T05:00:00",
+      "end_datetime": "2025-03-14T07:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "subject": "Game 104",
+      "category": "Atletika",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-14T08:00:00",
+      "end_datetime": "2025-03-14T10:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "subject": "Game 105",
+      "category": "Volejbal",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-14T11:00:00",
+      "end_datetime": "2025-03-14T13:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "subject": "Game 106",
+      "category": "Futbal",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-14T14:00:00",
+      "end_datetime": "2025-03-14T16:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 107,
+      "subject": "Game 107",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-14T17:00:00",
+      "end_datetime": "2025-03-14T19:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "subject": "Game 108",
+      "category": "Volejbal",
+      "category_priority": "Low",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-14T20:00:00",
+      "end_datetime": "2025-03-14T22:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "subject": "Game 109",
+      "category": "Basket EXZ",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-14T23:00:00",
+      "end_datetime": "2025-03-15T01:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 110,
+      "subject": "Game 110",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-15T02:00:00",
+      "end_datetime": "2025-03-15T04:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "subject": "Game 111",
+      "category": "Volejbal",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-15T05:00:00",
+      "end_datetime": "2025-03-15T07:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "subject": "Game 112",
+      "category": "Basket EXZ",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-15T08:00:00",
+      "end_datetime": "2025-03-15T10:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 113,
+      "subject": "Game 113",
+      "category": "Atletika",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-15T11:00:00",
+      "end_datetime": "2025-03-15T13:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 114,
+      "subject": "Game 114",
+      "category": "Basket EXZ",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-15T14:00:00",
+      "end_datetime": "2025-03-15T16:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 115,
+      "subject": "Game 115",
+      "category": "Hokej SHL",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-15T17:00:00",
+      "end_datetime": "2025-03-15T19:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 116,
+      "subject": "Game 116",
+      "category": "Atletika",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-15T20:00:00",
+      "end_datetime": "2025-03-15T22:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 117,
+      "subject": "Game 117",
+      "category": "Volejbal",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-15T23:00:00",
+      "end_datetime": "2025-03-16T01:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 118,
+      "subject": "Game 118",
+      "category": "Hokej SHL",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-16T02:00:00",
+      "end_datetime": "2025-03-16T04:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 119,
+      "subject": "Game 119",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-16T05:00:00",
+      "end_datetime": "2025-03-16T07:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "subject": "Game 120",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-16T08:00:00",
+      "end_datetime": "2025-03-16T10:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 121,
+      "subject": "Game 121",
+      "category": "Hokej SHL",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-16T11:00:00",
+      "end_datetime": "2025-03-16T13:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 122,
+      "subject": "Game 122",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-16T14:00:00",
+      "end_datetime": "2025-03-16T16:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 123,
+      "subject": "Game 123",
+      "category": "Atletika",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-16T17:00:00",
+      "end_datetime": "2025-03-16T19:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 124,
+      "subject": "Game 124",
+      "category": "Basket EXZ",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-16T20:00:00",
+      "end_datetime": "2025-03-16T22:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 125,
+      "subject": "Game 125",
+      "category": "Volejbal",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-16T23:00:00",
+      "end_datetime": "2025-03-17T01:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 126,
+      "subject": "Game 126",
+      "category": "Basket EXZ",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-17T02:00:00",
+      "end_datetime": "2025-03-17T04:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 127,
+      "subject": "Game 127",
+      "category": "Futbal",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-17T05:00:00",
+      "end_datetime": "2025-03-17T07:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 128,
+      "subject": "Game 128",
+      "category": "Atletika",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-17T08:00:00",
+      "end_datetime": "2025-03-17T10:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 129,
+      "subject": "Game 129",
+      "category": "Futbal",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-17T11:00:00",
+      "end_datetime": "2025-03-17T13:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 130,
+      "subject": "Game 130",
+      "category": "Basket EXZ",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-17T14:00:00",
+      "end_datetime": "2025-03-17T16:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 131,
+      "subject": "Game 131",
+      "category": "Volejbal",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-17T17:00:00",
+      "end_datetime": "2025-03-17T19:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 132,
+      "subject": "Game 132",
+      "category": "Futbal",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-17T20:00:00",
+      "end_datetime": "2025-03-17T22:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 133,
+      "subject": "Game 133",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-17T23:00:00",
+      "end_datetime": "2025-03-18T01:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 134,
+      "subject": "Game 134",
+      "category": "Atletika",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-18T02:00:00",
+      "end_datetime": "2025-03-18T04:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 135,
+      "subject": "Game 135",
+      "category": "Volejbal",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-18T05:00:00",
+      "end_datetime": "2025-03-18T07:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 136,
+      "subject": "Game 136",
+      "category": "Futbal",
+      "category_priority": "Low",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-18T08:00:00",
+      "end_datetime": "2025-03-18T10:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 137,
+      "subject": "Game 137",
+      "category": "Futbal",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-18T11:00:00",
+      "end_datetime": "2025-03-18T13:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 138,
+      "subject": "Game 138",
+      "category": "Basket EXZ",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-18T14:00:00",
+      "end_datetime": "2025-03-18T16:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 139,
+      "subject": "Game 139",
+      "category": "Atletika",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-18T17:00:00",
+      "end_datetime": "2025-03-18T19:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 140,
+      "subject": "Game 140",
+      "category": "Volejbal",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-18T20:00:00",
+      "end_datetime": "2025-03-18T22:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 141,
+      "subject": "Game 141",
+      "category": "Volejbal",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-18T23:00:00",
+      "end_datetime": "2025-03-19T01:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 142,
+      "subject": "Game 142",
+      "category": "Basket EXZ",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-19T02:00:00",
+      "end_datetime": "2025-03-19T04:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 143,
+      "subject": "Game 143",
+      "category": "Hokej SHL",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-19T05:00:00",
+      "end_datetime": "2025-03-19T07:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 144,
+      "subject": "Game 144",
+      "category": "Atletika",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-19T08:00:00",
+      "end_datetime": "2025-03-19T10:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 145,
+      "subject": "Game 145",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-19T11:00:00",
+      "end_datetime": "2025-03-19T13:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 146,
+      "subject": "Game 146",
+      "category": "Atletika",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-19T14:00:00",
+      "end_datetime": "2025-03-19T16:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 147,
+      "subject": "Game 147",
+      "category": "Volejbal",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-19T17:00:00",
+      "end_datetime": "2025-03-19T19:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 148,
+      "subject": "Game 148",
+      "category": "Hokej SHL",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-19T20:00:00",
+      "end_datetime": "2025-03-19T22:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 149,
+      "subject": "Game 149",
+      "category": "Basket EXZ",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-19T23:00:00",
+      "end_datetime": "2025-03-20T01:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 150,
+      "subject": "Game 150",
+      "category": "Hokej SHL",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-20T02:00:00",
+      "end_datetime": "2025-03-20T04:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 151,
+      "subject": "Game 151",
+      "category": "Atletika",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-20T05:00:00",
+      "end_datetime": "2025-03-20T07:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 152,
+      "subject": "Game 152",
+      "category": "Volejbal",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-20T08:00:00",
+      "end_datetime": "2025-03-20T10:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 153,
+      "subject": "Game 153",
+      "category": "Basket EXZ",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-20T11:00:00",
+      "end_datetime": "2025-03-20T13:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 154,
+      "subject": "Game 154",
+      "category": "Basket EXZ",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-20T14:00:00",
+      "end_datetime": "2025-03-20T16:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 155,
+      "subject": "Game 155",
+      "category": "Futbal",
+      "category_priority": "Low",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-20T17:00:00",
+      "end_datetime": "2025-03-20T19:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 156,
+      "subject": "Game 156",
+      "category": "Basket EXZ",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-20T20:00:00",
+      "end_datetime": "2025-03-20T22:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 157,
+      "subject": "Game 157",
+      "category": "Basket EXZ",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-20T23:00:00",
+      "end_datetime": "2025-03-21T01:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 158,
+      "subject": "Game 158",
+      "category": "Hokej SHL",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-21T02:00:00",
+      "end_datetime": "2025-03-21T04:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 159,
+      "subject": "Game 159",
+      "category": "Atletika",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-21T05:00:00",
+      "end_datetime": "2025-03-21T07:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 160,
+      "subject": "Game 160",
+      "category": "Volejbal",
+      "category_priority": "Low",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-21T08:00:00",
+      "end_datetime": "2025-03-21T10:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 161,
+      "subject": "Game 161",
+      "category": "Basket EXZ",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-21T11:00:00",
+      "end_datetime": "2025-03-21T13:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 162,
+      "subject": "Game 162",
+      "category": "Atletika",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-21T14:00:00",
+      "end_datetime": "2025-03-21T16:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 163,
+      "subject": "Game 163",
+      "category": "Atletika",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-21T17:00:00",
+      "end_datetime": "2025-03-21T19:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 164,
+      "subject": "Game 164",
+      "category": "Atletika",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-21T20:00:00",
+      "end_datetime": "2025-03-21T22:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 165,
+      "subject": "Game 165",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-21T23:00:00",
+      "end_datetime": "2025-03-22T01:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 166,
+      "subject": "Game 166",
+      "category": "Atletika",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-22T02:00:00",
+      "end_datetime": "2025-03-22T04:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 167,
+      "subject": "Game 167",
+      "category": "Futbal",
+      "category_priority": "Low",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-22T05:00:00",
+      "end_datetime": "2025-03-22T07:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 168,
+      "subject": "Game 168",
+      "category": "Basket EXZ",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-22T08:00:00",
+      "end_datetime": "2025-03-22T10:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 169,
+      "subject": "Game 169",
+      "category": "Basket EXZ",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-22T11:00:00",
+      "end_datetime": "2025-03-22T13:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 170,
+      "subject": "Game 170",
+      "category": "Basket EXZ",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-22T14:00:00",
+      "end_datetime": "2025-03-22T16:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 171,
+      "subject": "Game 171",
+      "category": "Atletika",
+      "category_priority": "Low",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-22T17:00:00",
+      "end_datetime": "2025-03-22T19:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 172,
+      "subject": "Game 172",
+      "category": "Atletika",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-22T20:00:00",
+      "end_datetime": "2025-03-22T22:00:00",
+      "required_roles": [
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 173,
+      "subject": "Game 173",
+      "category": "Hokej SHL",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-22T23:00:00",
+      "end_datetime": "2025-03-23T01:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 174,
+      "subject": "Game 174",
+      "category": "Basket EXZ",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-23T02:00:00",
+      "end_datetime": "2025-03-23T04:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 175,
+      "subject": "Game 175",
+      "category": "Atletika",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-23T05:00:00",
+      "end_datetime": "2025-03-23T07:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 176,
+      "subject": "Game 176",
+      "category": "Futbal",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-23T08:00:00",
+      "end_datetime": "2025-03-23T10:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 177,
+      "subject": "Game 177",
+      "category": "Basket EXZ",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-23T11:00:00",
+      "end_datetime": "2025-03-23T13:00:00",
+      "required_roles": [
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 178,
+      "subject": "Game 178",
+      "category": "Volejbal",
+      "category_priority": "Low",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-23T14:00:00",
+      "end_datetime": "2025-03-23T16:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 179,
+      "subject": "Game 179",
+      "category": "Futbal",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-23T17:00:00",
+      "end_datetime": "2025-03-23T19:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 180,
+      "subject": "Game 180",
+      "category": "Basket EXZ",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-23T20:00:00",
+      "end_datetime": "2025-03-23T22:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 181,
+      "subject": "Game 181",
+      "category": "Basket EXZ",
+      "category_priority": "High",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-23T23:00:00",
+      "end_datetime": "2025-03-24T01:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 182,
+      "subject": "Game 182",
+      "category": "Basket EXZ",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-24T02:00:00",
+      "end_datetime": "2025-03-24T04:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 183,
+      "subject": "Game 183",
+      "category": "Futbal",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-24T05:00:00",
+      "end_datetime": "2025-03-24T07:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 184,
+      "subject": "Game 184",
+      "category": "Hokej SHL",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-24T08:00:00",
+      "end_datetime": "2025-03-24T10:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 185,
+      "subject": "Game 185",
+      "category": "Atletika",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-24T11:00:00",
+      "end_datetime": "2025-03-24T13:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Komentátor",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 186,
+      "subject": "Game 186",
+      "category": "Futbal",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-24T14:00:00",
+      "end_datetime": "2025-03-24T16:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 187,
+      "subject": "Game 187",
+      "category": "Hokej SHL",
+      "category_priority": "High",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-24T17:00:00",
+      "end_datetime": "2025-03-24T19:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 188,
+      "subject": "Game 188",
+      "category": "Volejbal",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-24T20:00:00",
+      "end_datetime": "2025-03-24T22:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 189,
+      "subject": "Game 189",
+      "category": "Hokej SHL",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-24T23:00:00",
+      "end_datetime": "2025-03-25T01:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 190,
+      "subject": "Game 190",
+      "category": "Atletika",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-25T02:00:00",
+      "end_datetime": "2025-03-25T04:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 191,
+      "subject": "Game 191",
+      "category": "Atletika",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-25T05:00:00",
+      "end_datetime": "2025-03-25T07:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 192,
+      "subject": "Game 192",
+      "category": "Hokej SHL",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-25T08:00:00",
+      "end_datetime": "2025-03-25T10:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 193,
+      "subject": "Game 193",
+      "category": "Basket EXZ",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-25T11:00:00",
+      "end_datetime": "2025-03-25T13:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 194,
+      "subject": "Game 194",
+      "category": "Hokej SHL",
+      "category_priority": "High",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-25T14:00:00",
+      "end_datetime": "2025-03-25T16:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Režisér",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 195,
+      "subject": "Game 195",
+      "category": "Basket EXZ",
+      "category_priority": "Low",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-25T17:00:00",
+      "end_datetime": "2025-03-25T19:00:00",
+      "required_roles": [
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 196,
+      "subject": "Game 196",
+      "category": "Atletika",
+      "category_priority": "Medium",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-25T20:00:00",
+      "end_datetime": "2025-03-25T22:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 197,
+      "subject": "Game 197",
+      "category": "Atletika",
+      "category_priority": "Medium",
+      "priority": "Nízka",
+      "start_datetime": "2025-03-25T23:00:00",
+      "end_datetime": "2025-03-26T01:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 198,
+      "subject": "Game 198",
+      "category": "Atletika",
+      "category_priority": "Medium",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-26T02:00:00",
+      "end_datetime": "2025-03-26T04:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Strihač",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 199,
+      "subject": "Game 199",
+      "category": "Volejbal",
+      "category_priority": "Low",
+      "priority": "Vysoká",
+      "start_datetime": "2025-03-26T05:00:00",
+      "end_datetime": "2025-03-26T07:00:00",
+      "required_roles": [
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    },
+    {
+      "id": 200,
+      "subject": "Game 200",
+      "category": "Hokej SHL",
+      "category_priority": "Low",
+      "priority": "Normálna",
+      "start_datetime": "2025-03-26T08:00:00",
+      "end_datetime": "2025-03-26T10:00:00",
+      "required_roles": [
+        {
+          "role": "Technik",
+          "required_count": 1,
+          "assigned_users": []
+        },
+        {
+          "role": "Rozhodca",
+          "required_count": 1,
+          "assigned_users": []
+        }
+      ]
+    }
+  ]
+}

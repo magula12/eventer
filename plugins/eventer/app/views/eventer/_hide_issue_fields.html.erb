@@ -1,0 +1,31 @@
+<script>
+    (function($) {
+        function hideFields() {
+            var fieldsToHide = [
+                'issue_status_id',        // Stav
+                'issue_assigned_to_id',   // Assigned To
+                'issue_parent_issue_id',  // Nadradená úloha
+                'issue_start_date',       // Počiatočný dátum
+                'issue_due_date',         // Odovzdať do
+                'issue_done_ratio',       // % hotovo
+                'issue_estimated_hours'   // Odhadovaný čas
+            ];
+
+            fieldsToHide.forEach(function(fieldId) {
+                var label = $('label[for="' + fieldId + '"]');
+                if(label.length){
+                    label.closest('p').hide();
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            hideFields();
+
+            // This triggers after Redmine reloads issue form via AJAX
+            $(document).on('ajax:success', '#issue-form', function() {
+                hideFields();
+            });
+        });
+    })(jQuery);
+</script>

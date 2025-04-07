@@ -41,11 +41,15 @@ def send_assignments_to_redmine(results):
 
 @app.route("/run_algorithm", methods=["POST"])
 def run_algorithm():
+
     # Redirect stdout to capture prints
     old_stdout = sys.stdout
     sys.stdout = mystdout = io.StringIO()
 
     try:
+        print()
+        allow_partial = request.json.get("partial_solution", False)
+        print(f"ℹ️ Partial solution allowed: {allow_partial}")
         print("📡 Fetching data from API (GET)...")
         json_data = fetch_json_from_api()
 
@@ -66,7 +70,7 @@ def run_algorithm():
             print(str(user))
 
         print("\n🔄 Running Matching Algorithm with Datetime Checks...")
-        results = match_issues_to_users(issues, users)
+        results = match_issues_to_users(issues, users, allow_partial)
 
         print("\n=== FINAL RESULTS ===")
         for issue_id, role_assignments in results.items():

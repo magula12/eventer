@@ -9,8 +9,8 @@ class EventerApiController < ApplicationController
       {
         id: issue.id,
         subject: issue.subject,
-        start_datetime: issue.start_date,
-        end_datetime: issue.due_date,
+        start_datetime: issue.start_datetime,
+        end_datetime: issue.end_datetime,
         category: issue.category&.name,
         category_priority: issue.category&.priority,
         priority: issue.priority&.name,

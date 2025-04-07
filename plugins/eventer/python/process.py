@@ -1,11 +1,16 @@
 from datetime import datetime
 from models import User, Issue
-import  algo_ILP
+import  algo_ILP, algo_greedy, algo_backtracking
 
-def match_issues_to_users(issues, users):
-    #results = algo_basic.basic(issues, users)
-    results = algo_ILP.ilp(issues, users)
-    return results
+def match_issues_to_users(issues, users, allow_partial=False, strategy="ilp"):
+    if strategy == "greedy":
+        return algo_greedy.greedy(issues, users)
+    elif strategy == "backtracking_basic":
+        return algo_backtracking.backtracking_basic(issues, users)
+    elif strategy == "backtracking_heuristic":
+        return algo_backtracking.backtracking_heuristic(issues, users)
+    else:
+        return algo_ILP.ilp(issues, users, allow_partial)
 
 
 def is_qualified_for_role(user, role, category):

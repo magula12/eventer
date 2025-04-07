@@ -2,9 +2,10 @@ import pulp
 from datetime import timedelta
 from models import User, Issue
 from filter_eval import evaluate_filter_block  # Import filter evaluation
+import algo_greedy
+import diagnostics
 
-
-def ilp(issues, users):
+def ilp(issues, users, allow_partial = False):
     """
     ILP-based assignment of users to issues with custom filtering.
     Returns a dictionary: { issue_id: { role_name: [list_of_assigned_user_ids] } }
@@ -83,7 +84,20 @@ def ilp(issues, users):
         role = ir["role"]
         req_count = ir["required_count"]
         vars_for_ir = [x[(i_id, u.id, role)] for u in users if (i_id, u.id, role) in x]
+        if not vars_for_ir:
+            print(f"⚠️ No available users for issue {i_id}, role '{role}' — Debug")
         model += pulp.lpSum(vars_for_ir) == req_count, f"ReqCount_{i_id}_{role}"
+
+    # Constraint: Prevent same user assigned to multiple roles within one issue
+    for issue in issues:
+        for user in users:
+            vars_same_issue = [
+                x[(issue.id, user.id, role.role)]
+                for role in issue.required_roles
+                if (issue.id, user.id, role.role) in x
+            ]
+            if vars_same_issue:
+                model += pulp.lpSum(vars_same_issue) <= 1, f"NoMultiRole_{issue.id}_{user.id}"
 
     # Helper: Check if two time periods overlap.
     def times_overlap(s1, e1, s2, e2):
@@ -112,6 +126,14 @@ def ilp(issues, users):
     model.solve(solver)
     if pulp.LpStatus[model.status] != "Optimal":
         print("Warning: ILP did not reach an optimal solution. Status:", pulp.LpStatus[model.status])
+        with open("infeasible_model.lp", "w", encoding="utf-8") as f:
+            f.write(str(model))
+        diagnostics.diagnose(issues, users)  # 🧠 Diagnostic trigger
+
+        if allow_partial:
+            print("🔍 Returning partial assignment...")
+            return algo_greedy.greedy(issues, users)
+        return {}  # No solution found
 
     # Parse the solution.
     assignment = {}
@@ -131,14 +153,12 @@ def ilp(issues, users):
     for issue in issues:
         if issue.id not in assignment:
             assignment[issue.id] = {}
-
     return assignment
-
 
 # Example usage:
 if __name__ == "__main__":
     # Load issues and users (this is just a placeholder)
     issues = []  # Your list of Issue objects
     users = []  # Your list of User objects
-    result = ilp(issues, users)
+    result = ilp(issues, users, allow_partial = False)
     print("Assignment:", result)

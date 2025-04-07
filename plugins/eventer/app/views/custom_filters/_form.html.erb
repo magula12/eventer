@@ -1,36 +1,35 @@
 <%= form_for filter do |f| %>
   <p>
-    <%= f.label :name, 'Názov filtra' %><br>
+    <%= f.label :name, l(:label_filter_name) %><br>
     <%= f.text_field :name, required: true %>
   </p>
 
-  <h3>Conditions (voliteľné)</h3>
+  <h3><%= l(:label_filter_conditions_header) %></h3>
   <p>
-    <strong>Podmienky:</strong>
-    <input type="radio" name="conditions_type" value="and" checked> AND
-    <input type="radio" name="conditions_type" value="or"> OR
+    <strong><%= l(:label_filter_conditions) %>:</strong>
+    <input type="radio" name="conditions_type" value="and" checked> <%= l(:label_and) %>
+    <input type="radio" name="conditions_type" value="or"> <%= l(:label_or) %>
   </p>
   <div id="conditions-container"></div>
-  <button type="button" onclick="addCondition('conditions-container')">+ Pridať podmienku</button>
+  <button type="button" onclick="addCondition('conditions-container')">+ <%= l(:label_add_condition) %></button>
 
-  <h3>Rules (povinné)</h3>
+  <h3><%= l(:label_filter_rules_header) %></h3>
   <p>
-    <strong>Pravidlá:</strong>
-    <input type="radio" name="rules_type" value="and" checked> AND
-    <input type="radio" name="rules_type" value="or"> OR
+    <strong><%= l(:label_filter_rules) %>:</strong>
+    <input type="radio" name="rules_type" value="and" checked> <%= l(:label_and) %>
+    <input type="radio" name="rules_type" value="or"> <%= l(:label_or) %>
   </p>
   <div id="rules-container"></div>
-  <button type="button" onclick="addCondition('rules-container')">+ Pridať pravidlo</button>
+  <button type="button" onclick="addCondition('rules-container')">+ <%= l(:label_add_rule) %></button>
+
+  <%= f.hidden_field :conditions, id: "conditions-hidden" %>
 
   <p>
-    <%= f.hidden_field :conditions, id: "conditions-hidden" %>
-  </p>
-
-  <p>
-    <%= f.submit 'Uložiť', class: 'button', onclick: "prepareJson()" %>
-    <%= link_to 'Späť', custom_filters_path, class: 'button' %>
+    <%= f.submit l(:button_save_filter), class: 'button', onclick: "prepareJson()" %>
+    <%= link_to l(:button_back), custom_filters_path, class: 'button' %>
   </p>
 <% end %>
+
 
 <script>
     const validVariables = [
@@ -47,7 +46,7 @@
         // 1) Text input (left)
         let valueInput = document.createElement("input");
         valueInput.type = "text";
-        valueInput.placeholder = "Hodnota / Premenná";
+        valueInput.placeholder = "<%= j l(:placeholder_variable_or_value) %>";
 
         // 2) Operator (middle)
         let opSelect = createDropdown(validOperators);

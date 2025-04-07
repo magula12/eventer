@@ -2,12 +2,25 @@
 
 <p>This page allows you to run the Python script and see the results right here.</p>
 
-<%= form_with url: run_script_algorithm_path, method: :post, local: true do %>
+<%= form_with url: run_script_algorithm_path, method: :post, local: true do |f| %>
+  <p>
+    <%= f.label :start_date, 'Start Date' %><br>
+    <%= f.date_field :start_date, value: Time.now.strftime('%Y-%m-%d') %>
+  </p>
+
+  <p>
+    <%= f.label :end_date, 'End Date' %><br>
+    <%= f.date_field :end_date, value: (Time.now + 7.days).strftime('%Y-%m-%d') %>
+  </p>
+
+  <p>
+    <%= f.check_box :partial_solution %>
+    <%= f.label :partial_solution, "Allow partial solution if no complete solution is found" %>
+  </p>
+
   <%= submit_tag "Run Python Algorithm" %>
 <% end %>
 
-<%= notice %>
-<%= alert %>
 <%= flash[:error] %>
 <%= flash[:warning] %>
 
