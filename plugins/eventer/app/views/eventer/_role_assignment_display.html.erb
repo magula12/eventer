@@ -1,15 +1,97 @@
 <% if @issue && @issue.issue_role_assignments.present? %>
-  <h3>Required Roles</h3>
-  <ul>
+  <div class="required-roles-container">
+    <h3><%= l(:label_required_roles) %></h3>
     <% @issue.issue_role_assignments.each do |assignment| %>
-      <li>
-        <%= assignment.role.name %> (Required: <%= assignment.required_count %>)
-        <ul>
-          <% User.where(id: assignment.assigned_user_ids).each do |user| %>
-            <li><%= user.name %></li>
-          <% end %>
-        </ul>
-      </li>
+      <div class="role-card">
+        <div class="role-header">
+          <span class="role-name"><%= h(assignment.role.name) %></span>
+          <span class="required-count"><%= l(:label_required_count) %>: <%= h(assignment.required_count) %></span>
+        </div>
+        <% users = User.where(id: assignment.assigned_user_ids).to_a %>
+        <% unless users.empty? %>
+          <div class="assigned-users">
+            <span class="assigned-users-label"><%= l(:label_assigned_users) %>:</span>
+            <ul class="assigned-users-list">
+              <% users.each do |user| %>
+                <li><%= h(user.name) %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-  </ul>
+  </div>
 <% end %>
+
+<style>
+    .required-roles-container {
+        max-width: 400px; /* Compact width */
+        margin: 0 0 15px 0; /* Left-aligned */
+        padding: 10px;
+        background: #f1f1dc;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .required-roles-container h3 {
+        color: #333;
+        font-size: 1.3em;
+        margin: 0 0 10px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #007bff;
+    }
+
+    .role-card {
+        background: #ffffdd;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        padding: 8px;
+        transition: background 0.2s ease;
+    }
+
+    .role-card:hover {
+        background: #ffffdd;
+    }
+
+    .role-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9em;
+    }
+
+    .role-name {
+        color: #333;
+        font-weight: 600;
+    }
+
+    .required-count {
+        color: #555;
+        font-size: 0.85em;
+    }
+
+    .assigned-users {
+        margin-top: 6px;
+        font-size: 0.85em;
+    }
+
+    .assigned-users-label {
+        color: #555;
+        font-weight: 500;
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    .assigned-users-list {
+        margin: 4px 0 0 15px;
+        padding: 0;
+        list-style-type: disc;
+    }
+
+    .assigned-users-list li {
+        color: #666;
+        margin: 2px 0;
+    }
+</style>

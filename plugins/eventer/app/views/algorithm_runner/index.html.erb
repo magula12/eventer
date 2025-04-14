@@ -1,32 +1,28 @@
-<h1>Algorithm Runner</h1>
+<h1><%= l(:label_algorithm_runner_title) %></h1>
 
-<p>This page allows you to run the Python script and see the results right here.</p>
+<p><%= l(:label_algorithm_runner_description) %></p>
 
 <%= form_with url: run_script_algorithm_path, method: :post, local: true do |f| %>
   <p>
-    <%= f.label :start_date, 'Start Date' %><br>
-    <%= f.date_field :start_date, value: Time.now.strftime('%Y-%m-%d') %>
-  </p>
-
-  <p>
-    <%= f.label :end_date, 'End Date' %><br>
-    <%= f.date_field :end_date, value: (Time.now + 7.days).strftime('%Y-%m-%d') %>
+    <%= f.check_box :enable_dates, checked: false, id: "enable_dates" %>
+    <%= f.label :enable_dates, l(:label_enable_date_range) %><br>
+    <%= f.date_field :start_date, value: Time.now.strftime('%Y-%m-%d'), id: "start_date", disabled: true %>
+    <%= f.date_field :end_date, value: (Time.now + 7.days).strftime('%Y-%m-%d'), id: "end_date", disabled: true %>
   </p>
 
   <p>
     <%= f.check_box :partial_solution %>
-    <%= f.label :partial_solution, "Allow partial solution if no complete solution is found" %>
+    <%= f.label :partial_solution, l(:label_partial_solution) %>
   </p>
 
-  <%= submit_tag "Run Python Algorithm" %>
+  <%= f.submit l(:button_run_algorithm) %>
 <% end %>
 
-<%= flash[:error] %>
-<%= flash[:warning] %>
-
 <% if @output.present? %>
-  <h2>Python Script Output</h2>
-  <div style="
+  <h2><%= l(:label_script_output_header) %></h2>
+  <button id="toggle_output" style="margin-bottom: 10px;"><%= l(:button_show_details) %></button>
+  <div id="output_container" style="
+  display: none;
     background: #f9f9f9;
     border: 1px solid #ccc;
     padding: 15px;
@@ -40,3 +36,41 @@
     <%= @output.html_safe %>
   </div>
 <% end %>
+
+<script>
+    // JavaScript to enable/disable date fields based on checkbox
+    document.addEventListener('DOMContentLoaded', function() {
+        const datesCheckbox = document.getElementById('enable_dates');
+        const startDateField = document.getElementById('start_date');
+        const endDateField = document.getElementById('end_date');
+
+        function toggleDates() {
+            const isEnabled = datesCheckbox.checked;
+            startDateField.disabled = !isEnabled;
+            endDateField.disabled = !isEnabled;
+            startDateField.style.backgroundColor = isEnabled ? '' : '#e0e0e0';
+            endDateField.style.backgroundColor = isEnabled ? '' : '#e0e0e0';
+        }
+
+        datesCheckbox.addEventListener('change', toggleDates);
+
+        // Initialize state
+        toggleDates();
+
+        // JavaScript to toggle output visibility
+        const toggleButton = document.getElementById('toggle_output');
+        const outputContainer = document.getElementById('output_container');
+
+        if (toggleButton && outputContainer) {
+            toggleButton.addEventListener('click', function() {
+                if (outputContainer.style.display === 'none') {
+                    outputContainer.style.display = 'block';
+                    toggleButton.textContent = '<%= l(:button_hide_details) %>';
+                } else {
+                    outputContainer.style.display = 'none';
+                    toggleButton.textContent = '<%= l(:button_show_details) %>';
+                }
+            });
+        }
+    });
+</script>

@@ -1,11 +1,11 @@
-<fieldset>
+<fieldset data-turbo="false">
   <legend>Required Roles</legend>
   <div id="roles-container">
     <!-- Example: One role block by default -->
     <div class="role-assignment">
       <select name="issue[role_assignments][0][role_id]">
-        <option value="" selected>Choose a role</option> <!-- Default blank option -->
-        <% Role.where.not(id: [1, 2]).each do |role| %>  <!-- Exclude roles with ID 1 & 2 -->
+        <option value="" selected>Choose a role</option>
+        <% Role.where.not(id: [1, 2]).each do |role| %>
           <option value="<%= role.id %>"><%= role.name %></option>
         <% end %>
       </select>
@@ -13,8 +13,8 @@
       <input type="number" name="issue[role_assignments][0][required_count]" min="1" value="1" />
 
       <div class="assignees">
-        <select multiple name="issue[role_assignments][0][assigned_user_ids][]">
-          <% User.where.not(id: 1).each do |user| %> <!-- Exclude user with ID 1 -->
+        <select multiple name="issue[role_assignments][0][assigned_user_ids][]" class="assignee-select">
+          <% User.where.not(id: 1).each do |user| %>
             <option value="<%= user.id %>"><%= user.name %></option>
           <% end %>
         </select>
@@ -28,43 +28,85 @@
   <a href="#" id="add-role">Add Another Role</a>
 </fieldset>
 
+<!-- Select2 Dependencies -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<style>
+    .select2-container {
+        width: 100% !important;
+    }
+    .assignees {
+        margin-top: 5px;
+    }
+</style>
+
 <script>
+    function initializeSelect2() {
+        // Destroy existing Select2 instances to avoid duplicates
+        $(".assignee-select").each(function() {
+            if ($(this).hasClass("select2-hidden-accessible")) {
+                $(this).select2("destroy");
+            }
+        });
+
+        // Initialize Select2 with current values preserved
+        $(".assignee-select").each(function() {
+            const $select = $(this);
+            const selectedValues = $select.val(); // Store current selections
+            $select.select2({
+                placeholder: "Select assignees",
+                allowClear: true,
+            });
+            if (selectedValues) {
+                $select.val(selectedValues).trigger("change"); // Restore selections
+            }
+        });
+        console.log("Select2 initialized for .assignee-select elements");
+    }
+
     function addRoleHandler(e) {
         if (e.target && e.target.id === "add-role") {
             e.preventDefault();
+            e.stopPropagation();
 
             const container = document.getElementById("roles-container");
-            const index = container.querySelectorAll(".role-assignment").length; // Ensure unique index
+            const index = container.querySelectorAll(".role-assignment").length;
 
-            console.log("Adding new role at index:", index); // Debugging
+            console.log("Adding new role at index:", index);
 
             const newField = document.createElement("div");
             newField.classList.add("role-assignment");
             newField.innerHTML = `
         <select name="issue[role_assignments][${index}][role_id]">
-          <option value="" selected>Choose a role</option> <!-- Default blank option -->
+          <option value="" selected>Choose a role</option>
           <%== Role.where.not(id: [1, 2]).map { |role| "<option value='#{role.id}'>#{role.name}</option>" }.join %>
         </select>
 
         <input type="number" name="issue[role_assignments][${index}][required_count]" min="1" value="1" />
 
         <div class="assignees">
-          <select multiple name="issue[role_assignments][${index}][assigned_user_ids][]">
+          <select multiple name="issue[role_assignments][${index}][assigned_user_ids][]" class="assignee-select">
             <%== User.where.not(id: 1).map { |user| "<option value='#{user.id}'>#{user.name}</option>" }.join %>
           </select>
         </div>
 
-        <!-- Remove Button -->
         <button type="button" class="remove-role" style="margin-left: 10px;">❌</button>
       `;
 
             container.appendChild(newField);
+            $(newField).find(".assignee-select").select2({
+                placeholder: "Select assignees",
+                allowClear: true,
+            });
         }
     }
 
     function removeRoleHandler(e) {
         if (e.target && e.target.classList.contains("remove-role")) {
             e.preventDefault();
+            e.stopPropagation();
 
             const roleAssignment = e.target.closest(".role-assignment");
             if (roleAssignment) {
@@ -78,11 +120,33 @@
     }
 
     function attachEventListeners() {
-        document.removeEventListener("click", addRoleHandler); // Prevent multiple bindings
-        document.removeEventListener("click", removeRoleHandler); // Prevent duplicate bindings
+        document.removeEventListener("click", addRoleHandler);
+        document.removeEventListener("click", removeRoleHandler);
         document.addEventListener("click", addRoleHandler);
         document.addEventListener("click", removeRoleHandler);
     }
 
-    document.addEventListener("DOMContentLoaded", attachEventListeners);
+    // Initial load
+    document.addEventListener("DOMContentLoaded", function () {
+        initializeSelect2();
+        attachEventListeners();
+        console.log("Page loaded, event listeners attached");
+    });
+
+    // Handle Turbo updates
+    document.addEventListener("turbo:load", function () {
+        initializeSelect2();
+        attachEventListeners();
+        console.log("Turbo reload detected, re-initialized");
+    });
+
+    // Handle Redmine AJAX updates
+    $(document).ajaxComplete(function(event, xhr, settings) {
+        // Check if this is a Redmine form update
+        if (settings.url.includes("/issues/new.js") || settings.url.includes("/issues/update_form")) {
+            console.log("AJAX form update detected, re-initializing Select2");
+            initializeSelect2();
+            attachEventListeners();
+        }
+    });
 </script>

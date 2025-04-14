@@ -6,6 +6,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 
 from models import Issue, User
 from process import match_issues_to_users
+#sys.setrecursionlimit(5000)  # Adjust as needed
 
 
 # Load benchmark data

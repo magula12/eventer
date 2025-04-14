@@ -54,10 +54,12 @@ class AlgorithmRunnerController < ApplicationController
         json = JSON.parse(response.body)
         @output = json["output"]
 
-        if @output.include?("Assignments posted successfully")
-          flash.now[:notice] = "✅ Solutions from the algorithm were successfully saved into Redmine."
-        else
-          flash.now[:notice] = "✅ Python script ran successfully!"
+        if @output.include?("ILP did not reach an optimal solution")
+          flash.now[:warning] = "Infeasible solution found."
+          else
+            if @output.include?("Assignments posted successfully!")
+              flash.now[:notice] = "✅ Python script ran successfully!"
+            end
         end
 
       rescue => e

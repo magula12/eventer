@@ -100,3 +100,51 @@ def basic(issues, users):
             results[issue.id][role_name] = assigned_list
 
     return results
+
+from plugins.eventer.python.process import is_qualified_for_role
+
+def very_basic(issues, users):
+    """
+    Very basic assignment of users to issues using simple loops.
+    Only checks:
+      1. Role qualifications (role + category if needed)
+      2. Basic availability (off-days via user.is_available)
+    No overlaps, no ratings, no pre-existing assignments, no partial solutions.
+    """
+    results = {}
+
+    print("\n==== Very Basic Matching Algorithm ====")
+
+    for issue in issues:
+        print(f"\n=== Matching for Issue: {issue.subject} (ID={issue.id}) ===")
+        results[issue.id] = {}
+
+        for req_role in issue.required_roles:
+            role_name = req_role.role
+            required_count = req_role.required_count
+            assigned_list = []
+
+            print(f"  - Assigning {required_count} user(s) for role '{role_name}'.")
+
+            # Loop through users and assign the first qualified and available ones
+            for user in users:
+                if len(assigned_list) == required_count:
+                    break  # Stop once we have enough
+
+                # Check if user is qualified
+                if not is_qualified_for_role(user, role_name, issue.category):
+                    continue
+
+                # Check basic availability (off-days)
+                if not user.is_available(issue.start_datetime, issue.end_datetime):
+                    continue
+
+                # Assign the user
+                assigned_list.append(user.id)
+                print(f"    + Assigned: {user.firstname} {user.lastname}")
+
+            results[issue.id][role_name] = assigned_list
+            if len(assigned_list) < required_count:
+                print(f"    ❌ Failed to assign enough users for '{role_name}' (got {len(assigned_list)} of {required_count}).")
+
+    return results

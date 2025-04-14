@@ -1,12 +1,97 @@
-<h1>Users Data List</h1>
+<h1><%= l(:label_users_data_title) %></h1>
 
-<!-- Link to the new "Algorithm Runner" page -->
 <p>
-  <%= link_to "Go to Algorithm Runner", algorithm_runner_path, class: "button" %>
+  <%= link_to l(:button_go_to_algorithm_runner), algorithm_runner_path, class: "button button-enhanced" %>
 </p>
 
-<ul>
-  <% @users_data.each do |user_data| %>
-    <li><%= link_to user_data.name, users_datum_path(user_data) %></li>
-  <% end %>
-</ul>
+<% if @users_data.empty? %>
+  <p class="no-data"><%= l(:label_no_users_data) %></p>
+<% else %>
+  <table class="users-data-table">
+    <thead>
+    <tr>
+      <th>
+        <%= link_to l(:label_name),
+                    users_data_path(sort_by: (params[:sort_by] == "name_asc" ? "name_desc" : "name_asc")),
+                    class: params[:sort_by]&.start_with?("name") ? "sorted" : "" %>
+      </th>
+      <th><%= l(:label_email) %></th>
+      <th>
+        <%= link_to l(:label_created_at),
+                    users_data_path(sort_by: (params[:sort_by] == "created_at_asc" ? "created_at_desc" : "created_at_asc")),
+                    class: params[:sort_by]&.start_with?("created_at") ? "sorted" : "" %>
+      </th>
+      <th><%= l(:label_actions) %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @users_data.each do |user_data| %>
+      <tr>
+        <td><%= link_to h(user_data.name || user_data.login || l(:label_not_available)), users_datum_path(user_data) %></td>
+        <td><%= h(user_data.respond_to?(:mail) && user_data.mail.present? ? user_data.mail : l(:label_not_available)) %></td>
+        <td>
+          <%= link_to l(:button_view), users_datum_path(user_data), class: "action-link" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<style>
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    .button-enhanced {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .button-enhanced:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transform: translateY(-1px);
+    }
+    .button-enhanced:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    }
+    .users-data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    .users-data-table th,
+    .users-data-table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+    .users-data-table th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+    }
+    .users-data-table th.sorted {
+        background-color: #e0e0e0;
+    }
+    .users-data-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    .users-data-table tr:hover {
+        background-color: #f1f1f1;
+    }
+    .action-link {
+        color: #007bff;
+        text-decoration: none;
+    }
+    .action-link:hover {
+        text-decoration: underline;
+    }
+    .no-data {
+        color: #888;
+        font-style: italic;
+    }
+</style>

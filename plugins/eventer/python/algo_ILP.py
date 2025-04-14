@@ -5,10 +5,16 @@ from filter_eval import evaluate_filter_block  # Import filter evaluation
 import algo_greedy
 import diagnostics
 
-def ilp(issues, users, allow_partial = False):
+def ilp(issues, users, allow_partial=False, filter_penalty=100):
     """
-    ILP-based assignment of users to issues with custom filtering.
-    Returns a dictionary: { issue_id: { role_name: [list_of_assigned_user_ids] } }
+    ILP-based assignment of users to issues with custom filtering as a soft constraint.
+    Args:
+        issues: List of Issue objects.
+        users: List of User objects.
+        allow_partial: If True, falls back to greedy if ILP is infeasible.
+        filter_penalty: Penalty for assigning a user who fails custom filters.
+    Returns:
+        Dictionary: { issue_id: { role_name: [list_of_assigned_user_ids] } }
     """
     # Ensure every issue has an end_datetime: default to start_datetime + 3 hours if None.
     for issue in issues:
@@ -35,6 +41,7 @@ def ilp(issues, users, allow_partial = False):
     # Create the ILP model.
     model = pulp.LpProblem("Issue_Assignment", pulp.LpMaximize)
     x = {}  # Decision variables: keys (issue_id, user_id, role) -> binary variable
+    filter_violations = {}  # Track filter violations: keys (issue_id, user_id, role) -> 0 or 1
 
     # Helper function: returns user's rating for (role, category) or 0 if unqualified.
     def get_rating(user, role, category):
@@ -43,7 +50,7 @@ def ilp(issues, users, allow_partial = False):
                 return q.rating
         return 0
 
-    # Create decision variables only if the user is qualified, available, and passes custom filters.
+    # Create decision variables for qualified and available users, track filter violations.
     for ir in issue_roles:
         i_id = ir["issue_id"]
         role = ir["role"]
@@ -56,27 +63,30 @@ def ilp(issues, users, allow_partial = False):
             if not user.is_available(ir["start"], ir["end"]):
                 continue  # User not available
 
-            # 🚀 **Check if the user passes their custom filters for this issue**
+            # 🚀 **Evaluate custom filters, but allow variable creation**
             issue_context = {
                 "category": ir["category"],
                 "start_time": ir["start"],
                 "end_time": ir["end"],
-                "assigned_users": []  # We can extend this if needed
+                "assigned_users": []  # Extendable if needed
             }
 
-            # If any of the user's filters return `False`, skip the user
-            if any(not evaluate_filter_block(cf.conditions, issue_context) for cf in user.custom_filters):
-                continue  # User fails filter
+            # Check if user fails any filter
+            fails_filter = any(not evaluate_filter_block(cf.conditions, issue_context)
+                              for cf in user.custom_filters)
+            filter_violations[(i_id, user.id, role)] = 1 if fails_filter else 0
 
             var_name = f"x_{i_id}_{user.id}_{role}"
             x[(i_id, user.id, role)] = pulp.LpVariable(var_name, cat=pulp.LpBinary)
 
-    # Objective: maximize the total rating of assignments.
+    # Objective: maximize total rating, penalize filter violations.
     model += pulp.lpSum(
-        get_rating(u, ir["role"], ir["category"]) * x[(ir["issue_id"], u.id, ir["role"])]
+        (get_rating(u, ir["role"], ir["category"]) -
+         filter_penalty * filter_violations.get((ir["issue_id"], u.id, ir["role"]), 0)) *
+        x[(ir["issue_id"], u.id, ir["role"])]
         for ir in issue_roles
         for u in users if (ir["issue_id"], u.id, ir["role"]) in x
-    ), "Total_Rating"
+    ), "Total_Rating_With_Penalties"
 
     # Constraint 1: For each issue-role, assign exactly the required number of users.
     for ir in issue_roles:
@@ -147,6 +157,9 @@ def ilp(issues, users, allow_partial = False):
         for u in users:
             key = (i_id, u.id, role)
             if key in x and pulp.value(x[key]) == 1:
+                # Log if filter was violated for debugging
+                if filter_violations.get(key, 0) == 1:
+                    print(f"⚠️ User {u.id} assigned to issue {i_id}, role {role} despite failing filter")
                 assignment[i_id][role].append(u.id)
 
     # Ensure all issues exist in the assignment dictionary.
@@ -157,8 +170,8 @@ def ilp(issues, users, allow_partial = False):
 
 # Example usage:
 if __name__ == "__main__":
-    # Load issues and users (this is just a placeholder)
+    # Load issues and users (placeholder)
     issues = []  # Your list of Issue objects
     users = []  # Your list of User objects
-    result = ilp(issues, users, allow_partial = False)
+    result = ilp(issues, users, allow_partial=False, filter_penalty=100)
     print("Assignment:", result)

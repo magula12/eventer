@@ -1,6 +1,6 @@
 from datetime import datetime
 from models import User, Issue
-import  algo_ILP, algo_greedy, algo_backtracking
+import  algo_ILP, algo_greedy, algo_backtracking, algo_smart_greedy
 
 def match_issues_to_users(issues, users, allow_partial=False, strategy="ilp"):
     if strategy == "greedy":
@@ -9,6 +9,8 @@ def match_issues_to_users(issues, users, allow_partial=False, strategy="ilp"):
         return algo_backtracking.backtracking_basic(issues, users)
     elif strategy == "backtracking_heuristic":
         return algo_backtracking.backtracking_heuristic(issues, users)
+    elif strategy == "smart_greedy":
+        return algo_smart_greedy.smart_greedy(issues, users)
     else:
         return algo_ILP.ilp(issues, users, allow_partial)
 

@@ -75,8 +75,6 @@ def greedy(issues, users):
             assignment[issue.id][role] = assigned_users
 
     return assignment
-
-
 def times_overlap(s1, e1, s2, e2):
     e1 = e1 if e1 is not None else s1 + timedelta(hours=3)
     e2 = e2 if e2 is not None else s2 + timedelta(hours=3)
