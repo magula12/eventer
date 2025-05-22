@@ -55,4 +55,5 @@ sk:
   label_role_name: "Rola"
   label_required_count: "Požadovaný Počet"
   label_assigned_users: "Priradení Používatelia"
+  field_assigned_users: "Priradení Používatelia"
 

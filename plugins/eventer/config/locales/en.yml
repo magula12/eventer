@@ -55,3 +55,4 @@ en:
   label_role_name: "Role"
   label_required_count: "Required Count"
   label_assigned_users: "Assigned Users"
+  field_assigned_users: "Assigned Users"

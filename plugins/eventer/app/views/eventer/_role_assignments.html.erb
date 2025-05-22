@@ -1,16 +1,16 @@
 <fieldset data-turbo="false">
-  <legend>Required Roles</legend>
+  <legend>Required Roles <span class="required">*</span></legend>
   <div id="roles-container">
     <!-- Example: One role block by default -->
     <div class="role-assignment">
-      <select name="issue[role_assignments][0][role_id]">
+      <select name="issue[role_assignments][0][role_id]" required>
         <option value="" selected>Choose a role</option>
         <% Role.where.not(id: [1, 2]).each do |role| %>
           <option value="<%= role.id %>"><%= role.name %></option>
         <% end %>
       </select>
 
-      <input type="number" name="issue[role_assignments][0][required_count]" min="1" value="1" />
+      <input type="number" name="issue[role_assignments][0][required_count]" min="1" value="1" required/>
 
       <div class="assignees">
         <select multiple name="issue[role_assignments][0][assigned_user_ids][]" class="assignee-select">

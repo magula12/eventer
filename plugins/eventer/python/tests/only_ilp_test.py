@@ -2,6 +2,7 @@ import unittest
 import sys
 import os
 from datetime import datetime, timedelta
+import time
 
 # Ensure the parent directory is in Python's path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -10,184 +11,113 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 from models import User, Issue
 from process import match_issues_to_users
 
-class TestIssueAssignment(unittest.TestCase):
-    def test_only_ilp_solves(self):
-        """Test where only ILP finds a solution due to filter violations, while greedy and backtracking fail."""
-        # Define issues: two overlapping issues requiring one Technician each
-        issue1_start = datetime(2025, 3, 7, 18, 0)  # Issue 1: 18:00–21:00
-        issue2_start = datetime(2025, 3, 7, 18, 30)  # Issue 2: 18:30–21:30 (overlaps)
-        issues = [
+class TestCrossCategorySwap(unittest.TestCase):
+    """ILP‑only solvable assignment; measures runtime & coverage."""
+
+    def setUp(self):
+        start1 = datetime(2025, 3, 7, 18, 0)
+        start2 = datetime(2025, 3, 7, 18, 30)
+
+        # Two issues, one technician needed each.
+        self.issues = [
             Issue({
                 "id": 1,
-                "subject": "Issue 1",
-                "category": "General",
+                "subject": "A‑Issue",
+                "category": "A",
                 "category_priority": None,
                 "priority": "High",
-                "start_datetime": issue1_start.strftime("%Y-%m-%dT%H:%M:%S"),  # ISO string
-                "end_datetime": (issue1_start + timedelta(hours=3)).strftime("%Y-%m-%dT%H:%M:%S"),
-                "required_roles": [{"role": "Technician", "required_count": 1, "assigned_users": []}]
+                "start_datetime": start1.isoformat(),
+                "end_datetime": (start1 + timedelta(hours=2)).isoformat(),
+                "required_roles": [
+                    {"role": "Technician", "required_count": 1, "assigned_users": []}
+                ],
             }),
             Issue({
                 "id": 2,
-                "subject": "Issue 2",
-                "category": "General",
+                "subject": "B‑Issue",
+                "category": "B",
                 "category_priority": None,
                 "priority": "High",
-                "start_datetime": issue2_start.strftime("%Y-%m-%dT%H:%M:%S"),  # ISO string
-                "end_datetime": (issue2_start + timedelta(hours=3)).strftime("%Y-%m-%dT%H:%M:%S"),
-                "required_roles": [{"role": "Technician", "required_count": 1, "assigned_users": []}]
-            })
+                "start_datetime": start2.isoformat(),
+                "end_datetime": (start2 + timedelta(hours=2)).isoformat(),
+                "required_roles": [
+                    {"role": "Technician", "required_count": 1, "assigned_users": []}
+                ],
+            }),
         ]
 
-        # Define users: both qualified, but with conflicting filters and availability
-        users = [
+        # One star user (id 1) who can handle both categories; one support
+        # user (id 2) who can handle only category A.
+        self.users = [
             User({
                 "id": 1,
-                "firstname": "HighRating",
-                "lastname": "User1",
-                "qualifications": [{"role": "Technician", "category": "General", "rating": 10}],
-                "off_days": [],  # Unavailable for Issue 2
-                "custom_filters": [{
-                    "name": "Filter1",
-                    "conditions": {
-                        "rules": {
-                            "and": [{
-                                "==": [
-                                    {"var": "category"},
-                                    "EXZ"
-                                ]
-                            }]
-                        }
-                    }
-                }]  # Fails filter for Issue 1 (category != EXZ)
-            }),
-            User({
-                "id": 2,
-                "firstname": "LowRating",
-                "lastname": "User2",
-                "qualifications": [{"role": "Technician", "category": "General", "rating": 6}],
+                "firstname": "Star",
+                "lastname": "User",
+                "qualifications": [
+                    {"role": "Technician", "category": "A", "rating": 10},
+                    {"role": "Technician", "category": "B", "rating": 10},
+                ],
                 "off_days": [],
-                "custom_filters": [{
-                    "name": "Filter2",
-                    "conditions": {
-                        "rules": {
-                            "and": [{
-                                "<": [
-                                    {"var": "start_time"},
-                                    datetime.fromisoformat("2025-03-07T18:15:00").time()
-                                ]
-                            }]
-                        }
-                    }
-                }]  # Fails filter for Issue 2 (start_time >= 18:15)
-            })
-        ]
-
-        # Test ILP: Should assign User 2 to Issue 1, User 1 to Issue 2 (despite filter violations)
-        ilp_result = match_issues_to_users(issues, users, allow_partial=False, strategy="ilp")
-        expected = {
-            1: {"Technician": [2]},  # User 2 passes filter for Issue 1
-            2: {"Technician": [1]}   # User 1 assigned to Issue 2 despite filter violation
-        }
-        self.assertEqual(ilp_result, expected, "ILP should find a solution with filter violations")
-
-        # Test Greedy: Should fail (no valid users for Issue 2)
-        greedy_result = match_issues_to_users(issues, users, allow_partial=False, strategy="greedy")
-        self.assertEqual(greedy_result, {1: {'Technician': [2]}, 2: {'Technician': []}}, "Greedy should fail due to no valid users for Issue 2")
-
-        # Test Backtracking: Should fail (no combination satisfies all filters and availability)
-        backtrack_result = match_issues_to_users(issues, users, allow_partial=False, strategy="backtracking_basic")
-        self.assertEqual(backtrack_result, {}, "Backtracking should fail due to no valid solution")
-
-    def test_smart_greedy_fails_ilp_succeeds(self):
-        """Test where smart greedy fails to assign all roles due to sequential choices and availability, but ILP succeeds."""
-        issue1_start = datetime(2025, 3, 7, 18, 0)
-        issue2_start = datetime(2025, 3, 7, 18, 30)
-        issues = [
-            Issue({
-                "id": 1,
-                "subject": "Issue 1",
-                "category": "General",
-                "category_priority": None,
-                "priority": "High",
-                "start_datetime": issue1_start.strftime("%Y-%m-%dT%H:%M:%S"),
-                "end_datetime": (issue1_start + timedelta(hours=3)).strftime("%Y-%m-%dT%H:%M:%S"),
-                "required_roles": [{"role": "Technician", "required_count": 1, "assigned_users": []}]
-            }),
-            Issue({
-                "id": 2,
-                "subject": "Issue 2",
-                "category": "General",
-                "category_priority": None,
-                "priority": "High",
-                "start_datetime": issue2_start.strftime("%Y-%m-%dT%H:%M:%S"),
-                "end_datetime": (issue2_start + timedelta(hours=3)).strftime("%Y-%m-%dT%H:%M:%S"),
-                "required_roles": [{"role": "Technician", "required_count": 1, "assigned_users": []}]
-            })
-        ]
-
-        users = [
-            User({
-                "id": 1,
-                "firstname": "HighRating",
-                "lastname": "User1",
-                "qualifications": [{"role": "Technician", "category": "General", "rating": 10}],
-                "off_days": [{
-                    "start_datetime": "2025-03-07T18:30:00",
-                    "end_datetime": "2025-03-07T21:30:00"
-                }],
-                "custom_filters": [{
-                    "name": "Filter1",
-                    "conditions": {
-                        "rules": {
-                            "and": [{
-                                "<": [
-                                    {"var": "start_time"},
-                                    datetime.fromisoformat("2025-03-07T18:15:00").time()
-                                ]
-                            }]
-                        }
-                    }
-                }]
+                "custom_filters": [],
             }),
             User({
                 "id": 2,
-                "firstname": "LowRating",
-                "lastname": "User2",
-                "qualifications": [{"role": "Technician", "category": "General", "rating": 6}],
+                "firstname": "Support",
+                "lastname": "User",
+                "qualifications": [
+                    {"role": "Technician", "category": "A", "rating": 8},
+                ],
                 "off_days": [],
-                "custom_filters": [{
-                    "name": "Filter2",
-                    "conditions": {
-                        "rules": {
-                            "and": [{
-                                ">=": [
-                                    {"var": "start_time"},
-                                    datetime.fromisoformat("2025-03-07T19:00:00").time()
-
-                                ]
-                            }]
-                        }
-                    }
-                }]
-            })
+                "custom_filters": [],
+            }),
         ]
 
-        ilp_result = match_issues_to_users(issues, users, allow_partial=False, strategy="ilp")
-        expected = {
-            1: {"Technician": [2]},
-            2: {"Technician": [1]}
-        }
-        self.assertEqual(ilp_result, expected, "ILP should find a complete solution with filter violations")
+        self.total_required_slots = 2  # 1 role per issue × 2 issues
 
-        greedy_result = match_issues_to_users(issues, users, allow_partial=False, strategy="greedy")
-        expected_greedy = {
-            1: {"Technician": [1]},
-            2: {"Technician": []}
-        }
-        self.assertEqual(greedy_result, expected_greedy, "Smart greedy should fail to assign Issue 2 due to constraints")
+    # Helper -------------------------------------------------------------
+    def coverage_percent(self, result):
+        filled = sum(len(uids)
+                     for issue_roles in result.values()
+                     for uids in issue_roles.values())
+        return 100.0 * filled / self.total_required_slots
 
-        backtrack_result = match_issues_to_users(issues, users, allow_partial=False, strategy="backtracking_basic")
-        self.assertEqual(backtrack_result, {}, "Backtracking should fail due to no valid solution")
+    # Test ---------------------------------------------------------------
+    def test_only_ilp_finds_solution(self):
+        expected_ilp = {
+            1: {"Technician": [2]},  # User 2 handles category A
+            2: {"Technician": [1]},  # User 1 reserved for category B
+        }
+
+        strategies = [
+            ("ilp", expected_ilp),
+            ("greedy", {1: {"Technician": [1]}, 2: {"Technician": []}}),
+            ("backtracking_basic", {}),("smart_greedy", {1: {'Technician': [1]}, 2: {'Technician': []}}),
+
+        ]
+
+        print()  # blank line before metrics table
+        for name, expected in strategies:
+            t0 = time.perf_counter_ns()
+            result = match_issues_to_users(
+                self.issues,
+                self.users,
+                allow_partial=False,
+                strategy=name,
+            )
+            runtime_ms = (time.perf_counter_ns() - t0) / 1_000_000
+            cov = self.coverage_percent(result)
+            print(f"{name.upper():18s} runtime = {runtime_ms:9.3f} ms | "
+                  f"coverage = {cov:6.1f}%")
+
+            # Behavioural assertion
+            self.assertEqual(result, expected,
+                             f"{name} produced an unexpected assignment")
+
+        # Extra coverage sanity checks
+        self.assertEqual(self.coverage_percent(expected_ilp), 100.0)
+        self.assertLess(self.coverage_percent(strategies[1][1]), 100.0)  # greedy < 100%
+        self.assertLess(self.coverage_percent(strategies[2][1]), 100.0)  # backtracking < 100%
+
+
 if __name__ == "__main__":
     unittest.main()

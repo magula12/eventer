@@ -169,8 +169,7 @@ def ilp(issues, users, allow_partial=False, filter_penalty=100):
     return assignment
 
 # Example usage:
-if __name__ == "__main__":
-    # Load issues and users (placeholder)
+if __name__ == "__main__": 
     issues = []  # Your list of Issue objects
     users = []  # Your list of User objects
     result = ilp(issues, users, allow_partial=False, filter_penalty=100)

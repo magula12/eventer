@@ -12,7 +12,7 @@ def match_issues_to_users(issues, users, allow_partial=False, strategy="ilp"):
     elif strategy == "smart_greedy":
         return algo_smart_greedy.smart_greedy(issues, users)
     else:
-        return algo_ILP.ilp(issues, users, allow_partial)
+        return algo_ILP.ilp(issues, users, allow_partial,filter_penalty=0)
 
 
 def is_qualified_for_role(user, role, category):

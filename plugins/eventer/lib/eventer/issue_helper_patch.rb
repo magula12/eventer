@@ -16,8 +16,7 @@ module Eventer
   end
 end
 
-Rails.configuration.to_prepare do
-  unless IssuesHelper.included_modules.include?(Eventer::IssueHelperPatch)
-    IssuesHelper.send(:include, Eventer::IssueHelperPatch)
-  end
-end
+# unless IssuesHelper.included_modules.include?(Eventer::IssueHelperPatch)
+#   IssuesHelper.send(:include, Eventer::IssueHelperPatch)
+#   Rails.logger.info 'Eventer::IssuesControllerPatch included'
+# end
