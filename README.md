@@ -7,6 +7,9 @@
 ### Description
 Eventer is a Redmine plugin that is mainly developed for management automation of employee assignments to issues, tasks, or events. It helps streamline the process of matching qualified team members with appropriate tasks based on their skills and availability.
 
+## Documentation
+- [User Manual](docs/user_manual.md)
+- 
 ### Requirements
 - Redmine version: 6.0.2
 - Ruby version: (included in Redmine image)
@@ -89,6 +92,9 @@ This project is licensed under the GNU General Public License v3.0 - see the LIC
 
 ### Popis
 Eventer je Redmine plugin, ktorý je primárne vyvíjaný pre automatizáciu manažmentu priradenia zamestnancov k problémom, úlohám alebo udalostiam. Pomáha zefektívniť proces priraďovania kvalifikovaných členov tímu k vhodným úlohám na základe ich zručností a dostupnosti.
+
+## Dokumentácia
+- [Používateľská príručka](docs/user_manual.md)
 
 ### Požiadavky
 - Redmine verzia: 6.0.2
