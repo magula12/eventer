@@ -9,7 +9,7 @@ Eventer is a Redmine plugin that is mainly developed for management automation o
 
 ## Documentation
 - [User Manual](docs/user_manual.md)
-- 
+
 ### Requirements
 - Redmine version: 6.0.2
 - Ruby version: (included in Redmine image)
