@@ -23,9 +23,7 @@ class OffDay:
 
     def conflicts_with(self, start, end):
             if end is None:
-                # If the event has no end, treat it as an instant or indefinite
                 return (self.start_datetime <= start <= self.end_datetime)
-            # overlap check
             return not (self.end_datetime < start or self.start_datetime > end)
 
 
@@ -65,13 +63,10 @@ class User:
         self.login = user_data.get("login", "")
         self.firstname = user_data["firstname"]
         self.lastname = user_data["lastname"]
-        # Build qualifications
         self.qualifications = [
             Qualification(**q) for q in user_data.get("qualifications", [])
         ]
-        # Build off-days
         self.off_days = [OffDay(**od) for od in user_data.get("off_days", [])]
-        # Build custom filters
         self.custom_filters = [CustomFilter(**cf) for cf in user_data.get("custom_filters", [])]
 
 
@@ -79,24 +74,16 @@ class User:
         return f"User: {self.firstname} {self.lastname} ({self.login})"
 
     def is_available(self, start: datetime, end: datetime) -> bool:
-        """
-        True if user is NOT on off-day for this timeframe.
-        This doesn't check assignment conflicts (issue overlap).
-        """
         for off_day in self.off_days:
             if off_day.conflicts_with(start, end):
                 return False
         return True
 
     def get_role_rating(self, role: str, category: str) -> int:
-        """
-        Returns the user's rating for a given role in a specific category.
-        If the user is not qualified for the role in that category, returns 0.
-        """
         for qualification in self.qualifications:
             if qualification.role == role and qualification.category == category:
                 return qualification.rating
-        return 0  # If the user is not qualified, return 0
+        return 0
 
 
 
@@ -104,7 +91,6 @@ class RequiredRole:
     def __init__(self, role: str, required_count: int, assigned_users: List[Dict]):
         self.role = role
         self.required_count = required_count
-        # Each assigned_user is partial data. We'll adapt it to full 'User' if possible.
         self.assigned_users = [User(u) for u in assigned_users]
 
     def __repr__(self):
@@ -118,8 +104,6 @@ class Issue:
         self.category = issue_data["category"]
         self.category_priority = issue_data["category_priority"]
         self.priority = issue_data["priority"]
-
-        # Use your custom parse_datetime function for start_datetime
         self.start_datetime = parse_datetime(issue_data["start_datetime"])
         if self.start_datetime is None:
             raise ValueError("start_datetime is required and could not be parsed.")
@@ -138,7 +122,6 @@ class Issue:
 
 
 def initialize_data(json_data):
-    """Create lists of Issue and User objects from JSON."""
     issues = [Issue(i) for i in json_data["issues"]]
     users = [User(u) for u in json_data["users"]]
     return issues, users

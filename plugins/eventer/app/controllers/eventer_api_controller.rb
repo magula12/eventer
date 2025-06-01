@@ -2,7 +2,7 @@
 class EventerApiController < ApplicationController
   accept_api_auth :index, :create_assignments
 
-  # GET /eventer_api.json
+  # POST to /eventer_api.json
   def index
     # existing code for fetching data
     issues = Issue.includes(:issue_role_assignments, :category).limit(10).map do |issue|
@@ -61,7 +61,7 @@ class EventerApiController < ApplicationController
     render json: { issues: issues, users: users }
   end
 
-  # POST /eventer_api.json
+  # POST from /eventer_api.json
   def create_assignments
     Rails.logger.info "CREATE_ASSIGNMENTS: Start processing POST data."
 

@@ -1,4 +1,5 @@
 # plugins/eventer/lib/eventer/issue_patch.rb
+#TODO: Tidy up this file, remove unnecessary comments, and ensure it works as expected
 module Eventer
   module IssuePatch
     extend ActiveSupport::Concern
@@ -19,7 +20,7 @@ module Eventer
           issue_role_assignments.pluck(:assigned_user_ids).flatten.uniq.map(&:to_i).reject(&:zero?)
         end
         def assigned_user_ids=(user_ids)
-          Rails.logger.info "Was called mate! #{user_ids.inspect}"
+          #Rails.logger.info "Was called mate! #{user_ids.inspect}"
         end
 
         # Override assigned_to to maintain compatibility
@@ -36,13 +37,13 @@ module Eventer
           role = Role.first || Role.create(name: 'Default', position: 1)
           issue_role_assignments.destroy_all
           issue_role_assignments.create(role_id: role.id, required_count: 1, assigned_user_ids: user_ids)
-          Rails.logger.debug "Set assigned_user_ids for issue #{id || 'new'}: #{user_ids.join(', ')}"
+          #Rails.logger.info "Set assigned_user_ids for issue #{id || 'new'}: #{user_ids.join(', ')}"
         end
 
         # Override the assigned_to scope
         singleton_class.class_eval do
           def assigned_to(arg)
-            Rails.logger.debug "Entering assigned_to scope with arg: #{arg.inspect}"
+            #Rails.logger.info "Entering assigned_to scope with arg: #{arg.inspect}"
             arg = Array(arg).uniq
             ids = arg.map { |p| p.is_a?(Principal) ? p.id : p }
             ids += arg.select { |p| p.is_a?(User) }.map(&:group_ids).flatten.uniq
@@ -60,7 +61,7 @@ module Eventer
           return unless issues.any?
 
           issue_ids = issues.map(&:id)
-          Rails.logger.debug "Loading visible relations for issue IDs: #{issue_ids.join(', ')}"
+          #Rails.logger.info "Loading visible relations for issue IDs: #{issue_ids.join(', ')}"
           begin
             relations = IssueRelation.where("issue_from_id IN (:ids) OR issue_to_id IN (:ids)", ids: issue_ids)
             relations = relations.select do |relation|
@@ -74,7 +75,7 @@ module Eventer
               issues.detect { |issue| issue.id == relation.issue_from_id }&.relations << relation
               issues.detect { |issue| issue.id == relation.issue_to_id }&.relations << relation
             end
-            Rails.logger.debug "Loaded #{relations.size} visible relations"
+            #Rails.logger.info "Loaded #{relations.size} visible relations"
           rescue ActiveRecord::StatementInvalid => e
             Rails.logger.error "Error loading visible relations: #{e.message}"
           end
@@ -82,7 +83,7 @@ module Eventer
 
         # Override visible_condition
         def self.visible_condition(user, options={})
-          Rails.logger.info "Entering custom visible_condition for user #{user&.id || 'anonymous'}"
+          #Rails.logger.info "Entering custom visible_condition for user #{user&.id || 'anonymous'}"
           begin
             Project.allowed_to_condition(user, :view_issues, options) do |role, user|
               sql =
@@ -115,7 +116,7 @@ module Eventer
                   sql = '1=0'
                 end
               end
-              Rails.logger.info "Generated visible_condition SQL for user #{user&.id || 'anonymous'}: #{sql}"
+              #Rails.logger.info "Generated visible_condition SQL for user #{user&.id || 'anonymous'}: #{sql}"
               sql
             end
           rescue ActiveRecord::StatementInvalid => e
@@ -130,7 +131,6 @@ module Eventer
   end
 end
 
-# Apply patch
 unless Issue.included_modules.include?(Eventer::IssuePatch)
   Issue.send(:include, Eventer::IssuePatch)
   Rails.logger.info 'Eventer::IssuePatch included'

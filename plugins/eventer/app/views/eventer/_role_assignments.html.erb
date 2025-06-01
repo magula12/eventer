@@ -1,7 +1,6 @@
 <fieldset data-turbo="false">
   <legend>Required Roles <span class="required">*</span></legend>
   <div id="roles-container">
-    <!-- Example: One role block by default -->
     <div class="role-assignment">
       <select name="issue[role_assignments][0][role_id]" required>
         <option value="" selected>Choose a role</option>
@@ -20,7 +19,6 @@
         </select>
       </div>
 
-      <!-- Remove Button -->
       <button type="button" class="remove-role" style="margin-left: 10px;">❌</button>
     </div>
   </div>
@@ -28,7 +26,6 @@
   <a href="#" id="add-role">Add Another Role</a>
 </fieldset>
 
-<!-- Select2 Dependencies -->
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -44,23 +41,21 @@
 
 <script>
     function initializeSelect2() {
-        // Destroy existing Select2 instances to avoid duplicates
         $(".assignee-select").each(function() {
             if ($(this).hasClass("select2-hidden-accessible")) {
                 $(this).select2("destroy");
             }
         });
 
-        // Initialize Select2 with current values preserved
         $(".assignee-select").each(function() {
             const $select = $(this);
-            const selectedValues = $select.val(); // Store current selections
+            const selectedValues = $select.val();
             $select.select2({
                 placeholder: "Select assignees",
                 allowClear: true,
             });
             if (selectedValues) {
-                $select.val(selectedValues).trigger("change"); // Restore selections
+                $select.val(selectedValues).trigger("change");
             }
         });
         console.log("Select2 initialized for .assignee-select elements");

@@ -9,7 +9,6 @@ class CreateUserRoleQualifications < ActiveRecord::Migration[7.2]
       t.timestamps
     end
 
-    # Add foreign keys referencing the 'id' column of the respective tables
     add_foreign_key :user_role_qualifications, :users, column: :user_id
     add_foreign_key :user_role_qualifications, :roles, column: :role_id
     add_foreign_key :user_role_qualifications, :issue_categories, column: :category_id

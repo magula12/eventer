@@ -7,7 +7,6 @@ class CreateUserRoles < ActiveRecord::Migration[7.2]
       t.timestamps
     end
 
-    # Add foreign key constraints
     add_foreign_key :user_roles, :users, column: :user_id
     add_foreign_key :user_roles, :roles, column: :role_id
   end

@@ -66,23 +66,22 @@ def ilp(issues, users, allow_partial=False, filter_penalty=100):
         
         # Then create variables for other users with all checks
         for user in users:
-            # Skip if user is forward assigned
             if user.id in forward_assigned:
                 continue
                 
             rating = get_rating(user, role, cat)
             if rating <= 0:
-                continue  # User not qualified
+                continue
 
             if not user.is_available(ir["start"], ir["end"]):
-                continue  # User not available
+                continue
 
             # 🚀 **Evaluate custom filters, but allow variable creation**
             issue_context = {
                 "category": ir["category"],
                 "start_time": ir["start"],
                 "end_time": ir["end"],
-                "assigned_users": []  # Extendable if needed
+                "assigned_users": []
             }
 
             # Check if user fails any filter
@@ -120,7 +119,7 @@ def ilp(issues, users, allow_partial=False, filter_penalty=100):
             print(f"⚠️ No available users for issue {i_id}, role '{role}' — Debug")
         model += pulp.lpSum(vars_for_ir) == req_count, f"ReqCount_{i_id}_{role}"
 
-    # Constraint: Prevent same user assigned to multiple roles within one issue
+    # Constraint 2: Prevent same user assigned to multiple roles within one issue
     for issue in issues:
         for user in users:
             vars_same_issue = [
@@ -137,7 +136,7 @@ def ilp(issues, users, allow_partial=False, filter_penalty=100):
         e2 = e2 if e2 is not None else s2 + timedelta(hours=3)
         return (s1 < e2) and (s2 < e1)
 
-    # Constraint 2: A user cannot be double-booked for overlapping issues.
+    # Constraint 3: A user cannot be double-booked for overlapping issues.
     for u in users:
         for i1 in issues:
             for i2 in issues:
@@ -179,8 +178,7 @@ def ilp(issues, users, allow_partial=False, filter_penalty=100):
         for u in users:
             key = (i_id, u.id, role)
             if key in x and pulp.value(x[key]) == 1:
-                # Log if filter was violated for debugging
-                if filter_violations.get(key, 0) == 1:
+                if filter_violations.get(key, 0) == 1: # Log if filter was violated for debugging
                     print(f"⚠️ User {u.id} assigned to issue {i_id}, role {role} despite failing filter")
                 assignment[i_id][role].append(u.id)
 
@@ -192,7 +190,7 @@ def ilp(issues, users, allow_partial=False, filter_penalty=100):
 
 # Example usage:
 if __name__ == "__main__": 
-    issues = []  # Your list of Issue objects
-    users = []  # Your list of User objects
+    issues = []
+    users = []
     result = ilp(issues, users, allow_partial=False, filter_penalty=100)
     print("Assignment:", result)

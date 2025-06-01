@@ -1,9 +1,10 @@
+#plugins/eventer/app/controllers/offdays_controller.rb
 class OffdaysController < ApplicationController
   include OffdaysHelper
   def index
     if current_user.is_a?(AnonymousUser)
       Rails.logger.info "Anonymous user accessed off days at #{Time.now}"
-      @off_days = [] # Return an empty array for anonymous users
+      @off_days = []
     else
       cleanup_expired_off_days_for(current_user.id)
       @off_days = fetch_off_days_for_user(current_user.id)
@@ -13,12 +14,10 @@ class OffdaysController < ApplicationController
   end
 
   def current_user
-    # Assuming you have a method to get the current user
     User.find(session[:user_id]) rescue AnonymousUser.new
   end
 
   def fetch_off_days_for_user(user_id)
-    # Query the database for the user's off days
     OffDay.where(user_id: user_id)
   end
 

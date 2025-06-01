@@ -9,7 +9,7 @@ def greedy(issues, users):
     Returns a dictionary: { issue_id: { role_name: [list_of_assigned_user_ids] } }
     """
     assignment = {}
-    user_assignments = []  # List of (user_id, start, end) to track overlaps
+    user_assignments = []
 
     for issue in sorted(issues, key=lambda i: i.start_datetime):
         assignment[issue.id] = {}
@@ -20,30 +20,25 @@ def greedy(issues, users):
             count_needed = req_role.required_count
             assigned_users = []
 
-            # First, handle forward assignments - these are absolute and must be respected
+            # Handle forward assignments
             forward_assigned = [u.id for u in req_role.assigned_users]
             for user_id in forward_assigned:
-                # Add forward assigned user without any checks
                 assigned_users.append(user_id)
                 user_assignments.append((user_id, issue.start_datetime, issue_end))
 
             # If we still need more users, look for additional candidates
             if len(assigned_users) < count_needed:
-                # Build a list of qualified and available users
                 candidates = []
                 for user in users:
-                    # Skip if already assigned (either forward or in this issue)
                     if user.id in assigned_users:
                         continue
 
                     if any(q.role == role and (issue.category is None or q.category == issue.category)
                            for q in user.qualifications):
 
-                        # Check availability
                         if not user.is_available(issue.start_datetime, issue_end):
                             continue
 
-                        # Check time overlaps
                         has_conflict = any(
                             (user.id == u_id and times_overlap(issue.start_datetime, issue_end, s, e))
                             for (u_id, s, e) in user_assignments
@@ -51,7 +46,6 @@ def greedy(issues, users):
                         if has_conflict:
                             continue
 
-                        # Check filters
                         context = {
                             "category": issue.category,
                             "start_time": issue.start_datetime,
@@ -61,7 +55,6 @@ def greedy(issues, users):
                         if any(not evaluate_filter_block(cf.conditions, context) for cf in user.custom_filters):
                             continue
 
-                        # Check if already assigned in this issue to a different role
                         already_in_issue = any(
                             user.id in users_for_role
                             for r, users_for_role in assignment[issue.id].items()
@@ -69,7 +62,6 @@ def greedy(issues, users):
                         if already_in_issue:
                             continue
 
-                        # Get rating
                         rating = 0
                         for q in user.qualifications:
                             if q.role == role and (issue.category is None or q.category == issue.category):

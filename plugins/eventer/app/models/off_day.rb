@@ -1,3 +1,4 @@
+#plugins/eventer/app/models/off_day.rb
 class OffDay < ApplicationRecord
   belongs_to :user
 

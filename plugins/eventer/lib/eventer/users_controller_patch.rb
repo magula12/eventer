@@ -1,4 +1,5 @@
 #not applied
+#TODO: Remove this file when the patch is no longer needed
 
 module Eventer
   module UsersControllerPatch
@@ -6,10 +7,6 @@ module Eventer
 
     included do
       Rails.logger.info "Users controller patch start..."
-      # This hook will ensure the patch is applied only to the show action
-      #before_action :add_qualities_to_user, only: [:show]
-
-      # Alias original `show` method to preserve its functionality
       alias_method :show_without_qualities, :show
 
       def show

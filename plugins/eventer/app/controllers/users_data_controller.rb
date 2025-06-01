@@ -1,3 +1,4 @@
+# plugins/eventer/app/controllers/users_data_controller.rb
 class UsersDataController < ApplicationController
   before_action :set_user, only: [:show, :new_qualification, :create_qualification, :edit_qualification, :update_qualification]
 
@@ -19,7 +20,7 @@ class UsersDataController < ApplicationController
     @qualification.user = @user
 
     if @qualification.save
-      redirect_to users_data_path(@user), notice: "Kvalifikácia bola pridaná."
+      redirect_to users_data_path(@user), notice: I18n.t('flash.qualification_added')
     else
       render :new_qualification
     end
@@ -33,7 +34,7 @@ class UsersDataController < ApplicationController
     @qualification = UserRoleQualification.find(params[:id])
 
     if @qualification.update(qualification_params)
-      redirect_to users_data_path(@user), notice: "Kvalifikácia bola upravená."
+      redirect_to users_data_path(@user), notice: I18n.t('flash.qualification_updated')
     else
       render :edit_qualification
     end
@@ -62,7 +63,6 @@ class UsersDataController < ApplicationController
     Rails.logger.error "Error fetching qualities: #{e.message}"
     []
   end
-
 
   def qualification_params
     params.require(:user_role_qualification).permit(:role_id, :category_id, :rating)

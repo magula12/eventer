@@ -1,3 +1,4 @@
+#TODO: Tidy up this code, it is a bit messy
 module Eventer
   module IssuesControllerPatch
     def self.included(base)
@@ -30,16 +31,16 @@ module Eventer
         end
 
         def custom_find_issue
-          Rails.logger.info "Patch loaded and custom_find_issue running"
-          Rails.logger.info "Custom find_issue for user #{User.current.id}, issue #{params[:id]}"
+          #Rails.logger.info "Patch loaded and custom_find_issue running"
+          #Rails.logger.info "Custom find_issue for user #{User.current.id}, issue #{params[:id]}"
           begin
             issue = Issue.find_by(id: params[:id].to_i)
             if issue
-              Rails.logger.info "Issue #{params[:id]}: author_id=#{issue.author_id}, assigned_to_id=#{issue.assigned_to_id}, is_private=#{issue.is_private}, project_id=#{issue.project_id}, assigned_user_ids=#{issue.issue_role_assignments.map { |a| a.assigned_user_ids }.inspect}"
+              #Rails.logger.info "Issue #{params[:id]}: author_id=#{issue.author_id}, assigned_to_id=#{issue.assigned_to_id}, is_private=#{issue.is_private}, project_id=#{issue.project_id}, assigned_user_ids=#{issue.issue_role_assignments.map { |a| a.assigned_user_ids }.inspect}"
               project = issue.project
               roles = User.current.roles_for_project(project)
               visibility = roles.map(&:issues_visibility).uniq
-              Rails.logger.info "User #{User.current.id} visibility: #{visibility.inspect}"
+              #Rails.logger.info "User #{User.current.id} visibility: #{visibility.inspect}"
 
               allow_access = false
               if visibility.include?('all')
@@ -53,9 +54,9 @@ module Eventer
               if allow_access
                 @issue = issue
                 @project = project
-                Rails.logger.info "User #{User.current.id} authorized for issue #{params[:id]}"
+                #Rails.logger.info "User #{User.current.id} authorized for issue #{params[:id]}"
               else
-                Rails.logger.warn "User #{User.current.id} not authorized for issue #{params[:id]}"
+                #Rails.logger.warn "User #{User.current.id} not authorized for issue #{params[:id]}"
                 render_403
                 return false
               end
@@ -70,7 +71,7 @@ module Eventer
               render_404
               return false
             end
-            Rails.logger.info "Issue #{params[:id]} found for user #{User.current.id}"
+            #Rails.logger.info "Issue #{params[:id]} found for user #{User.current.id}"
           rescue ActiveRecord::RecordNotFound
             #Rails.logger.warn "Issue #{params[:id]} not found"
             render_404

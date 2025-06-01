@@ -63,7 +63,7 @@
         removeBtn.type = "button";
         removeBtn.onclick = () => div.remove();
 
-        // Append them in the new order: valueInput -> opSelect -> varSelect -> ...
+        // Append them in the new order: valueInput -> opSelect -> varSelect -> logicSelect -> removeBtn
         div.append(valueInput, opSelect, varSelect, logicSelect, removeBtn);
         container.appendChild(div);
     }
@@ -105,12 +105,10 @@
         let logicGroup = { [logicType]: [] };
 
         document.querySelectorAll(`#${containerId} > .condition-row`).forEach(row => {
-            // Because we changed the DOM order, the sequence is now:
             // [valueInput, opSelect, varSelect, logicSelect, removeBtn]
             let [value, operator, variable, nestedLogicType] = row.querySelectorAll("input, select");
 
             if (variable.value && operator.value && value.value) {
-                // Keep the JSON structure exactly the same as before:
                 // { "operator": [ { "var": variable.value }, value.value ] }
                 let condition = {
                     [operator.value]: [

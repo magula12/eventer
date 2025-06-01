@@ -1,3 +1,4 @@
+#plugins/eventer/app/controllers/custom_filters_controller.rb
 class CustomFiltersController < ApplicationController
   before_action :find_filter, only: [:edit, :update, :destroy]
 
@@ -5,7 +6,7 @@ class CustomFiltersController < ApplicationController
     @filters = CustomFilter.where(user_id: User.current.id)
 
     if @filters.empty?
-      flash[:notice] = I18n.t('no_filters')
+      flash[:notice] = I18n.t('flash.no_filters')
     end
   end
 
@@ -22,9 +23,9 @@ class CustomFiltersController < ApplicationController
     end
 
     if @filter.save
-      redirect_to custom_filters_path, notice: I18n.t('filter_created')
+      redirect_to custom_filters_path, notice: I18n.t('flash.filter_created')
     else
-      flash.now[:alert] = I18n.t('filter_create_failed')
+      flash.now[:alert] = I18n.t('flash.filter_create_failed')
       render :new
     end
   end
@@ -33,7 +34,7 @@ class CustomFiltersController < ApplicationController
 
   def update
     if @filter.update(filter_params)
-      redirect_to custom_filters_path, notice: I18n.t('filter_updated')
+      redirect_to custom_filters_path, notice: I18n.t('flash.filter_updated')
     else
       render :edit
     end
@@ -41,7 +42,7 @@ class CustomFiltersController < ApplicationController
 
   def destroy
     @filter.destroy
-    redirect_to custom_filters_path, notice: I18n.t('filter_deleted')
+    redirect_to custom_filters_path, notice: I18n.t('flash.filter_deleted')
   end
 
   private

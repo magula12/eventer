@@ -1,3 +1,4 @@
+#TODO: Check if this is still needed with the new multi-assignee feature
 module Eventer
   module IssueHelperPatch
     def self.included(base)
@@ -15,8 +16,3 @@ module Eventer
     end
   end
 end
-
-# unless IssuesHelper.included_modules.include?(Eventer::IssueHelperPatch)
-#   IssuesHelper.send(:include, Eventer::IssueHelperPatch)
-#   Rails.logger.info 'Eventer::IssuesControllerPatch included'
-# end

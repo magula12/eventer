@@ -2,6 +2,12 @@ from filter_eval import evaluate_filter_block
 
 
 def diagnose(issues, users):
+    """
+    Diagnose potential infeasibility in the current issue-user assignments.
+    :param issues:
+    :param users:
+    :return: log of diagnostics
+    """
     print("🔍 Diagnosing infeasibility...\n")
 
     # 1) Local check: For each issue, see how many matching users each role has
@@ -92,21 +98,16 @@ def detect_pairwise_conflicts(issues, users):
 
     return conflicts
 
-# Helper to see if times overlap
 def times_overlap(s1, e1, s2, e2):
     return (s1 < e2) and (s2 < e1)
 
 # Helper to find the list of candidate users for a single role in a single issue
 def find_candidates(users, issue, role):
-    from datetime import datetime
     cands = []
     for user in users:
-        # If user qualifies for the role
         if any(q.role == role and (issue.category is None or q.category == issue.category)
                for q in user.qualifications):
-            # If user is available
             if user.is_available(issue.start_datetime, issue.end_datetime):
-                # If user passes custom filters
                 ctx = {
                     "category": issue.category,
                     "start_time": issue.start_datetime,

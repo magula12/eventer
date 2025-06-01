@@ -6,8 +6,7 @@ import io
 import sys
 
 app = Flask(__name__)
-
-# Same endpoint & key as before
+# URL of the Redmine API endpoint to post assignments
 API_URL = "http://redmine:3000/eventer_api.json?key=836415703b4576d4dc5663a062a89b3a7b10055f"
 
 def send_assignments_to_redmine(results):
@@ -18,7 +17,6 @@ def send_assignments_to_redmine(results):
     """
     payload = { "assignments": {} }
     for issue_id, roles_dict in results.items():
-        # Convert integer keys to strings
         payload["assignments"][str(issue_id)] = roles_dict
 
     try:
@@ -48,7 +46,6 @@ def run_algorithm():
 
         print("✅ Data received successfully!\n")
 
-        #print(json_data)
         issues, users = initialize_data(json_data)
 
         print("📌 Issues Loaded:")
@@ -71,7 +68,6 @@ def run_algorithm():
         print("\n💾 Sending assignments to Redmine...")
         send_assignments_to_redmine(results)
 
-        # Restore stdout
         sys.stdout = old_stdout
 
         return jsonify({
@@ -87,5 +83,4 @@ def run_algorithm():
         }), 500
 
 if __name__ == "__main__":
-    # Make sure to listen on 0.0.0.0 so Redmine can reach us
     app.run(host="0.0.0.0", port=5000)
