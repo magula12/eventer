@@ -35,9 +35,12 @@ class AlgorithmRunnerController < ApplicationController
       end
     end
 
+    # Prepare the complete payload with all data
     payload = {
-      issues: filtered_issues,
-      users: users,
+      data: {
+        issues: filtered_issues,
+        users: users
+      },
       partial_solution: params[:partial_solution] == '1'
     }
 
@@ -56,10 +59,10 @@ class AlgorithmRunnerController < ApplicationController
 
         if @output.include?("ILP did not reach an optimal solution")
           flash.now[:warning] = "Infeasible solution found."
-          else
-            if @output.include?("Assignments posted successfully!")
-              flash.now[:notice] = "✅ Python script ran successfully!"
-            end
+        else
+          if @output.include?("Assignments posted successfully!")
+            flash.now[:notice] = "✅ Python script ran successfully!"
+          end
         end
 
       rescue => e

@@ -10,12 +10,12 @@ module Eventer
         private
 
         def handle_issue_role_assignments
-          Rails.logger.info "Processing issue params: #{params[:issue]&.inspect}"
+          #Rails.logger.info "Processing issue params: #{params[:issue]&.inspect}"
           if params[:issue] && params[:issue][:issue_role_assignments_attributes]
             params[:issue][:issue_role_assignments_attributes].each do |_, attrs|
               if attrs[:assigned_user_ids]
                 attrs[:assigned_user_ids] = attrs[:assigned_user_ids].reject(&:blank?).map(&:to_i).uniq
-                Rails.logger.info "Received assigned_user_ids for role #{attrs[:role_id]}: #{attrs[:assigned_user_ids].join(', ')}"
+                #Rails.logger.info "Received assigned_user_ids for role #{attrs[:role_id]}: #{attrs[:assigned_user_ids].join(', ')}"
               else
                 attrs[:assigned_user_ids] = []
               end
@@ -24,7 +24,7 @@ module Eventer
             first_assignment = params[:issue][:issue_role_assignments_attributes].values.find { |a| a[:assigned_user_ids].any? }
             params[:issue][:assigned_to_id] = first_assignment[:assigned_user_ids].first if first_assignment
           else
-            Rails.logger.info "No issue_role_assignments_attributes in params: #{params[:issue]&.inspect}"
+            #Rails.logger.info "No issue_role_assignments_attributes in params: #{params[:issue]&.inspect}"
             params[:issue][:issue_role_assignments_attributes] = []
           end
         end
@@ -46,8 +46,8 @@ module Eventer
                 allow_access = true
               elsif visibility.include?('own')
                 allow_access = issue.author_id == User.current.id ||
-                  issue.assigned_to_id == User.current.id ||
-                  issue.issue_role_assignments.any? { |a| a.assigned_user_ids.include?(User.current.id) }
+                               issue.assigned_to_id == User.current.id ||
+                               issue.issue_role_assignments.any? { |a| a.assigned_user_ids.map(&:to_s).include?(User.current.id.to_s) }
               end
 
               if allow_access
@@ -72,11 +72,11 @@ module Eventer
             end
             Rails.logger.info "Issue #{params[:id]} found for user #{User.current.id}"
           rescue ActiveRecord::RecordNotFound
-            Rails.logger.warn "Issue #{params[:id]} not found"
+            #Rails.logger.warn "Issue #{params[:id]} not found"
             render_404
             return false
           rescue StandardError => e
-            Rails.logger.error "Error in custom_find_issue for issue #{params[:id]}: #{e.message}"
+            #sRails.logger.error "Error in custom_find_issue for issue #{params[:id]}: #{e.message}"
             render_403
             return false
           end

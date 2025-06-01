@@ -17,7 +17,7 @@ issues = [Issue(i) for i in data["issues"]]
 users = [User(u) for u in data["users"]]
 
 start = time.time()
-strategy = "backtracking_basic"
+strategy = "ilp"
 results = match_issues_to_users(issues, users, strategy= strategy)
 duration = time.time() - start
 

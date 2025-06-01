@@ -25,7 +25,6 @@ module Eventer
                                 .uniq
         Rails.logger.info "[Eventer] Overwriting assigned_user_ids with role-based: #{all_assigned_ids.inspect}"
         issue.assigned_user_ids = all_assigned_ids
-
       end
 
       # For EDITs, we might be okay using before_save, as the issue already has an ID

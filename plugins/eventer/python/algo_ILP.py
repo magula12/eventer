@@ -32,7 +32,8 @@ def ilp(issues, users, allow_partial=False, filter_penalty=100):
                 "required_count": req_role.required_count,
                 "start": issue.start_datetime,
                 "end": issue.end_datetime,
-                "category": issue.category
+                "category": issue.category,
+                "forward_assigned_users": [u.id for u in req_role.assigned_users]  # Track forward assignments
             })
 
     # Build lookup for issue time windows (for overlap constraints)
@@ -55,7 +56,20 @@ def ilp(issues, users, allow_partial=False, filter_penalty=100):
         i_id = ir["issue_id"]
         role = ir["role"]
         cat = ir["category"]
+        forward_assigned = ir["forward_assigned_users"]
+        
+        # First, create variables for forward assigned users without any checks
+        for user_id in forward_assigned:
+            var_name = f"x_{i_id}_{user_id}_{role}"
+            x[(i_id, user_id, role)] = pulp.LpVariable(var_name, cat=pulp.LpBinary)
+            filter_violations[(i_id, user_id, role)] = 0  # No filter violations for forward assignments
+        
+        # Then create variables for other users with all checks
         for user in users:
+            # Skip if user is forward assigned
+            if user.id in forward_assigned:
+                continue
+                
             rating = get_rating(user, role, cat)
             if rating <= 0:
                 continue  # User not qualified
@@ -93,6 +107,14 @@ def ilp(issues, users, allow_partial=False, filter_penalty=100):
         i_id = ir["issue_id"]
         role = ir["role"]
         req_count = ir["required_count"]
+        forward_assigned = ir["forward_assigned_users"]
+        
+        # If there are forward assignments, ensure they are maintained
+        if forward_assigned:
+            for user_id in forward_assigned:
+                if (i_id, user_id, role) in x:
+                    model += x[(i_id, user_id, role)] == 1, f"ForwardAssign_{i_id}_{user_id}_{role}"
+        
         vars_for_ir = [x[(i_id, u.id, role)] for u in users if (i_id, u.id, role) in x]
         if not vars_for_ir:
             print(f"⚠️ No available users for issue {i_id}, role '{role}' — Debug")

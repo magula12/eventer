@@ -1,17 +1,16 @@
 <h1><%= @user_data.name %></h1>
 
 <p>
-  Tu si môžete spravovať kvalifikácie používateľa.
-  Každá kvalifikácia obsahuje rolu, kategóriu a hodnotenie.
+  <%= l(:description_manage_qualifications) %>
 </p>
 
 <table class="list">
   <thead>
   <tr>
-    <th>Rola</th>
-    <th>Kategória</th>
-    <th>Hodnotenie</th>
-    <th>Akcie</th>
+    <th><%= l(:label_role) %></th>
+    <th><%= l(:label_category) %></th>
+    <th><%= l(:label_rating) %></th>
+    <th><%= l(:label_actions) %></th>
   </tr>
   </thead>
   <tbody>
@@ -21,13 +20,12 @@
       <td><%= qualification[:category_name] %></td>
       <td><%= qualification[:rating] %></td>
       <td>
-        <%= link_to 'Upraviť', edit_qualification_path(qualification), class: 'icon icon-edit' %> |
-        <%= link_to 'Odstrániť', qualification_path(qualification), method: :delete, data: { confirm: 'Naozaj chcete odstrániť túto kvalifikáciu?' }, class: 'icon icon-del' %>
+        <%= link_to l(:link_edit), edit_qualification_path(qualification), class: 'icon icon-edit' %> |
+        <%= link_to l(:link_delete), qualification_path(qualification), method: :delete, data: { confirm: l(:confirm_delete_qualification) }, class: 'icon icon-del' %>
       </td>
     </tr>
   <% end %>
   </tbody>
-
 </table>
 
-<%= link_to 'Pridať novú kvalifikáciu', new_qualification_path(user_id: @user_data.id), class: 'button' %>
+<%= link_to l(:link_add_new_qualification), new_qualification_path(user_id: @user_data.id), class: 'button' %>

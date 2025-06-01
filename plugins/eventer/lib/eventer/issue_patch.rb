@@ -18,6 +18,9 @@ module Eventer
         def assigned_user_ids
           issue_role_assignments.pluck(:assigned_user_ids).flatten.uniq.map(&:to_i).reject(&:zero?)
         end
+        def assigned_user_ids=(user_ids)
+          Rails.logger.info "Was called mate! #{user_ids.inspect}"
+        end
 
         # Override assigned_to to maintain compatibility
         def assigned_to

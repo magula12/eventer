@@ -5,10 +5,9 @@ class CustomFiltersController < ApplicationController
     @filters = CustomFilter.where(user_id: User.current.id)
 
     if @filters.empty?
-      flash[:notice] = "Nemáte žiadne filtre. Vytvorte nový!"
+      flash[:notice] = I18n.t('no_filters')
     end
   end
-
 
   def new
     @filter = CustomFilter.new
@@ -23,19 +22,18 @@ class CustomFiltersController < ApplicationController
     end
 
     if @filter.save
-      redirect_to custom_filters_path, notice: 'Filter bol úspešne vytvorený.'
+      redirect_to custom_filters_path, notice: I18n.t('filter_created')
     else
-      flash.now[:alert] = 'Nepodarilo sa vytvoriť filter. Skontrolujte dáta.'
+      flash.now[:alert] = I18n.t('filter_create_failed')
       render :new
     end
   end
-
 
   def edit; end
 
   def update
     if @filter.update(filter_params)
-      redirect_to custom_filters_path, notice: 'Filter was successfully updated.'
+      redirect_to custom_filters_path, notice: I18n.t('filter_updated')
     else
       render :edit
     end
@@ -43,7 +41,7 @@ class CustomFiltersController < ApplicationController
 
   def destroy
     @filter.destroy
-    redirect_to custom_filters_path, notice: 'Filter was successfully deleted.'
+    redirect_to custom_filters_path, notice: I18n.t('filter_deleted')
   end
 
   private

@@ -10,16 +10,6 @@ app = Flask(__name__)
 # Same endpoint & key as before
 API_URL = "http://redmine:3000/eventer_api.json?key=836415703b4576d4dc5663a062a89b3a7b10055f"
 
-def fetch_json_from_api():
-    """Fetch JSON data from the Redmine plugin API (same as old logic)."""
-    try:
-        response = requests.get(API_URL, headers={"Content-Type": "application/json"})
-        response.raise_for_status()
-        return response.json()
-    except requests.RequestException as e:
-        print(f"❌ Error fetching API data: {e}")
-        return None
-
 def send_assignments_to_redmine(results):
     """
     POST the assignment results back to the same endpoint,
@@ -42,7 +32,6 @@ def send_assignments_to_redmine(results):
 @app.route("/run_algorithm", methods=["POST"])
 def run_algorithm():
 
-    # Redirect stdout to capture prints
     old_stdout = sys.stdout
     sys.stdout = mystdout = io.StringIO()
 
@@ -50,15 +39,16 @@ def run_algorithm():
         print()
         allow_partial = request.json.get("partial_solution", False)
         print(f"ℹ️ Partial solution allowed: {allow_partial}")
-        print("📡 Fetching data from API (GET)...")
-        json_data = fetch_json_from_api()
-
+        
+        # Get data directly from the POST request
+        json_data = request.json.get("data")
         if not json_data:
-            print("❌ No data fetched from API.")
+            print("❌ No data received in request.")
             return jsonify({"status": "error", "output": mystdout.getvalue()}), 400
 
-        print("✅ Data fetched successfully!\n")
+        print("✅ Data received successfully!\n")
 
+        #print(json_data)
         issues, users = initialize_data(json_data)
 
         print("📌 Issues Loaded:")

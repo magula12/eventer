@@ -19,6 +19,7 @@ Eventer is a Redmine plugin that is mainly developed for management automation o
 
 ## Documentation
 - [User Manual](docs/user_manual.md)
+- [Thesis](docs/thesis.pdf) - Bachelor thesis detailing the development and features of the plugin
 
 ### Requirements
 - Redmine version: 6.0.2
@@ -105,6 +106,7 @@ Eventer je Redmine plugin, ktorý je primárne vyvíjaný pre automatizáciu man
 
 ## Dokumentácia
 - [Používateľská príručka](docs/user_manual.md)
+- [Bakalárska práca](docs/thesis.pdf) - Bakalárska práca podrobne popisujúca vývoj a funkcie pluginu
 
 ### Požiadavky
 - Redmine verzia: 6.0.2

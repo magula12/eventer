@@ -1,5 +1,5 @@
-<h2>Upraviť kvalifikáciu</h2>
+<h2><%= l(:heading_edit_qualification) %></h2>
 
 <%= render 'form', qualification: @qualification %>
 
-<%= link_to "Späť", users_data_path(@qualification.user_id) %>
+<%= link_to l(:link_back), users_data_path(@qualification.user_id) %>

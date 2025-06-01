@@ -2,20 +2,19 @@
   <%= hidden_field_tag :user_id, params[:user_id] %>
 
   <p>
-    <%= form.label :role_id, "Rola" %><br>
-    <%= form.collection_select :role_id, Role.where.not(id: [1, 2]), :id, :name, prompt: "Vyberte rolu" %>
-
+    <%= form.label :role_id, l(:label_role) %><br>
+    <%= form.collection_select :role_id, Role.where.not(id: [1, 2]), :id, :name, prompt: l(:prompt_select_role) %>
   </p>
 
   <p>
-    <%= form.label :category_id, "Kategória" %><br>
-    <%= form.collection_select :category_id, IssueCategory.all, :id, :name, prompt: "Vyberte kategóriu" %>
+    <%= form.label :category_id, l(:label_category) %><br>
+    <%= form.collection_select :category_id, IssueCategory.all, :id, :name, prompt: l(:prompt_select_category) %>
   </p>
 
   <p>
-    <%= form.label :rating, "Hodnotenie (0-10)" %><br>
+    <%= form.label :rating, l(:label_rating) %><br>
     <%= form.number_field :rating, in: 0..10, step: 1 %>
   </p>
 
-  <%= form.submit "Uložiť" %>
+  <%= form.submit l(:button_save) %>
 <% end %>

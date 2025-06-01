@@ -20,61 +20,78 @@ def greedy(issues, users):
             count_needed = req_role.required_count
             assigned_users = []
 
-            # Build a list of qualified and available users
-            candidates = []
-            for user in users:
-                if any(q.role == role and (issue.category is None or q.category == issue.category)
-                       for q in user.qualifications):
+            # First, handle forward assignments - these are absolute and must be respected
+            forward_assigned = [u.id for u in req_role.assigned_users]
+            for user_id in forward_assigned:
+                # Add forward assigned user without any checks
+                assigned_users.append(user_id)
+                user_assignments.append((user_id, issue.start_datetime, issue_end))
 
-                    # Check availability
-                    if not user.is_available(issue.start_datetime, issue_end):
+            # If we still need more users, look for additional candidates
+            if len(assigned_users) < count_needed:
+                # Build a list of qualified and available users
+                candidates = []
+                for user in users:
+                    # Skip if already assigned (either forward or in this issue)
+                    if user.id in assigned_users:
                         continue
 
-                    # Check time overlaps
-                    has_conflict = any(
-                        (user.id == u_id and times_overlap(issue.start_datetime, issue_end, s, e))
-                        for (u_id, s, e) in user_assignments
-                    )
-                    if has_conflict:
-                        continue
+                    if any(q.role == role and (issue.category is None or q.category == issue.category)
+                           for q in user.qualifications):
 
-                    # Check filters
-                    context = {
-                        "category": issue.category,
-                        "start_time": issue.start_datetime,
-                        "end_time": issue_end,
-                        "assigned_users": []
-                    }
-                    if any(not evaluate_filter_block(cf.conditions, context) for cf in user.custom_filters):
-                        continue
+                        # Check availability
+                        if not user.is_available(issue.start_datetime, issue_end):
+                            continue
 
-                    # Check if already assigned in this issue to a different role
-                    already_in_issue = any(
-                        user.id in users_for_role
-                        for r, users_for_role in assignment[issue.id].items()
-                    )
-                    if already_in_issue:
-                        continue
+                        # Check time overlaps
+                        has_conflict = any(
+                            (user.id == u_id and times_overlap(issue.start_datetime, issue_end, s, e))
+                            for (u_id, s, e) in user_assignments
+                        )
+                        if has_conflict:
+                            continue
 
-                    # Get rating
-                    rating = 0
-                    for q in user.qualifications:
-                        if q.role == role and (issue.category is None or q.category == issue.category):
-                            rating = q.rating
-                            break
+                        # Check filters
+                        context = {
+                            "category": issue.category,
+                            "start_time": issue.start_datetime,
+                            "end_time": issue_end,
+                            "assigned_users": []
+                        }
+                        if any(not evaluate_filter_block(cf.conditions, context) for cf in user.custom_filters):
+                            continue
 
-                    candidates.append((user, rating))
+                        # Check if already assigned in this issue to a different role
+                        already_in_issue = any(
+                            user.id in users_for_role
+                            for r, users_for_role in assignment[issue.id].items()
+                        )
+                        if already_in_issue:
+                            continue
 
-            # Sort candidates by rating (descending)
-            candidates.sort(key=lambda t: t[1], reverse=True)
+                        # Get rating
+                        rating = 0
+                        for q in user.qualifications:
+                            if q.role == role and (issue.category is None or q.category == issue.category):
+                                rating = q.rating
+                                break
 
-            for user, _ in candidates[:count_needed]:
-                assigned_users.append(user.id)
-                user_assignments.append((user.id, issue.start_datetime, issue_end))
+                        candidates.append((user, rating))
+
+                # Sort candidates by rating (descending)
+                candidates.sort(key=lambda t: t[1], reverse=True)
+
+                # Assign remaining needed users
+                remaining_needed = count_needed - len(assigned_users)
+                for user, _ in candidates[:remaining_needed]:
+                    assigned_users.append(user.id)
+                    user_assignments.append((user.id, issue.start_datetime, issue_end))
 
             assignment[issue.id][role] = assigned_users
 
     return assignment
+
+
 def times_overlap(s1, e1, s2, e2):
     e1 = e1 if e1 is not None else s1 + timedelta(hours=3)
     e2 = e2 if e2 is not None else s2 + timedelta(hours=3)

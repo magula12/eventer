@@ -228,6 +228,56 @@ class IssueUserMatchingTests(unittest.TestCase):
             # Ensure user 1 is not assigned to multiple overlapping issues
             self.assertLessEqual(assignments.count(1), 1)
 
+    def test_forward_assignments_respected(self):
+        """Test that forward assignments are respected and not overwritten."""
+        issues = [
+            Issue({
+                "id": 7,
+                "subject": "Forward Assignment Test",
+                "category": "General",
+                "category_priority": None,
+                "priority": "High",
+                "start_datetime": "2025-03-07T20:00:00",
+                "end_datetime": "2025-03-07T21:00:00",
+                "required_roles": [
+                    {
+                        "role": "Director",
+                        "required_count": 2,
+                        "assigned_users": [
+                            {"id": 1, "firstname": "Forward", "lastname": "Assigned"}
+                        ]
+                    }
+                ]
+            })
+        ]
+
+        users = [
+            User({
+                "id": 1,
+                "firstname": "Forward",
+                "lastname": "Assigned",
+                "qualifications": [{"role": "Director", "category": "General", "rating": 8}]
+            }),
+            User({
+                "id": 2,
+                "firstname": "Higher",
+                "lastname": "Rating",
+                "qualifications": [{"role": "Director", "category": "General", "rating": 10}]
+            })
+        ]
+
+        # Test ILP strategy
+        results_ilp = match_issues_to_users(issues, users, strategy="ilp")
+        self.assertIn(1, results_ilp[7]["Director"], "Forward assigned user should be in ILP results")
+        self.assertIn(2, results_ilp[7]["Director"], "Higher rated user should also be assigned in ILP")
+        self.assertEqual(len(results_ilp[7]["Director"]), 2, "Should have exactly 2 assigned users in ILP")
+
+        # Test Greedy strategy
+        results_greedy = match_issues_to_users(issues, users, strategy="greedy")
+        self.assertIn(1, results_greedy[7]["Director"], "Forward assigned user should be in Greedy results")
+        self.assertIn(2, results_greedy[7]["Director"], "Higher rated user should also be assigned in Greedy")
+        self.assertEqual(len(results_greedy[7]["Director"]), 2, "Should have exactly 2 assigned users in Greedy")
+
 
 if __name__ == "__main__":
     start = datetime.now()
