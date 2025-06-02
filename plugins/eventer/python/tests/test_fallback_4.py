@@ -1,17 +1,3 @@
-"""test_fallback.py
-
-A test case demonstrating fallback behavior where ILP fails to find a solution
-(0% coverage) but Greedy can still make some assignments.
-
-Key points
-~~~~~~~~~~
-* Creates a scenario where multiple users are required per issue
-* Not enough users are available to satisfy all requirements
-* ILP fails to find a solution while Greedy can make partial assignments
-* Greedy ignores allow_partial and always makes partial assignments when needed
-* Backtracking should also fail like ILP since it requires complete solutions
-"""
-
 from __future__ import annotations
 
 import os
@@ -21,25 +7,19 @@ import unittest
 from datetime import datetime, timedelta, time
 from typing import Dict, List
 
-# ---------------------------------------------------------------------------
-# Import system under test
-# ---------------------------------------------------------------------------
 THIS_DIR = os.path.dirname(__file__)
 PROJECT_ROOT = os.path.abspath(os.path.join(THIS_DIR, ".."))
 sys.path.insert(0, PROJECT_ROOT)
 
-from models import Issue, User  # type: ignore
-from process import match_issues_to_users  # type: ignore
+from models import Issue, User
+from process import match_issues_to_users
 
-# ---------------------------------------------------------------------------
-# Synthetic data builders
-# ---------------------------------------------------------------------------
 
-ISSUE_SPACING_MINUTES = 15  # new issue every 15 min (more overlap)
-ISSUE_DURATION_HOURS = 2    # each issue lasts 2 h
-NUM_ISSUES = 25            # 25 issues
-USERS_PER_ISSUE = 2        # each issue needs 2 users
-TOTAL_USERS = 8            # only 8 users available (not enough for overlapping issues)
+ISSUE_SPACING_MINUTES = 15 
+ISSUE_DURATION_HOURS = 2 
+NUM_ISSUES = 25
+USERS_PER_ISSUE = 2 
+TOTAL_USERS = 8
 
 
 def build_issues(start_dt: datetime) -> List[Issue]:
@@ -71,7 +51,6 @@ def build_users() -> List[User]:
     """Create a limited number of users that can't satisfy all requirements."""
     users: List[User] = []
     
-    # Create only TOTAL_USERS when we need NUM_ISSUES * USERS_PER_ISSUE
     for uid in range(1, TOTAL_USERS + 1):
         users.append(
             User(
@@ -82,19 +61,13 @@ def build_users() -> List[User]:
                     "qualifications": [
                         {"role": "Technician", "category": "General", "rating": 5},
                     ],
-                    "off_days": [],  # No off days to keep it simple
-                    "custom_filters": [],  # No time filters to keep it simple
+                    "off_days": [],
+                    "custom_filters": [],
                 }
             )
         )
     
     return users
-
-
-# ---------------------------------------------------------------------------
-# TestCase
-# ---------------------------------------------------------------------------
-
 
 class TestFallbackBehavior(unittest.TestCase):
     @classmethod
@@ -102,7 +75,6 @@ class TestFallbackBehavior(unittest.TestCase):
         base_start = datetime(2025, 3, 7, 9, 0)  # Start at 9:00
         cls.issues = build_issues(base_start)
         cls.users = build_users()
-        # Calculate total required users
         cls.total_required = sum(
             role.required_count 
             for issue in cls.issues 
@@ -126,7 +98,7 @@ class TestFallbackBehavior(unittest.TestCase):
         result = match_issues_to_users(
             self.issues,
             self.users,
-            allow_partial=False,  # Don't allow partial assignments
+            allow_partial=False,
             strategy=strategy,
         )
         elapsed = time_module.perf_counter() - t0
@@ -144,16 +116,12 @@ class TestFallbackBehavior(unittest.TestCase):
                 f"{s.upper():<18} runtime = {runtime * 1000:9.3f} ms | coverage = {cov * 100:6.1f}%"
             )
 
-        # ILP should fail to find a solution
         self.assertEqual(metrics["ilp"][1], 0.0, "ILP should fail to find any assignments")
         
-        # Backtracking should also fail since it requires complete solutions
         self.assertEqual(metrics["backtracking_basic"][1], 0.0, "Backtracking should fail to find any assignments")
         
-        # Greedy should make partial assignments regardless of allow_partial
         self.assertGreater(metrics["greedy"][1], 0.0, "Greedy should make partial assignments")
         
-        # Greedy should find more assignments than ILP and Backtracking
         self.assertGreater(
             metrics["greedy"][1],
             metrics["ilp"][1],
@@ -164,7 +132,6 @@ class TestFallbackBehavior(unittest.TestCase):
             metrics["backtracking_basic"][1],
             "Greedy should find more assignments than Backtracking"
         )
-
 
 if __name__ == "__main__":
     unittest.main() 

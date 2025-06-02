@@ -1,14 +1,12 @@
 from datetime import datetime
 from models import User, Issue
-import  algo_ILP, algo_greedy, algo_backtracking, algo_smart_greedy
+import  algo_ILP, algo_greedy, algo_backtracking
 
 def match_issues_to_users(issues, users, allow_partial=False, strategy="ilp"):
     if strategy == "greedy":
         return algo_greedy.greedy(issues, users)
     elif strategy == "backtracking_basic":
         return algo_backtracking.backtracking_basic(issues, users)
-    elif strategy == "smart_greedy":
-        return algo_smart_greedy.smart_greedy(issues, users)
     else:
         return algo_ILP.ilp(issues, users, allow_partial,filter_penalty=0)
 
