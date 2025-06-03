@@ -1,5 +1,4 @@
 # plugins/eventer/lib/eventer/issue_patch.rb
-#TODO: Tidy up this file, remove unnecessary comments, and ensure it works as expected
 module Eventer
   module IssuePatch
     extend ActiveSupport::Concern

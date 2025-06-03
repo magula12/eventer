@@ -1,4 +1,3 @@
-#TODO: Tidy up this code, it is a bit messy
 module Eventer
   module IssuesControllerPatch
     def self.included(base)

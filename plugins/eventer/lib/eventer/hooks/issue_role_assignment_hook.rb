@@ -1,4 +1,3 @@
-#TODO: Check if it works properly
 module Eventer
   module Hooks
     class IssueRoleAssignmentHook < Redmine::Hook::Listener
