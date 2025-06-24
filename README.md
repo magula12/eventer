@@ -4,7 +4,7 @@ This plugin was developed as a part of bachelor thesis at the Faculty of Mathema
 
 Tento plugin bol vyvinutý ako súčasť bakalárskej práce na Fakulte matematiky, fyziky a informatiky Univerzity Komenského v Bratislave, Slovensko.
 
-[![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![License](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 [![Redmine Version](https://img.shields.io/badge/redmine-6.0.2-blue.svg)](https://www.redmine.org/)
 [![RoR Version](https://img.shields.io/badge/ruby-3.0.0-blue.svg)](https://www.ruby-lang.org/)
 [![Python Version](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/)
